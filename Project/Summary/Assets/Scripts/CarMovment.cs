@@ -72,8 +72,13 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     public void MoveFront()
     {
+
         if (verticalInput >= 0)
         {
+            FrontLeftWheel.brakeTorque = 0;
+            FrontRightWheel.brakeTorque = 0;
+            BackLeftWheel.brakeTorque = 0;
+            BackRightWheel.brakeTorque = 0;
             if (!IsRearWheelDrive)
             {
                 FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
@@ -86,11 +91,19 @@ public class CarMovment : MonoBehaviour, IMoveable
             }
         }
 
-        /*if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            FrontLeftWheel.brakeTorque = 0;
-            FrontRightWheel.brakeTorque = 0;
-        }*/
+            if (!IsRearWheelDrive)
+            {
+                BackLeftWheel.brakeTorque = MotorForce;
+                BackRightWheel.brakeTorque = MotorForce;
+            }
+            else
+            {
+                FrontLeftWheel.brakeTorque = MotorForce;
+                FrontRightWheel.brakeTorque = MotorForce;
+            }   
+        }
     }
 
     public void StartMovment()

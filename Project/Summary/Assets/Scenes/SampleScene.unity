@@ -13001,11 +13001,11 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
-    m_Resolution: 1
+    m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0
-    m_NormalBias: 0.4
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -18352,6 +18352,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 284420222803362439, guid: dada1f078fa114f48a158347ee46086e, type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 678712823356743938, guid: dada1f078fa114f48a158347ee46086e, type: 3}
       propertyPath: ColorModule.enabled
       value: 1
@@ -18367,6 +18371,22 @@ PrefabInstance:
     - target: {fileID: 678712823614547791, guid: dada1f078fa114f48a158347ee46086e, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678712823969352269, guid: dada1f078fa114f48a158347ee46086e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 678712824606540137, guid: dada1f078fa114f48a158347ee46086e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 678712825340467971, guid: dada1f078fa114f48a158347ee46086e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 678712825411849975, guid: dada1f078fa114f48a158347ee46086e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2061640535145562590, guid: dada1f078fa114f48a158347ee46086e, type: 3}
       propertyPath: m_Lightmapping
@@ -18447,6 +18467,10 @@ PrefabInstance:
     - target: {fileID: 7653605414304782065, guid: dada1f078fa114f48a158347ee46086e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714985350807522313, guid: dada1f078fa114f48a158347ee46086e, type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumValue
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dada1f078fa114f48a158347ee46086e, type: 3}
