@@ -11,6 +11,8 @@ public class CarMovment : MonoBehaviour, IMoveable
     float maxSteerAngle = 30;
     [SerializeField]
     float MotorForce = 6000;
+    [SerializeField]
+    bool IsRearWheelDrive = false;
 
     bool canMove = false;
     [SerializeField]
@@ -37,8 +39,16 @@ public class CarMovment : MonoBehaviour, IMoveable
     {
         if (verticalInput < 0)
         {
-            FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-            FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            if (!IsRearWheelDrive)
+            {
+                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            }
+            else
+            {
+                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            }
         }
     }
 
@@ -64,8 +74,16 @@ public class CarMovment : MonoBehaviour, IMoveable
     {
         if (verticalInput >= 0)
         {
-            FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-            FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            if (!IsRearWheelDrive)
+            {
+                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            }
+            else
+            {
+                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            }
         }
 
         /*if (Input.GetKeyDown(KeyCode.Space))
@@ -104,7 +122,7 @@ public class CarMovment : MonoBehaviour, IMoveable
         wheel.rotation = quaternion;
     }
 
-    void ReRotate() 
+    void ReRotate()
     {
         bool isWheelsUp = false;
         WheelCollider[] wheelColliders = gameObject.GetComponentsInChildren<WheelCollider>();
@@ -116,7 +134,7 @@ public class CarMovment : MonoBehaviour, IMoveable
 
         if (isWheelsUp && Input.GetKeyDown(KeyCode.R))
         {
-            carRigidbody.AddForce(Vector3.up * carRigidbody.mass *100 * Time.deltaTime);
+            carRigidbody.AddForce(Vector3.up * carRigidbody.mass * 100 * Time.deltaTime);
             gameObject.transform.DORotate(new Vector3(180, 0, 180), 1f);
         }
     }

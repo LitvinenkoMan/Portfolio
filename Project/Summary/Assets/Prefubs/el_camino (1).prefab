@@ -127,7 +127,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331883067715487793}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -10235,7 +10235,7 @@ WheelCollider:
     targetPosition: 1
   m_SuspensionDistance: 0.01
   m_ForceAppPointDistance: 0
-  m_Mass: 1
+  m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -10404,7 +10404,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5950473893678114097}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -10497,7 +10497,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6740869837798434647}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -10599,7 +10599,7 @@ WheelCollider:
     targetPosition: 1
   m_SuspensionDistance: 0.01
   m_ForceAppPointDistance: 0
-  m_Mass: 1
+  m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -10638,6 +10638,7 @@ GameObject:
   - component: {fileID: 7653605414304782065}
   - component: {fileID: 7024701992837893193}
   - component: {fileID: 7024701992837893192}
+  - component: {fileID: 5433603765329768841}
   m_Layer: 0
   m_Name: el_camino (1)
   m_TagString: Untagged
@@ -10694,8 +10695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90626a8c2b3f5de48ac77cf8509defd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSteerAngle: 30
-  MotorForce: 4000
+  maxSteerAngle: 35
+  MotorForce: 6000
+  IsRearWheelDrive: 1
   FrontLeftWheel: {fileID: 6787402106512911883}
   FrontRightWheel: {fileID: 2557038526374949924}
   BackLeftWheel: {fileID: 284420222803362439}
@@ -10705,6 +10707,24 @@ MonoBehaviour:
   TBackLeftWheel: {fileID: 678712824606540150}
   TBackRightWheel: {fileID: 678712823969352266}
   carRigidbody: {fileID: 7024701992837893193}
+--- !u!114 &5433603765329768841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024701992837893195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5973d822f04041439681a58a839703a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrontLights:
+  - {fileID: 2061640535145562590}
+  - {fileID: 4465832437971128378}
+  - {fileID: 3980652379550323361}
+  - {fileID: 3423066163179813548}
+  backLights: []
 --- !u!1 &7714985350807522312
 GameObject:
   m_ObjectHideFlags: 0
@@ -10832,7 +10852,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8325867594003889709}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
