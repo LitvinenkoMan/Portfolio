@@ -118,7 +118,7 @@ Transform:
   m_LocalScale: {x: 22.249922, y: 22.249922, z: 22.249922}
   m_Children: []
   m_Father: {fileID: 7653605414304782065}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &4465832437971128378
 Light:
@@ -9822,7 +9822,7 @@ Transform:
   - {fileID: 678712824606540150}
   - {fileID: 678712823969352266}
   m_Father: {fileID: 7653605414304782065}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678712823969352269
 GameObject:
@@ -10022,7 +10022,7 @@ Transform:
   - {fileID: 678712823614547777}
   - {fileID: 678712823356743936}
   m_Father: {fileID: 7653605414304782065}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678712825340467971
 GameObject:
@@ -10294,7 +10294,7 @@ Transform:
   m_LocalScale: {x: 7.4806457, y: 7.480646, z: 7.4806457}
   m_Children: []
   m_Father: {fileID: 7653605414304782065}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1840125757236510863
 MeshFilter:
@@ -10395,7 +10395,7 @@ Transform:
   m_LocalScale: {x: 22.249922, y: 22.249922, z: 22.249922}
   m_Children: []
   m_Father: {fileID: 7653605414304782065}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &3980652379550323361
 Light:
@@ -10488,7 +10488,7 @@ Transform:
   m_LocalScale: {x: 22.249922, y: 22.249922, z: 22.249922}
   m_Children: []
   m_Father: {fileID: 7653605414304782065}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2061640535145562590
 Light:
@@ -10627,6 +10627,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.01
   m_Center: {x: 0, y: 0.005, z: 0}
+--- !u!1 &7004649729574580944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1143221242807562259}
+  m_Layer: 0
+  m_Name: CamTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1143221242807562259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004649729574580944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7653605414304782065}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7024701992837893195
 GameObject:
   m_ObjectHideFlags: 0
@@ -10657,6 +10687,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
+  - {fileID: 1143221242807562259}
   - {fileID: 4867428132169702739}
   - {fileID: 5880497867701072574}
   - {fileID: 4567985815465395425}
@@ -10697,7 +10728,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSteerAngle: 35
   MotorForce: 6000
-  IsRearWheelDrive: 1
   FrontLeftWheel: {fileID: 6787402106512911883}
   FrontRightWheel: {fileID: 2557038526374949924}
   BackLeftWheel: {fileID: 284420222803362439}
@@ -10707,6 +10737,7 @@ MonoBehaviour:
   TBackLeftWheel: {fileID: 678712824606540150}
   TBackRightWheel: {fileID: 678712823969352266}
   carRigidbody: {fileID: 7024701992837893193}
+  IsRearWheelDrive: 1
 --- !u!114 &5433603765329768841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10843,7 +10874,7 @@ Transform:
   m_LocalScale: {x: 22.249922, y: 22.249922, z: 22.249922}
   m_Children: []
   m_Father: {fileID: 7653605414304782065}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &3423066163179813548
 Light:

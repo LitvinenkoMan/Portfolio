@@ -3,10 +3,12 @@ using Zenject;
 
 public class SceneInstaller : MonoInstaller
 {
-    public CarMovment car;
+    [SerializeField]
+    CarManager CarManager;
+
 
     public override void InstallBindings()
     {
-        Container.Bind<CarMovment>().FromInstance(car);
+        Container.Bind<CarManager>().FromInstance(CarManager);
     }
 }

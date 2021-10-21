@@ -11,10 +11,7 @@ public class CarMovment : MonoBehaviour, IMoveable
     float maxSteerAngle = 30;
     [SerializeField]
     float MotorForce = 6000;
-    [SerializeField]
-    bool IsRearWheelDrive = false;
 
-    bool canMove = false;
     [SerializeField]
     WheelCollider FrontLeftWheel;
     [SerializeField]
@@ -35,6 +32,11 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     [SerializeField]
     Rigidbody carRigidbody;
+
+    [SerializeField]
+    bool IsRearWheelDrive = false;
+    bool canMove = false;
+
     public void MoveBack()
     {
         if (verticalInput < 0)
@@ -75,10 +77,6 @@ public class CarMovment : MonoBehaviour, IMoveable
 
         if (verticalInput >= 0)
         {
-            FrontLeftWheel.brakeTorque = 0;
-            FrontRightWheel.brakeTorque = 0;
-            BackLeftWheel.brakeTorque = 0;
-            BackRightWheel.brakeTorque = 0;
             if (!IsRearWheelDrive)
             {
                 FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
@@ -90,7 +88,24 @@ public class CarMovment : MonoBehaviour, IMoveable
                 BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
             }
         }
+    }
 
+    public void StartMovment()
+    {
+        canMove = true;
+    }
+
+    public void StopMovment()
+    {
+
+    }
+
+    void HandBreak()
+    {
+        FrontLeftWheel.brakeTorque = 0;
+        FrontRightWheel.brakeTorque = 0;
+        BackLeftWheel.brakeTorque = 0;
+        BackRightWheel.brakeTorque = 0;
         if (Input.GetKey(KeyCode.Space))
         {
             if (!IsRearWheelDrive)
@@ -102,18 +117,8 @@ public class CarMovment : MonoBehaviour, IMoveable
             {
                 FrontLeftWheel.brakeTorque = MotorForce;
                 FrontRightWheel.brakeTorque = MotorForce;
-            }   
+            }
         }
-    }
-
-    public void StartMovment()
-    {
-        canMove = true;
-    }
-
-    public void StopMovment()
-    {
-
     }
 
     void UpdateWheeelsModels()
@@ -170,6 +175,7 @@ public class CarMovment : MonoBehaviour, IMoveable
             MoveLeft();
             MoveRight();
             ReRotate();
+            HandBreak();
         }
     }
 }

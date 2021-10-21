@@ -13,12 +13,12 @@ public class DayLightChanger : MonoBehaviour
     [SerializeField]
     Color startColor;
 
-    CarMovment car;
+    CarManager cars;
 
     [Inject]
-    void Constract(CarMovment car) 
+    void Constract(CarManager cars) 
     {
-        this.car = car;
+        this.cars = cars;
     }
 
     private void Start()
@@ -27,13 +27,13 @@ public class DayLightChanger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.transform.IsChildOf(car.gameObject.transform))
+        if (other.gameObject.transform.IsChildOf(cars.GetActiveCar().transform))
             Light.DOColor(Color.black, 2f);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.transform.IsChildOf(car.gameObject.transform))
+        if (other.gameObject.transform.IsChildOf(cars.GetActiveCar().transform))
             Light.DOColor(startColor, 2f);
     }
 }

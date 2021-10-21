@@ -7,7 +7,8 @@ using TMPro;
 
 public class CarDetecter : MonoBehaviour
 {
-    CarMovment car;
+    CarManager cars;
+
     [SerializeField]
     GameObject Description;
 
@@ -17,16 +18,18 @@ public class CarDetecter : MonoBehaviour
     float textEndPosition;
 
     bool IsEntered;
+
+    bool IsInGarage;
     
 
     [Inject]
-    void Constract(CarMovment car) 
+    void Constract(CarManager cars) 
     {
-        this.car = car;
+        this.cars = cars;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.IsChildOf(car.gameObject.transform) && !IsEntered)
+        if (other.transform.IsChildOf(cars.GetActiveCar().transform) && !IsEntered)
         { 
             Description.transform.DOMoveY(textEndPosition, 1.5f);
             IsEntered = true;
@@ -35,7 +38,7 @@ public class CarDetecter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.IsChildOf(car.gameObject.transform) && IsEntered)
+        if (other.transform.IsChildOf(cars.GetActiveCar().transform) && IsEntered)
         {
             Description.transform.DOMoveY(textStartPosition, 1.5f);
             IsEntered = false;
