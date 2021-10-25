@@ -5,22 +5,34 @@ using UnityEngine;
 public class CarLights : MonoBehaviour, ICarLightable
 {
     [SerializeField]
-    public Light[] FrontLights;
+    Light[] FrontLights;
 
     [SerializeField]
-    public Light[] backLights;
+    Light[] BackLights;
 
     bool isFrontLightsActivated = false;
+    bool isBackLightsActivated = false;
     void Update()
     {
-        if (isFrontLightsActivated )
+        if (isFrontLightsActivated)
             DeactivateFrontLights();
         else ActivateFrontLights();
+
+        if (isBackLightsActivated)
+            DeactivateBackLights();
+        else ActivateBackLights();
     }
 
     public void ActivateBackLights()
     {
-       
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            for (int i = 0; i < BackLights.Length; i++)
+            {
+                BackLights[i].enabled = true;
+                isBackLightsActivated = true;
+            }
+        }
     }
 
     public void ActivateFrontLights()
@@ -37,7 +49,14 @@ public class CarLights : MonoBehaviour, ICarLightable
 
     public void DeactivateBackLights()
     {
-       
+        if (Input.GetAxis("Vertical") >= 0)
+        {
+            for (int i = 0; i < BackLights.Length; i++)
+            {
+                BackLights[i].enabled = false;
+                isBackLightsActivated = false;
+            }
+        }
     }
 
     public void DeactivateFrontLights()
@@ -52,4 +71,13 @@ public class CarLights : MonoBehaviour, ICarLightable
         }
     }
 
+    public bool GetFrontLightsState() 
+    {
+        return isFrontLightsActivated;
+    }
+
+    public bool GetBackLightsState()
+    {
+        return isBackLightsActivated;
+    }
 }

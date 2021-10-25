@@ -19,14 +19,12 @@ public class CarDetecter : MonoBehaviour
 
     bool IsEntered;
 
-    bool IsInGarage;
-    
-
     [Inject]
     void Constract(CarManager cars) 
     {
         this.cars = cars;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.IsChildOf(cars.GetActiveCar().transform) && !IsEntered)

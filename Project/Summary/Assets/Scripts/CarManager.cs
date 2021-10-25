@@ -69,7 +69,6 @@ public class CarManager : MonoBehaviour
 
     public void SetInGarageState(bool TorF) 
     {
-        Debug.Log("IsInGarage");
         IsInGarage = TorF;
     }
 

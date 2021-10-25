@@ -20304,3 +20304,4 @@ MonoBehaviour:
   TBackLeftWheel: {fileID: 8247903865372547163}
   TBackRightWheel: {fileID: 6182407263647919476}
   carRigidbody: {fileID: 9188913031917716829}
+  IsRearWheelDrive: 0
