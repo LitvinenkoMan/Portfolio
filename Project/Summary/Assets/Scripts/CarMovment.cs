@@ -4,9 +4,12 @@ using UnityEngine;
 using DG.Tweening;
 public class CarMovment : MonoBehaviour, IMoveable
 {
+    [SerializeField]
+    CarSound carSound;
     float horizontalInput;
     float verticalInput;
     float steerAngle;
+
     [SerializeField]
     float maxSteerAngle = 30;
     [SerializeField]
@@ -77,6 +80,7 @@ public class CarMovment : MonoBehaviour, IMoveable
 
         if (verticalInput >= 0)
         {
+            carSound.CarAccelerationSound();
             if (!IsRearWheelDrive)
             {
                 FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
@@ -92,12 +96,20 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     public void StartMovment()
     {
+        carSound.StartEngineSound();
+        carSound.CarRollingSound();
         canMove = true;
     }
 
     public void StopMovment()
     {
+        FrontLeftWheel.motorTorque = 0;
+        FrontRightWheel.motorTorque = 0;
+        BackLeftWheel.motorTorque = 0;
+        BackRightWheel.motorTorque = 0;
 
+        carSound.MuffleEngineSound();
+        canMove = false;
     }
 
     void HandBreak()
@@ -108,16 +120,10 @@ public class CarMovment : MonoBehaviour, IMoveable
         BackRightWheel.brakeTorque = 0;
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!IsRearWheelDrive)
-            {
-                BackLeftWheel.brakeTorque = MotorForce;
-                BackRightWheel.brakeTorque = MotorForce;
-            }
-            else
-            {
-                FrontLeftWheel.brakeTorque = MotorForce;
-                FrontRightWheel.brakeTorque = MotorForce;
-            }
+            BackLeftWheel.brakeTorque = MotorForce;
+            BackRightWheel.brakeTorque = MotorForce;
+            FrontLeftWheel.brakeTorque = MotorForce;
+            FrontRightWheel.brakeTorque = MotorForce;
         }
     }
 
@@ -167,15 +173,26 @@ public class CarMovment : MonoBehaviour, IMoveable
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         steerAngle = maxSteerAngle * horizontalInput;
+
         if (canMove)
         {
-            UpdateWheeelsModels();
             MoveBack();
             MoveFront();
-            MoveLeft();
-            MoveRight();
-            ReRotate();
-            HandBreak();
         }
+
+        if (canMove && Input.GetKeyDown(KeyCode.I))
+        {
+            StopMovment();
+        }
+        else if (!canMove && Input.GetKeyDown(KeyCode.I))
+        {
+            StartMovment();
+        }
+
+        UpdateWheeelsModels();
+        HandBreak();
+        MoveLeft();
+        MoveRight();
+        ReRotate();
     }
 }

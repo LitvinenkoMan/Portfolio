@@ -20239,6 +20239,8 @@ GameObject:
   - component: {fileID: 8416738537547341798}
   - component: {fileID: 9188913031917716829}
   - component: {fileID: 9188913031917716826}
+  - component: {fileID: 5160175615835177296}
+  - component: {fileID: 6107444912512696851}
   m_Layer: 0
   m_Name: Good Car
   m_TagString: Untagged
@@ -20293,6 +20295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90626a8c2b3f5de48ac77cf8509defd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carSound: {fileID: 6107444912512696851}
   maxSteerAngle: 40
   MotorForce: 6000
   FrontLeftWheel: {fileID: 4421684795687994766}
@@ -20305,3 +20308,34 @@ MonoBehaviour:
   TBackRightWheel: {fileID: 6182407263647919476}
   carRigidbody: {fileID: 9188913031917716829}
   IsRearWheelDrive: 0
+--- !u!114 &5160175615835177296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188913031917716828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5973d822f04041439681a58a839703a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrontLights: []
+  BackLights: []
+--- !u!114 &6107444912512696851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188913031917716828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd72c27dbbe29c43b4dfe6b02482356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarSoundSource: {fileID: 0}
+  engineOn: {fileID: 0}
+  engineOff: {fileID: 0}
+  carRolling: {fileID: 0}
+  carAccceleration: {fileID: 0}
