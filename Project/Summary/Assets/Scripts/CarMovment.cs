@@ -38,13 +38,22 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     [SerializeField]
     bool IsRearWheelDrive = false;
+    [SerializeField]
+    bool IsFullWheelDrive = false;
     bool canMove = false;
 
     public void MoveBack()
     {
         if (verticalInput < 0)
         {
-            if (!IsRearWheelDrive)
+            if (IsFullWheelDrive)
+            {
+                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
+                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            }
+            else if (!IsRearWheelDrive)
             {
                 FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
                 FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
@@ -81,7 +90,14 @@ public class CarMovment : MonoBehaviour, IMoveable
         if (verticalInput >= 0)
         {
             carSound.CarAccelerationSound();
-            if (!IsRearWheelDrive)
+            if (IsFullWheelDrive)
+            {
+                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
+                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
+                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
+            }
+            else if (!IsRearWheelDrive)
             {
                 FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
                 FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;

@@ -18,7 +18,7 @@ public class CarSound : MonoBehaviour, ICarSounded
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -45,19 +45,28 @@ public class CarSound : MonoBehaviour, ICarSounded
 
     public void CarRollingSound()
     {
-        CarSoundSource.clip = carRolling;
-        CarSoundSource.loop = true;
-        CarSoundSource.Play();
+        if (carRolling)
+        {
+            CarSoundSource.clip = carRolling;
+            CarSoundSource.loop = true;
+            CarSoundSource.Play();
+        }
     }
 
     public void MuffleEngineSound()
     {
-        CarSoundSource.Stop();
-        CarSoundSource.PlayOneShot(engineOff);
+        if (engineOff)
+        {
+            CarSoundSource.Stop();
+            CarSoundSource.PlayOneShot(engineOff);
+        }
     }
 
     public void StartEngineSound()
     {
-        CarSoundSource.PlayOneShot(engineOn);
+        if (engineOn)
+        {
+            CarSoundSource.PlayOneShot(engineOn);
+        }
     }
 }
