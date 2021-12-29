@@ -14,6 +14,14 @@ public class Gravity : MonoBehaviour
     [SerializeField, Min(0)]
     float force = 1f;
 
+    private void Start()
+    {
+        if (!ObjectRigidbody)
+        {
+            ObjectRigidbody = gameObject.GetComponent<Rigidbody>();
+        }
+    }
+
     public void ActivateGravity()
     {
         IsGravityOn = false;
@@ -34,6 +42,12 @@ public class Gravity : MonoBehaviour
         {
             CalculateGravity();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(ObjectRigidbody.worldCenterOfMass, 1);
     }
 
 }

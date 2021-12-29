@@ -16,19 +16,19 @@ public class WheelsSmokeEffect : MonoBehaviour
         this.car = car;
     }*/
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == 3)
-        {
-            Effect.Play();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.layer == 3)
+    //    {
+    //        Effect.Play();
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == 3)
-            Effect.Stop();
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.layer == 3)
+    //        Effect.Stop();
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {

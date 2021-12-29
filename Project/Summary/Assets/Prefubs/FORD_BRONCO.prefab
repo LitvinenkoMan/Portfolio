@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668775388078494765}
   m_LocalRotation: {x: 0.50000006, y: 0.49999997, z: 0.5, w: -0.49999997}
-  m_LocalPosition: {x: 0.01112, y: -0.00897, z: -0.03389}
+  m_LocalPosition: {x: 0.01112, y: -0.00861, z: -0.03389}
   m_LocalScale: {x: 0.02054238, y: 0.02054238, z: 0.02054238}
   m_Children: []
   m_Father: {fileID: 7456757767466155812}
@@ -1356,6 +1356,7 @@ GameObject:
   - component: {fileID: 4714629003508053620}
   - component: {fileID: 4714629003508053625}
   - component: {fileID: 7416125226849996824}
+  - component: {fileID: 8994286035128911808}
   - component: {fileID: 3084925688737058071}
   m_Layer: 0
   m_Name: FORD_BRONCO
@@ -1470,19 +1471,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSound: {fileID: 4714629003508053625}
-  maxSteerAngle: 30
-  MotorForce: 6000
-  FrontLeftWheel: {fileID: 7456757769131098719}
-  FrontRightWheel: {fileID: 7456757768464653829}
-  BackLeftWheel: {fileID: 7456757767796105110}
-  BackRightWheel: {fileID: 7456757767307595628}
-  TFrontLeftWheel: {fileID: 3070608927659713972}
-  TFrontRightWheel: {fileID: 8474645469092537929}
-  TBackLeftWheel: {fileID: 9095252082846716977}
-  TBackRightWheel: {fileID: 3311235230336392935}
   carRigidbody: {fileID: 4714629003508053626}
-  IsRearWheelDrive: 0
-  IsFullWheelDrive: 1
+  CenterOfMass: {x: 0, y: -3, z: 0}
+  maxSteerAngle: 30
+  MotorForce: 100
+  Breakforce: 5
+  Wheels:
+  - WheelCollider: {fileID: 7456757769131098719}
+    WheelTransform: {fileID: 3070608927659713972}
+    IsSteerWheel: 1
+    IsFront: 1
+    IsCanAccelerate: 1
+  - WheelCollider: {fileID: 7456757768464653829}
+    WheelTransform: {fileID: 8474645469092537929}
+    IsSteerWheel: 1
+    IsFront: 1
+    IsCanAccelerate: 1
+  - WheelCollider: {fileID: 7456757767796105110}
+    WheelTransform: {fileID: 9095252082846716977}
+    IsSteerWheel: 0
+    IsFront: 0
+    IsCanAccelerate: 1
+  - WheelCollider: {fileID: 7456757767307595628}
+    WheelTransform: {fileID: 3311235230336392935}
+    IsSteerWheel: 0
+    IsFront: 0
+    IsCanAccelerate: 1
 --- !u!114 &4714629003508053620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,7 +1545,22 @@ MonoBehaviour:
   ObjectRigidbody: {fileID: 4714629003508053626}
   IsGravityOn: 1
   GravityDirection: {x: 0, y: -1, z: 0}
-  force: 50
+  force: 30
+--- !u!114 &8994286035128911808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714629003508053621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carMovment: {fileID: 4714629003508053627}
+  MaxSpeed: 200
+  updateFrequency: 1
 --- !u!65 &3084925688737058071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1800,6 +1829,7 @@ GameObject:
   - component: {fileID: 3341823182852645974}
   - component: {fileID: 816477515530802440}
   - component: {fileID: 5233395333281794386}
+  - component: {fileID: 7957368669423055621}
   m_Layer: 0
   m_Name: Front_bumper
   m_TagString: Untagged
@@ -1815,8 +1845,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6073337603340098367}
   m_LocalRotation: {x: 0.7071069, y: 0.70710665, z: -0.000000026692529, w: 0.00000000421608}
-  m_LocalPosition: {x: -0.000302824, y: -0.008486488, z: -0.036532205}
-  m_LocalScale: {x: 0.12034732, y: 1.6500072, z: 1}
+  m_LocalPosition: {x: -0.0003, y: -0.00906, z: -0.03653}
+  m_LocalScale: {x: 0.1521792, y: 1.6500072, z: 1}
   m_Children: []
   m_Father: {fileID: 7456757767466155812}
   m_RootOrder: 11
@@ -1870,6 +1900,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7957368669423055621
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073337603340098367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4108578541302734809, guid: 0b73532d36774f4438baaa5cd7ec2876, type: 3}
 --- !u!1 &6158463371568764961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,19 +2458,19 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.01
   m_SuspensionSpring:
-    spring: 9000
-    damper: 450
+    spring: 64000
+    damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0.0075
   m_ForceAppPointDistance: 0
   m_Mass: 150
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 1
+    m_Stiffness: 4.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -2472,7 +2516,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7456757767457264447}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -2611,19 +2655,19 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.01
   m_SuspensionSpring:
-    spring: 9000
-    damper: 450
+    spring: 64000
+    damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0.0075
   m_ForceAppPointDistance: 0
   m_Mass: 150
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 1
+    m_Stiffness: 4.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -2672,19 +2716,19 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.01
   m_SuspensionSpring:
-    spring: 9000
-    damper: 450
+    spring: 64000
+    damper: 1000
     targetPosition: 0.3
   m_SuspensionDistance: 0.012
   m_ForceAppPointDistance: 0
   m_Mass: 150
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 1
+    m_Stiffness: 4.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -2843,19 +2887,19 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.01
   m_SuspensionSpring:
-    spring: 9000
-    damper: 450
+    spring: 64000
+    damper: 1000
     targetPosition: 0.3
   m_SuspensionDistance: 0.012
   m_ForceAppPointDistance: 0
   m_Mass: 150
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 1
+    m_Stiffness: 4.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -2901,7 +2945,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7456757769240031613}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0

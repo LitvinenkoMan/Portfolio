@@ -1,7 +1,19 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Zenject;
+
+[System.Serializable]
+public class Wheel
+{
+    public WheelCollider WheelCollider;
+    public Transform WheelTransform;
+    public bool IsSteerWheel;
+    public bool IsFront;
+    public bool IsCanAccelerate;
+}
+
 public class CarMovment : MonoBehaviour, IMoveable
 {
     [SerializeField]
@@ -11,57 +23,38 @@ public class CarMovment : MonoBehaviour, IMoveable
     float steerAngle;
 
     [SerializeField]
+    Rigidbody carRigidbody;
+    [SerializeField]
+    Vector3 CenterOfMass;
+    [SerializeField]
     float maxSteerAngle = 30;
     [SerializeField]
     float MotorForce = 6000;
+    [SerializeField]
+    float Breakforce = 1;
 
     [SerializeField]
-    WheelCollider FrontLeftWheel;
-    [SerializeField]
-    WheelCollider FrontRightWheel;
-    [SerializeField]
-    WheelCollider BackLeftWheel;
-    [SerializeField]
-    WheelCollider BackRightWheel;
+    List<Wheel> Wheels = new List<Wheel>();
 
-    [SerializeField]
-    Transform TFrontLeftWheel;
-    [SerializeField]
-    Transform TFrontRightWheel;
-    [SerializeField]
-    Transform TBackLeftWheel;
-    [SerializeField]
-    Transform TBackRightWheel;
-
-    [SerializeField]
-    Rigidbody carRigidbody;
-
-    [SerializeField]
-    bool IsRearWheelDrive = false;
-    [SerializeField]
-    bool IsFullWheelDrive = false;
     bool canMove = false;
+
+    //[Inject]
+    //void Constract(CarSpeed CarSpeed)
+    //{
+    //    this.CarSpeed = CarSpeed;
+    //    this.CarSpeed.SetSettings(Wheels, MaxSpeed);
+    //}
 
     public void MoveBack()
     {
         if (verticalInput < 0)
         {
-            if (IsFullWheelDrive)
+            foreach (var wheel in Wheels)
             {
-                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
-                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
-            }
-            else if (!IsRearWheelDrive)
-            {
-                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
-            }
-            else
-            {
-                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
+                if (wheel.IsCanAccelerate)
+                {
+                    wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                }
             }
         }
     }
@@ -70,8 +63,17 @@ public class CarMovment : MonoBehaviour, IMoveable
     {
         if (steerAngle < 0)
         {
-            FrontLeftWheel.steerAngle = steerAngle;
-            FrontRightWheel.steerAngle = steerAngle;
+            foreach (var wheel in Wheels)
+            {
+                if (wheel.IsFront && wheel.IsSteerWheel)
+                {
+                    wheel.WheelCollider.steerAngle = steerAngle;
+                }
+                else if (!wheel.IsFront && wheel.IsSteerWheel)
+                {
+                    wheel.WheelCollider.steerAngle = -steerAngle;
+                }
+            }
         }
     }
 
@@ -79,76 +81,73 @@ public class CarMovment : MonoBehaviour, IMoveable
     {
         if (steerAngle > 0)
         {
-            FrontLeftWheel.steerAngle = steerAngle;
-            FrontRightWheel.steerAngle = steerAngle;
+            foreach (var wheel in Wheels)
+            {
+                if (wheel.IsFront && wheel.IsSteerWheel)
+                {
+                    wheel.WheelCollider.steerAngle = steerAngle;
+                }
+                else if (!wheel.IsFront && wheel.IsSteerWheel)
+                {
+                    wheel.WheelCollider.steerAngle = -steerAngle;
+                }
+            }
         }
     }
 
     public void MoveFront()
     {
-
-        if (verticalInput >= 0)
+        if (verticalInput > 0)
         {
             carSound.CarAccelerationSound();
-            if (IsFullWheelDrive)
+            foreach (var wheel in Wheels)
             {
-                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
-                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
-            }
-            else if (!IsRearWheelDrive)
-            {
-                FrontLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                FrontRightWheel.motorTorque = verticalInput * MotorForce * -1;
-            }
-            else
-            {
-                BackLeftWheel.motorTorque = verticalInput * MotorForce * -1;
-                BackRightWheel.motorTorque = verticalInput * MotorForce * -1;
+                if (wheel.IsCanAccelerate)
+                {
+                    wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                }
             }
         }
     }
 
     public void StartMovment()
     {
-        carSound.StartEngineSound();
-        carSound.CarRollingSound();
         canMove = true;
     }
 
     public void StopMovment()
     {
-        FrontLeftWheel.motorTorque = 0;
-        FrontRightWheel.motorTorque = 0;
-        BackLeftWheel.motorTorque = 0;
-        BackRightWheel.motorTorque = 0;
-
-        carSound.MuffleEngineSound();
+        foreach (var wheel in Wheels)
+        {
+            wheel.WheelCollider.motorTorque = 0;
+        }
         canMove = false;
     }
 
     void HandBreak()
     {
-        FrontLeftWheel.brakeTorque = 0;
-        FrontRightWheel.brakeTorque = 0;
-        BackLeftWheel.brakeTorque = 0;
-        BackRightWheel.brakeTorque = 0;
-        if (Input.GetKey(KeyCode.Space))
+        foreach (var wheel in Wheels)
         {
-            BackLeftWheel.brakeTorque = MotorForce;
-            BackRightWheel.brakeTorque = MotorForce;
-            FrontLeftWheel.brakeTorque = MotorForce;
-            FrontRightWheel.brakeTorque = MotorForce;
+            wheel.WheelCollider.brakeTorque = 0;
         }
+        if (Input.GetKey(KeyCode.Space))
+            foreach (var wheel in Wheels)
+            {
+                wheel.WheelCollider.brakeTorque = MotorForce * Breakforce;
+            }
+    }
+
+    List<Wheel> GetCarWheels()
+    {
+        return Wheels;
     }
 
     void UpdateWheeelsModels()
     {
-        UpdateWheelModel(FrontLeftWheel, TFrontLeftWheel);
-        UpdateWheelModel(FrontRightWheel, TFrontRightWheel);
-        UpdateWheelModel(BackLeftWheel, TBackLeftWheel);
-        UpdateWheelModel(BackRightWheel, TBackRightWheel);
+        foreach (var wheel in Wheels)
+        {
+            UpdateWheelModel(wheel.WheelCollider, wheel.WheelTransform);
+        }
     }
 
     void UpdateWheelModel(WheelCollider wheelCollider, Transform wheel)
@@ -165,13 +164,15 @@ public class CarMovment : MonoBehaviour, IMoveable
     void ReRotate()
     {
         bool isWheelsUp = false;
-        WheelCollider[] wheelColliders = gameObject.GetComponentsInChildren<WheelCollider>();
-        for (int i = 0; i < wheelColliders.Length; i++)
-        {
-            if (wheelColliders[i].transform.position.y > gameObject.transform.position.y)
-                isWheelsUp = true;
-        }
 
+        foreach (var wheel in Wheels)
+        {
+            if (wheel.WheelTransform.position.y > gameObject.transform.position.y)
+            {
+                isWheelsUp = true;
+                break;
+            }
+        }
         if (isWheelsUp && Input.GetKeyDown(KeyCode.R))
         {
             carRigidbody.AddForce(Vector3.up * carRigidbody.mass * 100 * Time.deltaTime);
@@ -179,8 +180,14 @@ public class CarMovment : MonoBehaviour, IMoveable
         }
     }
 
+    public bool IsCarCanMove()
+    {
+        return canMove;        
+    }
+
     void Start()
     {
+        carRigidbody.centerOfMass = CenterOfMass;
         StartMovment();
     }
 
@@ -198,10 +205,13 @@ public class CarMovment : MonoBehaviour, IMoveable
 
         if (canMove && Input.GetKeyDown(KeyCode.I))
         {
+            carSound.MuffleEngineSound();
             StopMovment();
         }
         else if (!canMove && Input.GetKeyDown(KeyCode.I))
-        {
+        { 
+            carSound.StartEngineSound();
+            carSound.CarRollingSound();
             StartMovment();
         }
 

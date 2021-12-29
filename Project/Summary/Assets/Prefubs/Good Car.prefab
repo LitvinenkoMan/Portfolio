@@ -574,8 +574,8 @@ WheelCollider:
   m_Radius: 0.01
   m_SuspensionSpring:
     spring: 45000
-    damper: 4500
-    targetPosition: 1
+    damper: 2000
+    targetPosition: 0.5
   m_SuspensionDistance: 0.005
   m_ForceAppPointDistance: 0
   m_Mass: 50
@@ -585,13 +585,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.4
     m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_Stiffness: 9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!135 &4421684795687994767
 SphereCollider:
@@ -650,8 +650,8 @@ WheelCollider:
   m_Radius: 0.01
   m_SuspensionSpring:
     spring: 45000
-    damper: 4500
-    targetPosition: 1
+    damper: 2000
+    targetPosition: 0.5
   m_SuspensionDistance: 0.005
   m_ForceAppPointDistance: 0
   m_Mass: 50
@@ -661,13 +661,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.4
     m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_Stiffness: 9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!114 &4421684796145746707
 MonoBehaviour:
@@ -5542,8 +5542,8 @@ WheelCollider:
   m_Radius: 0.01
   m_SuspensionSpring:
     spring: 45000
-    damper: 4500
-    targetPosition: 1
+    damper: 2000
+    targetPosition: 0.5
   m_SuspensionDistance: 0.005
   m_ForceAppPointDistance: 0
   m_Mass: 50
@@ -5553,13 +5553,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.4
     m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_Stiffness: 9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!135 &4421684796305753226
 SphereCollider:
@@ -10422,8 +10422,8 @@ WheelCollider:
   m_Radius: 0.01
   m_SuspensionSpring:
     spring: 45000
-    damper: 4500
-    targetPosition: 1
+    damper: 2000
+    targetPosition: 0.5
   m_SuspensionDistance: 0.005
   m_ForceAppPointDistance: 0
   m_Mass: 50
@@ -10433,13 +10433,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.4
     m_AsymptoteValue: 1
-    m_Stiffness: 5
+    m_Stiffness: 9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!114 &4421684796580343129
 MonoBehaviour:
@@ -20241,6 +20241,8 @@ GameObject:
   - component: {fileID: 9188913031917716826}
   - component: {fileID: 5160175615835177296}
   - component: {fileID: 6107444912512696851}
+  - component: {fileID: 3716856945841866435}
+  - component: {fileID: -857075607411563991}
   m_Layer: 0
   m_Name: Good Car
   m_TagString: Untagged
@@ -20255,8 +20257,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9188913031917716828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.000000023849863, y: 1, z: -0.000000033944232, w: 0.00000013411044}
+  m_LocalPosition: {x: 0.0000004925179, y: 0.000000014901161, z: 0.85663795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4330123857573021542}
@@ -20266,7 +20268,7 @@ Transform:
   - {fileID: 4421684797385322459}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!54 &9188913031917716829
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20278,7 +20280,7 @@ Rigidbody:
   m_Mass: 2000
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -20296,18 +20298,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSound: {fileID: 6107444912512696851}
+  carRigidbody: {fileID: 9188913031917716829}
+  CenterOfMass: {x: 0, y: -1, z: 0}
   maxSteerAngle: 40
   MotorForce: 6000
-  FrontLeftWheel: {fileID: 4421684795687994766}
-  FrontRightWheel: {fileID: 4421684796305753229}
-  BackLeftWheel: {fileID: 4421684796145746706}
-  BackRightWheel: {fileID: 4421684796580343128}
-  TFrontLeftWheel: {fileID: 8351518248302514404}
-  TFrontRightWheel: {fileID: 4111240026695886751}
-  TBackLeftWheel: {fileID: 8247903865372547163}
-  TBackRightWheel: {fileID: 6182407263647919476}
-  carRigidbody: {fileID: 9188913031917716829}
-  IsRearWheelDrive: 0
+  Breakforce: 1
+  Wheels:
+  - WheelCollider: {fileID: 4421684796145746706}
+    WheelTransform: {fileID: 8247903865372547163}
+    IsSteerWheel: 0
+    IsFront: 0
+    IsCanAccelerate: 0
+  - WheelCollider: {fileID: 4421684796580343128}
+    WheelTransform: {fileID: 6182407263647919476}
+    IsSteerWheel: 0
+    IsFront: 0
+    IsCanAccelerate: 0
+  - WheelCollider: {fileID: 4421684795687994766}
+    WheelTransform: {fileID: 8351518248302514404}
+    IsSteerWheel: 1
+    IsFront: 1
+    IsCanAccelerate: 1
+  - WheelCollider: {fileID: 4421684796305753229}
+    WheelTransform: {fileID: 4111240026695886751}
+    IsSteerWheel: 1
+    IsFront: 1
+    IsCanAccelerate: 1
 --- !u!114 &5160175615835177296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20339,3 +20355,34 @@ MonoBehaviour:
   engineOff: {fileID: 0}
   carRolling: {fileID: 0}
   carAccceleration: {fileID: 0}
+--- !u!114 &3716856945841866435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188913031917716828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68585f5d37ec294d960130864bdc3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectRigidbody: {fileID: 9188913031917716829}
+  IsGravityOn: 1
+  GravityDirection: {x: 0, y: -1, z: 0}
+  force: 20
+--- !u!114 &-857075607411563991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188913031917716828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carMovment: {fileID: 9188913031917716826}
+  MaxSpeed: 60
+  updateFrequency: 1

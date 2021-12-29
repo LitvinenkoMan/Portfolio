@@ -61,7 +61,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 1
-    m_Stiffness: 2.5
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!135 &284420222803362437
 SphereCollider:
@@ -230,7 +230,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5034,7 +5034,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10278,7 +10278,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 1
-    m_Stiffness: 2.5
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!135 &2557038526374949925
 SphereCollider:
@@ -10676,7 +10676,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 1
-    m_Stiffness: 2.5
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!135 &6787402106512911880
 SphereCollider:
@@ -10705,6 +10705,8 @@ GameObject:
   - component: {fileID: 7024701992837893192}
   - component: {fileID: 5433603765329768841}
   - component: {fileID: 8666344945534889020}
+  - component: {fileID: 2732744728310029201}
+  - component: {fileID: 7454345888554165799}
   m_Layer: 0
   m_Name: El_camino
   m_TagString: Untagged
@@ -10742,7 +10744,7 @@ Rigidbody:
   m_Mass: 750
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -10874,18 +10876,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSound: {fileID: 8666344945534889020}
-  maxSteerAngle: 40
-  MotorForce: 6000
-  FrontLeftWheel: {fileID: 6787402106512911883}
-  FrontRightWheel: {fileID: 2557038526374949924}
-  BackLeftWheel: {fileID: 284420222803362439}
-  BackRightWheel: {fileID: 7714985350807522313}
-  TFrontLeftWheel: {fileID: 678712825411849972}
-  TFrontRightWheel: {fileID: 678712825340467968}
-  TBackLeftWheel: {fileID: 678712824606540150}
-  TBackRightWheel: {fileID: 678712823969352266}
   carRigidbody: {fileID: 7024701992837893193}
-  IsRearWheelDrive: 1
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  maxSteerAngle: 60
+  MotorForce: 6000
+  Breakforce: 2
+  Wheels:
+  - WheelCollider: {fileID: 6787402106512911883}
+    WheelTransform: {fileID: 678712825411849972}
+    IsSteerWheel: 1
+    IsFront: 1
+    IsCanAccelerate: 0
+  - WheelCollider: {fileID: 2557038526374949924}
+    WheelTransform: {fileID: 678712825340467968}
+    IsSteerWheel: 1
+    IsFront: 1
+    IsCanAccelerate: 0
+  - WheelCollider: {fileID: 284420222803362439}
+    WheelTransform: {fileID: 678712824606540150}
+    IsSteerWheel: 0
+    IsFront: 0
+    IsCanAccelerate: 1
+  - WheelCollider: {fileID: 7714985350807522313}
+    WheelTransform: {fileID: 678712823969352266}
+    IsSteerWheel: 0
+    IsFront: 0
+    IsCanAccelerate: 1
 --- !u!114 &5433603765329768841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10921,6 +10937,37 @@ MonoBehaviour:
   engineOff: {fileID: 8300000, guid: 3a0e36203d4fee4438a53a50cccd55b7, type: 3}
   carRolling: {fileID: 8300000, guid: cbb414db70fb2c14fbfa1e01138f96a5, type: 3}
   carAccceleration: {fileID: 0}
+--- !u!114 &2732744728310029201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024701992837893195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carMovment: {fileID: 7024701992837893192}
+  MaxSpeed: 120
+  updateFrequency: 1
+--- !u!114 &7454345888554165799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024701992837893195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68585f5d37ec294d960130864bdc3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectRigidbody: {fileID: 7024701992837893193}
+  IsGravityOn: 0
+  GravityDirection: {x: 0, y: -1, z: 0}
+  force: 1
 --- !u!1 &7714985350807522312
 GameObject:
   m_ObjectHideFlags: 0
@@ -10982,7 +11029,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 1
-    m_Stiffness: 2.5
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!135 &7714985350807522327
 SphereCollider:

@@ -12,10 +12,9 @@ public class CarDetecter : MonoBehaviour
     [SerializeField]
     GameObject Description;
 
-    [SerializeField]
     float textStartPosition;
     [SerializeField]
-    float textEndPosition;
+    float MoveOn;
 
     bool IsEntered;
 
@@ -24,12 +23,16 @@ public class CarDetecter : MonoBehaviour
     {
         this.cars = cars;
     }
+    private void Start()
+    {
+        textStartPosition = gameObject.transform.position.y;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.IsChildOf(cars.GetActiveCar().transform) && !IsEntered)
-        { 
-            Description.transform.DOMoveY(textEndPosition, 1.5f);
+        {
+            Description.transform.DOMoveY(textStartPosition + MoveOn, 1.5f);
             IsEntered = true;
         }
     }
@@ -38,7 +41,7 @@ public class CarDetecter : MonoBehaviour
     {
         if (other.transform.IsChildOf(cars.GetActiveCar().transform) && IsEntered)
         {
-            Description.transform.DOMoveY(textStartPosition, 1.5f);
+            Description.transform.DOMoveY(textStartPosition - MoveOn, 1.5f);
             IsEntered = false;
         }
     }
