@@ -10,6 +10,8 @@ public class Gravity : MonoBehaviour
     bool IsGravityOn = false;
 
     [SerializeField]
+    Vector3 CenterOfMass;
+    [SerializeField]
     Vector3 GravityDirection = new Vector3(0, -1, 0);
     [SerializeField, Min(0)]
     float force = 1f;
@@ -19,12 +21,17 @@ public class Gravity : MonoBehaviour
         if (!ObjectRigidbody)
         {
             ObjectRigidbody = gameObject.GetComponent<Rigidbody>();
+            ObjectRigidbody.centerOfMass = CenterOfMass;
+        }
+        else
+        {
+            ObjectRigidbody.centerOfMass = CenterOfMass;
         }
     }
 
     public void ActivateGravity()
     {
-        IsGravityOn = false;
+        IsGravityOn = true;
     }
     public void DeactivateGravity()
     {
@@ -47,7 +54,7 @@ public class Gravity : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(ObjectRigidbody.worldCenterOfMass, 1);
+        Gizmos.DrawSphere(ObjectRigidbody.worldCenterOfMass, 0.1f);
     }
 
 }

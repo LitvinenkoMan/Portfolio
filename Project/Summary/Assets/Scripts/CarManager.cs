@@ -21,8 +21,6 @@ public class CarManager : MonoBehaviour
 
     bool IsInGarage;
 
-
-
     void Start()
     {
         ActiveCar = Cars[ActiveCarNumber-1];

@@ -25,8 +25,6 @@ public class CarMovment : MonoBehaviour, IMoveable
     [SerializeField]
     Rigidbody carRigidbody;
     [SerializeField]
-    Vector3 CenterOfMass;
-    [SerializeField]
     float maxSteerAngle = 30;
     [SerializeField]
     float MotorForce = 6000;
@@ -99,7 +97,8 @@ public class CarMovment : MonoBehaviour, IMoveable
     {
         if (verticalInput > 0)
         {
-            carSound.CarAccelerationSound();
+            if (carSound) { carSound.CarAccelerationSound(); }
+
             foreach (var wheel in Wheels)
             {
                 if (wheel.IsCanAccelerate)
@@ -130,6 +129,7 @@ public class CarMovment : MonoBehaviour, IMoveable
         {
             wheel.WheelCollider.brakeTorque = 0;
         }
+
         if (Input.GetKey(KeyCode.Space))
             foreach (var wheel in Wheels)
             {
@@ -137,7 +137,7 @@ public class CarMovment : MonoBehaviour, IMoveable
             }
     }
 
-    List<Wheel> GetCarWheels()
+    public List<Wheel> GetCarWheels()
     {
         return Wheels;
     }
@@ -187,7 +187,6 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     void Start()
     {
-        carRigidbody.centerOfMass = CenterOfMass;
         StartMovment();
     }
 
@@ -196,6 +195,12 @@ public class CarMovment : MonoBehaviour, IMoveable
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         steerAngle = maxSteerAngle * horizontalInput;
+
+        if (verticalInput == 0)
+            foreach (var wheel in Wheels)
+            {
+                wheel.WheelCollider.motorTorque = 0;
+            }
 
         if (canMove)
         {

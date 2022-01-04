@@ -5,6 +5,7 @@ using Zenject;
 
 public class WheelsSmokeEffect : MonoBehaviour
 {
+    WheelCollider Wheel;
     [SerializeField]
     ParticleSystem Effect;
 
@@ -30,8 +31,21 @@ public class WheelsSmokeEffect : MonoBehaviour
     //        Effect.Stop();
     //}
 
+    private void Start()
+    {
+        if (GetComponent<WheelCollider>())
+        {
+            Wheel = GetComponent<WheelCollider>();
+        }
+        else
+        {
+            Debug.LogWarning($"Can't find component WheelCollider to attached GameObject: {gameObject.name}");
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("!!!!!");
         if (collision.gameObject.layer == 3)
         {
             Effect.Play();
@@ -46,13 +60,23 @@ public class WheelsSmokeEffect : MonoBehaviour
 
     private void Update()
     {
-        if (CheckForTakingRace())
+        if (!Wheel.isGrounded)
         {
-            Effect.Emit(1); 
+            Effect.Stop();
+        }
+
+        if (Wheel.isGrounded)
+        {
+            Effect.Play();
+        }
+
+        if (Wheel.motorTorque != 0)
+        {
+            Effect.Emit(1);
         }
     }
 
-    bool CheckForTakingRace() 
+    bool CheckForTakingRace()
     {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Space))
             return true;

@@ -64,8 +64,8 @@ public class CarSpeed : MonoBehaviour
     {
         float speed = 0;
         speed = Vector3.Distance(start, finish) * updateFrequency;
-        Debug.Log(speed * 3.6f);
-        return speed * 3.6f;
+        Debug.Log(speed * 3.6f / gameObject.transform.lossyScale.x);
+        return speed * 3.6f / gameObject.transform.lossyScale.x;
     }
     public float GetCurrentSpeed()
     {
