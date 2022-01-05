@@ -2799,11 +2799,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90626a8c2b3f5de48ac77cf8509defd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSound: {fileID: 6669030528966613053}
+  CarSound: {fileID: 0}
+  CarSpeed: {fileID: 7343561392682127957}
   carRigidbody: {fileID: 3192052272466427801}
-  maxSteerAngle: 30
+  MaxSteerAngle: 30
   MotorForce: 6000
-  Breakforce: 1.5
+  Breakforce: 10000
   Wheels:
   - WheelCollider: {fileID: 8743881098017513035}
     WheelTransform: {fileID: 6387261885333353562}
@@ -2837,7 +2838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carMovment: {fileID: 5673097121685649996}
   MaxSpeed: 150
   updateFrequency: 1
 --- !u!114 &539670068510821375
@@ -2887,7 +2887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3192052272466427801}
   IsGravityOn: 1
-  CenterOfMass: {x: 0, y: -2.5, z: 0}
+  CenterOfMass: {x: 0, y: -2.25, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 20
 --- !u!1 &7211994617143504833

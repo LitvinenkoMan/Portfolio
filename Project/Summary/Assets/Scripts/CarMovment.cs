@@ -17,7 +17,9 @@ public class Wheel
 public class CarMovment : MonoBehaviour, IMoveable
 {
     [SerializeField]
-    CarSound carSound;
+    CarSound CarSound;
+    [SerializeField]
+    CarSpeed CarSpeed;
     float horizontalInput;
     float verticalInput;
     float steerAngle;
@@ -25,7 +27,7 @@ public class CarMovment : MonoBehaviour, IMoveable
     [SerializeField]
     Rigidbody carRigidbody;
     [SerializeField]
-    float maxSteerAngle = 30;
+    float MaxSteerAngle = 30;
     [SerializeField]
     float MotorForce = 6000;
     [SerializeField]
@@ -97,13 +99,18 @@ public class CarMovment : MonoBehaviour, IMoveable
     {
         if (verticalInput > 0)
         {
-            if (carSound) { carSound.CarAccelerationSound(); }
+            if (CarSound) { CarSound.CarAccelerationSound(); }
 
             foreach (var wheel in Wheels)
             {
                 if (wheel.IsCanAccelerate)
                 {
-                    wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                    //if (CarSpeed)
+                    //{
+                    //    wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
+                    //}
+                    //else
+                        wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
                 }
             }
         }
@@ -116,10 +123,6 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     public void StopMovment()
     {
-        foreach (var wheel in Wheels)
-        {
-            wheel.WheelCollider.motorTorque = 0;
-        }
         canMove = false;
     }
 
@@ -133,7 +136,7 @@ public class CarMovment : MonoBehaviour, IMoveable
         if (Input.GetKey(KeyCode.Space))
             foreach (var wheel in Wheels)
             {
-                wheel.WheelCollider.brakeTorque = MotorForce * Breakforce;
+                wheel.WheelCollider.brakeTorque = Breakforce;
             }
     }
 
@@ -182,7 +185,7 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     public bool IsCarCanMove()
     {
-        return canMove;        
+        return canMove;
     }
 
     void Start()
@@ -194,7 +197,7 @@ public class CarMovment : MonoBehaviour, IMoveable
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        steerAngle = maxSteerAngle * horizontalInput;
+        steerAngle = MaxSteerAngle * horizontalInput;
 
         if (verticalInput == 0)
             foreach (var wheel in Wheels)
@@ -210,13 +213,13 @@ public class CarMovment : MonoBehaviour, IMoveable
 
         if (canMove && Input.GetKeyDown(KeyCode.I))
         {
-            carSound.MuffleEngineSound();
+            CarSound.MuffleEngineSound();
             StopMovment();
         }
         else if (!canMove && Input.GetKeyDown(KeyCode.I))
-        { 
-            carSound.StartEngineSound();
-            carSound.CarRollingSound();
+        {
+            CarSound.StartEngineSound();
+            CarSound.CarRollingSound();
             StartMovment();
         }
 

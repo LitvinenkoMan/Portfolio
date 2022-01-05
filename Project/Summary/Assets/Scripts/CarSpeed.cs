@@ -6,9 +6,6 @@ using Zenject;
 
 public class CarSpeed : MonoBehaviour
 {
-    [SerializeField]
-    CarMovment carMovment;
-
     TextMesh TextMesh;
 
     Vector3 priviosPosition;
@@ -18,7 +15,7 @@ public class CarSpeed : MonoBehaviour
     float MaxSpeed;
     [SerializeField]
     float updateFrequency = 1f;
-    float CurrentSpeed;
+    float currentSpeed;
 
     public IEnumerator SpeedCalculater()
     {
@@ -29,29 +26,15 @@ public class CarSpeed : MonoBehaviour
             yield return new WaitForSeconds(updateFrequency);
             //
             currentPosition = gameObject.transform.position;
-            CurrentSpeed = CalculateCarSpeed(priviosPosition, currentPosition);
+            currentSpeed = CalculateCarSpeed(priviosPosition, currentPosition);
             if (TextMesh)
             {
-                TextMesh.text = CurrentSpeed.ToString();
+                TextMesh.text = currentSpeed.ToString();
             }
         }
         yield return null;
     }
 
-    private void FixedUpdate() {
-
-        if (carMovment)
-        {
-            if (CurrentSpeed > MaxSpeed && carMovment.IsCarCanMove())
-            {
-                carMovment.StopMovment();
-            }
-            else if (CurrentSpeed < MaxSpeed && !carMovment.IsCarCanMove())
-            {
-                carMovment.StartMovment();
-            }                
-        }
-    }
 
     private void Start()
     {
@@ -63,13 +46,21 @@ public class CarSpeed : MonoBehaviour
     public float CalculateCarSpeed(Vector3 start, Vector3 finish)
     {
         float speed = 0;
-        speed = Vector3.Distance(start, finish) * updateFrequency;
-        Debug.Log(speed * 3.6f / gameObject.transform.lossyScale.x);
+        speed = Vector3.Distance(start, finish) / updateFrequency;
+        //Debug.Log(speed * 3.6f / gameObject.transform.lossyScale.x);
         return speed * 3.6f / gameObject.transform.lossyScale.x;
     }
+
+    public float CalculateMotorTorque(float motorForce) 
+    {
+        float motorTorque = MaxSpeed / 100 * currentSpeed;
+        Debug.Log($"motorTorque: {motorTorque}, force: {motorForce / motorTorque}");
+        return motorForce / motorTorque;
+    }
+
     public float GetCurrentSpeed()
     {
-        return CurrentSpeed;
+        return currentSpeed;
     }
     public float GetMaxSpeed()
     {
