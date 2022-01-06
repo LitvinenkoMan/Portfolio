@@ -10503,7 +10503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4421684796678586609}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.004172775, y: -0.00091559853, z: 0.010695605}
+  m_LocalPosition: {x: 0.43, y: -0, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4421684796305753228}
@@ -20274,7 +20274,7 @@ MonoBehaviour:
   carRigidbody: {fileID: 9188913031917716829}
   MaxSteerAngle: 30
   MotorForce: 2700
-  Breakforce: 1
+  Breakforce: 5000
   Wheels:
   - WheelCollider: {fileID: 4421684796145746706}
     WheelTransform: {fileID: 8247903865372547163}
