@@ -38,13 +38,6 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     bool canMove = false;
 
-    //[Inject]
-    //void Constract(CarSpeed CarSpeed)
-    //{
-    //    this.CarSpeed = CarSpeed;
-    //    this.CarSpeed.SetSettings(Wheels, MaxSpeed);
-    //}
-
     public void MoveBack()
     {
         if (verticalInput < 0)
@@ -53,6 +46,11 @@ public class CarMovment : MonoBehaviour, IMoveable
             {
                 if (wheel.IsCanAccelerate)
                 {
+                    if (CarSpeed)
+                    {
+                        wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
+                    }
+                    else
                     wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
                 }
             }
@@ -105,12 +103,13 @@ public class CarMovment : MonoBehaviour, IMoveable
             {
                 if (wheel.IsCanAccelerate)
                 {
-                    //if (CarSpeed)
-                    //{
-                    //    wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
-                    //}
-                    //else
-                        wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                    if (CarSpeed)
+                    {
+                        wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
+                        //Debug.Log(wheel.WheelCollider.motorTorque);
+                    }
+                    else
+                    wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
                 }
             }
         }

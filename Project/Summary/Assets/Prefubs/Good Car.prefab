@@ -189,8 +189,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3110438079235843027}
   m_LocalRotation: {x: -0.000000053385072, y: 0.7071068, z: 0.70710677, w: 0.00000005338508}
-  m_LocalPosition: {x: -0.0000006496861, y: 0, z: 3.877857}
-  m_LocalScale: {x: 258.134, y: 308.84375, z: 100}
+  m_LocalPosition: {x: -0.00000067709, y: 0.078047, z: 3.4068}
+  m_LocalScale: {x: 222.88065, y: 266.66498, z: 86.343}
   m_Children: []
   m_Father: {fileID: 8416738537547341798}
   m_RootOrder: 0
@@ -285,8 +285,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3204824863496752186}
   m_LocalRotation: {x: -0.00000005338508, y: 0.7071068, z: 0.70710677, w: 0.000000053385076}
-  m_LocalPosition: {x: 0.00000006414595, y: 0, z: -0.8496388}
-  m_LocalScale: {x: 258.134, y: 164.65123, z: 100}
+  m_LocalPosition: {x: -0.000000060748, y: 0.078047, z: -0.67511}
+  m_LocalScale: {x: 222.88065, y: 142.16481, z: 86.343}
   m_Children: []
   m_Father: {fileID: 8416738537547341798}
   m_RootOrder: 1
@@ -462,8 +462,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576694257961653944}
   m_LocalRotation: {x: 0.7071068, y: -0.000000053385083, z: 0.000000053385094, w: 0.7071067}
-  m_LocalPosition: {x: 0.0000005855402, y: 0, z: -4.302676}
-  m_LocalScale: {x: -258.134, y: -180.69806, z: -100}
+  m_LocalPosition: {x: 0.00000038944, y: 0.078047, z: -3.6566}
+  m_LocalScale: {x: -222.88065, y: -156.02013, z: -86.343}
   m_Children: []
   m_Father: {fileID: 8416738537547341798}
   m_RootOrder: 2
@@ -10467,8 +10467,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4421684796674183853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.00000011613, y: 0.078047, z: 0.058495}
+  m_LocalScale: {x: 0.86343, y: 0.86343, z: 0.86343}
   m_Children:
   - {fileID: 8247903865372547163}
   - {fileID: 6182407263647919476}
@@ -15305,8 +15305,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4421684797385322458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.00000011613, y: 0.078047, z: 0.058495}
+  m_LocalScale: {x: 0.86343, y: 0.86343, z: 0.86343}
   m_Children:
   - {fileID: 4421684796145746709}
   - {fileID: 4421684796580343131}
@@ -20212,9 +20212,9 @@ GameObject:
   - component: {fileID: 9188913031917716829}
   - component: {fileID: 9188913031917716826}
   - component: {fileID: 5160175615835177296}
+  - component: {fileID: -857075607411563991}
   - component: {fileID: 6107444912512696851}
   - component: {fileID: 3716856945841866435}
-  - component: {fileID: -857075607411563991}
   m_Layer: 0
   m_Name: Good Car
   m_TagString: Untagged
@@ -20269,10 +20269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90626a8c2b3f5de48ac77cf8509defd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSound: {fileID: 6107444912512696851}
+  CarSound: {fileID: 0}
+  CarSpeed: {fileID: -857075607411563991}
   carRigidbody: {fileID: 9188913031917716829}
-  maxSteerAngle: 40
-  MotorForce: 4500
+  MaxSteerAngle: 30
+  MotorForce: 2700
   Breakforce: 1
   Wheels:
   - WheelCollider: {fileID: 4421684796145746706}
@@ -20309,6 +20310,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrontLights: []
   BackLights: []
+--- !u!114 &-857075607411563991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188913031917716828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 135
+  updateFrequency: 1
 --- !u!114 &6107444912512696851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20343,18 +20358,3 @@ MonoBehaviour:
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 20
---- !u!114 &-857075607411563991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9188913031917716828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carMovment: {fileID: 9188913031917716826}
-  MaxSpeed: 60
-  updateFrequency: 1

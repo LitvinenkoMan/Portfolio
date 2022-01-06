@@ -47,15 +47,18 @@ public class CarSpeed : MonoBehaviour
     {
         float speed = 0;
         speed = Vector3.Distance(start, finish) / updateFrequency;
-        //Debug.Log(speed * 3.6f / gameObject.transform.lossyScale.x);
+        //Debug.Log($"{speed} * {3.6f} / {gameObject.transform.lossyScale.x}");
         return speed * 3.6f / gameObject.transform.lossyScale.x;
     }
 
-    public float CalculateMotorTorque(float motorForce) 
+    public float CalculateMotorTorque(float motorForce)
     {
-        float motorTorque = MaxSpeed / 100 * currentSpeed;
-        Debug.Log($"motorTorque: {motorTorque}, force: {motorForce / motorTorque}");
-        return motorForce / motorTorque;
+        float motorTorque = Mathf.Round(currentSpeed) * 100 / MaxSpeed;
+
+        if (motorTorque <= 0) motorTorque = 1;
+
+        Debug.Log($"motorTorque: {Mathf.Round(currentSpeed)} * {100} / {MaxSpeed} = {motorTorque}, force: {motorForce} - {motorForce} / {100} * {motorTorque} = {motorForce - motorForce / 100 * motorTorque}");
+        return motorForce - motorForce / 100 * motorTorque;
     }
 
     public float GetCurrentSpeed()

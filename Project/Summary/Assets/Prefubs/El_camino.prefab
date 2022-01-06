@@ -55,13 +55,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1
-    m_Stiffness: 8
+    m_Stiffness: 6
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 1
-    m_Stiffness: 3
+    m_Stiffness: 4
   m_Enabled: 1
 --- !u!135 &284420222803362437
 SphereCollider:
@@ -10272,7 +10272,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1
-    m_Stiffness: 8
+    m_Stiffness: 6
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -10670,7 +10670,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1
-    m_Stiffness: 8
+    m_Stiffness: 6
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -10875,12 +10875,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90626a8c2b3f5de48ac77cf8509defd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSound: {fileID: 8666344945534889020}
+  CarSound: {fileID: 0}
+  CarSpeed: {fileID: 2732744728310029201}
   carRigidbody: {fileID: 7024701992837893193}
-  CenterOfMass: {x: 0, y: 0, z: 0}
-  maxSteerAngle: 60
+  MaxSteerAngle: 30
   MotorForce: 6000
-  Breakforce: 2
+  Breakforce: 10000
   Wheels:
   - WheelCollider: {fileID: 6787402106512911883}
     WheelTransform: {fileID: 678712825411849972}
@@ -10949,8 +10949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carMovment: {fileID: 7024701992837893192}
-  MaxSpeed: 120
+  MaxSpeed: 280
   updateFrequency: 1
 --- !u!114 &7454345888554165799
 MonoBehaviour:
@@ -10966,6 +10965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 7024701992837893193}
   IsGravityOn: 0
+  CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 1
 --- !u!1 &7714985350807522312
@@ -11023,13 +11023,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1
-    m_Stiffness: 8
+    m_Stiffness: 6
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 1
-    m_Stiffness: 3
+    m_Stiffness: 4
   m_Enabled: 1
 --- !u!135 &7714985350807522327
 SphereCollider:

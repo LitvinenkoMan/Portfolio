@@ -8,31 +8,14 @@ public class WheelsSmokeEffect : MonoBehaviour
     WheelCollider Wheel;
     [SerializeField]
     ParticleSystem Effect;
-
-    /*CarMovment car;
-
-    [Inject]
-    void Constract(CarMovment car) 
-    {
-        this.car = car;
-    }*/
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.layer == 3)
-    //    {
-    //        Effect.Play();
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.layer == 3)
-    //        Effect.Stop();
-    //}
+    CarSpeed CarSpeed;
 
     private void Start()
     {
+        if (GetComponentInParent<CarSpeed>())
+        {
+            CarSpeed = GetComponentInParent<CarSpeed>();
+        }
         if (GetComponent<WheelCollider>())
         {
             Wheel = GetComponent<WheelCollider>();
@@ -68,6 +51,10 @@ public class WheelsSmokeEffect : MonoBehaviour
         if (Wheel.isGrounded)
         {
             Effect.Play();
+            if (Wheel.brakeTorque != 0 && CarSpeed.GetCurrentSpeed() > 5)
+            {
+                Effect.Emit(1);
+            }
         }
 
         if (Wheel.motorTorque != 0)
