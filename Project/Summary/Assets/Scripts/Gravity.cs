@@ -56,7 +56,7 @@ public class Gravity : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(ObjectRigidbody.worldCenterOfMass, 0.1f);
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(gameObject.transform.position, gameObject.transform.position + GravityDirection);
+        Gizmos.DrawLine(ObjectRigidbody.worldCenterOfMass, ObjectRigidbody.worldCenterOfMass + GravityDirection);
     }
 
 }

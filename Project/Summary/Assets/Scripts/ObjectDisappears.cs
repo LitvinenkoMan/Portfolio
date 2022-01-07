@@ -15,6 +15,8 @@ public class ObjectDisappears : MonoBehaviour
     bool AcceptCollisionWithParentChildrens = false;
     [SerializeField]
     bool IsCanDisappear = true;
+    [SerializeField]
+    bool DestroyObjectOnDisappearing = true;
 
     bool isDisappears = false;
     float timer = 0;
@@ -26,6 +28,7 @@ public class ObjectDisappears : MonoBehaviour
         if (DisappearOnStart)
         {
             Disappears();
+            
         }
     }
 
@@ -37,6 +40,8 @@ public class ObjectDisappears : MonoBehaviour
             timer += Time.deltaTime;
             if (timer + 2 > Delay)
                 GameObjectCollider.enabled = false;
+            if (timer > Delay && !DestroyObjectOnDisappearing)
+                gameObject.SetActive(false);
         }
     }
 
@@ -60,7 +65,10 @@ public class ObjectDisappears : MonoBehaviour
     {
         if (IsCanDisappear)
         {
-            Destroy(gameObject, Delay);
+            if (DestroyObjectOnDisappearing)
+            {
+                Destroy(gameObject, Delay);
+            }
             isDisappears = true;
         }
     }

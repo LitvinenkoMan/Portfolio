@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8028822066305724483}
   - component: {fileID: 5479353650958773001}
   - component: {fileID: 772000039000875836}
-  - component: {fileID: 772000039000875837}
   - component: {fileID: 772000039000875811}
   - component: {fileID: 772000039000875810}
   - component: {fileID: 1402379618740731995}
+  - component: {fileID: 772000039000875837}
   m_Layer: 0
   m_Name: Cylinder.005
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772000039000875838}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 9.569, z: 3.301}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3161656193730760394}
@@ -102,21 +102,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &772000039000875837
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772000039000875838}
-  m_ConnectedBody: {fileID: 1803645773885243663}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 1000
-  m_BreakTorque: 1000
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!64 &772000039000875811
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -165,6 +150,22 @@ MonoBehaviour:
   DisappearOnCollision: 1
   AcceptCollisionWithParentChildrens: 0
   IsCanDisappear: 1
+  DestroyObjectOnDisappearing: 0
+--- !u!138 &772000039000875837
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772000039000875838}
+  m_ConnectedBody: {fileID: 1803645773885243663}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 1000
+  m_BreakTorque: 1000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &1073050981785554487
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,10 +178,10 @@ GameObject:
   - component: {fileID: 6039463307434300890}
   - component: {fileID: 4643142892555466202}
   - component: {fileID: 1073050981785554485}
-  - component: {fileID: 1073050981785554486}
   - component: {fileID: 1073050981785554484}
   - component: {fileID: 1073050981785554491}
   - component: {fileID: 5803978706605351034}
+  - component: {fileID: 1073050981785554486}
   m_Layer: 0
   m_Name: Cylinder.002
   m_TagString: Untagged
@@ -196,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073050981785554487}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 8.518, z: -2.61}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3161656193730760394}
@@ -267,21 +268,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &1073050981785554486
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073050981785554487}
-  m_ConnectedBody: {fileID: 2871464951347088729}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 2000
-  m_BreakTorque: 1000
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!64 &1073050981785554484
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -330,6 +316,22 @@ MonoBehaviour:
   DisappearOnCollision: 1
   AcceptCollisionWithParentChildrens: 0
   IsCanDisappear: 1
+  DestroyObjectOnDisappearing: 0
+--- !u!138 &1073050981785554486
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073050981785554487}
+  m_ConnectedBody: {fileID: 2871464951347088729}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 2000
+  m_BreakTorque: 1000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &1803645773885243657
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,10 +344,10 @@ GameObject:
   - component: {fileID: 8282266010966724545}
   - component: {fileID: 3771641699594880368}
   - component: {fileID: 1803645773885243663}
-  - component: {fileID: 1803645773885243656}
   - component: {fileID: 1803645773885243662}
   - component: {fileID: 1803645773885243661}
   - component: {fileID: 5190844849520539463}
+  - component: {fileID: 1803645773885243656}
   m_Layer: 0
   m_Name: Cylinder.006
   m_TagString: Untagged
@@ -361,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803645773885243657}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 5.513, z: 2.902}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3161656193730760394}
@@ -432,21 +434,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &1803645773885243656
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803645773885243657}
-  m_ConnectedBody: {fileID: 8506130934723674117}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 2000
-  m_BreakTorque: 1000
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!64 &1803645773885243662
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -495,6 +482,22 @@ MonoBehaviour:
   DisappearOnCollision: 1
   AcceptCollisionWithParentChildrens: 0
   IsCanDisappear: 1
+  DestroyObjectOnDisappearing: 0
+--- !u!138 &1803645773885243656
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803645773885243657}
+  m_ConnectedBody: {fileID: 8506130934723674117}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 2000
+  m_BreakTorque: 1000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &2221373486185195297
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +511,7 @@ GameObject:
   - component: {fileID: 5735711573450727422}
   - component: {fileID: 2221373486185195296}
   - component: {fileID: 2221373486185195303}
+  - component: {fileID: 5010740271898118085}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -608,6 +612,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 343c14f0302498543b3c719bbdb5144e, type: 3}
+--- !u!114 &5010740271898118085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221373486185195297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68585f5d37ec294d960130864bdc3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectRigidbody: {fileID: 2221373486185195296}
+  IsGravityOn: 1
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  GravityDirection: {x: 0, y: -1, z: 0}
+  force: 1
 --- !u!1 &2354156795738199152
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,10 +679,10 @@ GameObject:
   - component: {fileID: 508633050804808098}
   - component: {fileID: 891692181115027796}
   - component: {fileID: 2871464951347088729}
-  - component: {fileID: 2871464951347088730}
   - component: {fileID: 2871464951347088728}
   - component: {fileID: 2871464951347088735}
   - component: {fileID: 702791890357028786}
+  - component: {fileID: 2871464951347088730}
   m_Layer: 0
   m_Name: Cylinder.004
   m_TagString: Untagged
@@ -677,7 +698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2871464951347088731}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 7.603, z: -0.586}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3161656193730760394}
@@ -748,21 +769,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &2871464951347088730
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2871464951347088731}
-  m_ConnectedBody: {fileID: 8506130934723674117}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 7500
-  m_BreakTorque: 1000
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!64 &2871464951347088728
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -811,6 +817,22 @@ MonoBehaviour:
   DisappearOnCollision: 1
   AcceptCollisionWithParentChildrens: 0
   IsCanDisappear: 1
+  DestroyObjectOnDisappearing: 0
+--- !u!138 &2871464951347088730
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871464951347088731}
+  m_ConnectedBody: {fileID: 8506130934723674117}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 7500
+  m_BreakTorque: 1000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &6113042093167922743
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,10 +845,10 @@ GameObject:
   - component: {fileID: 7975052133410971068}
   - component: {fileID: 2577760681194291864}
   - component: {fileID: 6113042093167922741}
-  - component: {fileID: 6113042093167922742}
   - component: {fileID: 6113042093167922740}
   - component: {fileID: 6113042093167922747}
   - component: {fileID: 4017625752994998874}
+  - component: {fileID: 6113042093167922742}
   m_Layer: 0
   m_Name: Cylinder.003
   m_TagString: Untagged
@@ -842,7 +864,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6113042093167922743}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 13.015, z: 0.001}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3161656193730760394}
@@ -913,21 +935,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &6113042093167922742
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6113042093167922743}
-  m_ConnectedBody: {fileID: 2871464951347088729}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 5000
-  m_BreakTorque: 1000
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!64 &6113042093167922740
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -976,6 +983,22 @@ MonoBehaviour:
   DisappearOnCollision: 1
   AcceptCollisionWithParentChildrens: 0
   IsCanDisappear: 1
+  DestroyObjectOnDisappearing: 0
+--- !u!138 &6113042093167922742
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6113042093167922743}
+  m_ConnectedBody: {fileID: 2871464951347088729}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 5000
+  m_BreakTorque: 1000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &6506999016651048978
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,10 +1011,10 @@ GameObject:
   - component: {fileID: 1543976814874753328}
   - component: {fileID: 5641655400956936603}
   - component: {fileID: 6506999016651048976}
-  - component: {fileID: 6506999016651048977}
   - component: {fileID: 6506999016651048983}
   - component: {fileID: 6506999016651048982}
   - component: {fileID: 583085036597288506}
+  - component: {fileID: 6506999016651048977}
   m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
@@ -1007,7 +1030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6506999016651048978}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 12.576, z: -3.011}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3161656193730760394}
@@ -1078,21 +1101,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &6506999016651048977
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506999016651048978}
-  m_ConnectedBody: {fileID: 1073050981785554485}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 1000
-  m_BreakTorque: 1000
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!64 &6506999016651048983
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1141,6 +1149,22 @@ MonoBehaviour:
   DisappearOnCollision: 1
   AcceptCollisionWithParentChildrens: 0
   IsCanDisappear: 1
+  DestroyObjectOnDisappearing: 0
+--- !u!138 &6506999016651048977
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506999016651048978}
+  m_ConnectedBody: {fileID: 1073050981785554485}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 1000
+  m_BreakTorque: 1000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &8506130934723674119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,10 +1177,10 @@ GameObject:
   - component: {fileID: 6171607894683222388}
   - component: {fileID: 6640790190320035858}
   - component: {fileID: 8506130934723674117}
-  - component: {fileID: 8506130934723674118}
   - component: {fileID: 8506130934723674116}
   - component: {fileID: 8506130934723674123}
   - component: {fileID: 5370509571864951763}
+  - component: {fileID: 8506130934723674118}
   m_Layer: 0
   m_Name: Cylinder.007
   m_TagString: Untagged
@@ -1172,7 +1196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8506130934723674119}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 4.118, z: 0.688}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 3161656193730760394}
@@ -1243,21 +1267,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &8506130934723674118
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506130934723674119}
-  m_ConnectedBody: {fileID: 2221373486185195296}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: 10000
-  m_BreakTorque: 1000
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!64 &8506130934723674116
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1306,3 +1315,19 @@ MonoBehaviour:
   DisappearOnCollision: 1
   AcceptCollisionWithParentChildrens: 0
   IsCanDisappear: 1
+  DestroyObjectOnDisappearing: 0
+--- !u!138 &8506130934723674118
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8506130934723674119}
+  m_ConnectedBody: {fileID: 2221373486185195296}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 10000
+  m_BreakTorque: 1000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1

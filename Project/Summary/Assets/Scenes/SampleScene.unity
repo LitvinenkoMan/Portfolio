@@ -4970,6 +4970,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 2871464951347088735, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
+      propertyPath: CenterOfMass.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3161656193730760394, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -5025,6 +5029,26 @@ PrefabInstance:
     - target: {fileID: 3161656193730760394, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070420796657502970, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070420796657502970, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070420796657502970, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7069834
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070420796657502970, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070420796657502970, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f180ba438f447dc45ba31f4495fb18c2, type: 3}
