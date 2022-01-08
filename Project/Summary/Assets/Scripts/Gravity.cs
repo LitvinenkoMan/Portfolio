@@ -21,6 +21,10 @@ public class Gravity : MonoBehaviour
         if (!ObjectRigidbody)
         {
             ObjectRigidbody = gameObject.GetComponent<Rigidbody>();
+            if (!ObjectRigidbody)
+            {
+                ObjectRigidbody = gameObject.GetComponentInParent<Rigidbody>();
+            }
             ObjectRigidbody.centerOfMass = CenterOfMass;
         }
         else

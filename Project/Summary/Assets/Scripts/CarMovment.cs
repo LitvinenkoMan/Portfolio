@@ -36,6 +36,9 @@ public class CarMovment : MonoBehaviour, IMoveable
     [SerializeField]
     List<Wheel> Wheels = new List<Wheel>();
 
+    [SerializeField]
+    bool IsNegetivZ = true;
+
     bool canMove = false;
 
     public void MoveBack()
@@ -46,12 +49,24 @@ public class CarMovment : MonoBehaviour, IMoveable
             {
                 if (wheel.IsCanAccelerate)
                 {
-                    if (CarSpeed)
+                    if (IsNegetivZ)
                     {
-                        wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
+                        if (CarSpeed)
+                        {
+                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
+                        }
+                        else
+                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
                     }
-                    else
-                    wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                    if (!IsNegetivZ)
+                    {
+                        if (CarSpeed)
+                        {
+                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce);
+                        }
+                        else
+                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce;
+                    }
                 }
             }
         }
@@ -103,13 +118,26 @@ public class CarMovment : MonoBehaviour, IMoveable
             {
                 if (wheel.IsCanAccelerate)
                 {
-                    if (CarSpeed)
+                    if (IsNegetivZ)
                     {
-                        wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
-                        //Debug.Log(wheel.WheelCollider.motorTorque);
+                        if (CarSpeed)
+                        {
+                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
+                            //Debug.Log(wheel.WheelCollider.motorTorque);
+                        }
+                        else
+                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
                     }
-                    else
-                    wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                    if (!IsNegetivZ)
+                    {
+                        if (CarSpeed)
+                        {
+                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce);
+                            //Debug.Log(wheel.WheelCollider.motorTorque);
+                        }
+                        else
+                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce;
+                    }
                 }
             }
         }
@@ -204,12 +232,19 @@ public class CarMovment : MonoBehaviour, IMoveable
                 wheel.WheelCollider.motorTorque = 0;
             }
 
-        if (canMove)
-        {
-            MoveBack();
-            MoveFront();
-        }
+        MoveLeft();
+        MoveRight();
 
+        if (horizontalInput == 0)
+            foreach (var wheel in Wheels)
+            {
+                if (wheel.IsSteerWheel)
+                {
+                    wheel.WheelCollider.steerAngle = 0;
+                }
+            }
+
+        
         if (canMove && Input.GetKeyDown(KeyCode.I))
         {
             CarSound.MuffleEngineSound();
@@ -224,8 +259,13 @@ public class CarMovment : MonoBehaviour, IMoveable
 
         UpdateWheeelsModels();
         HandBreak();
-        MoveLeft();
-        MoveRight();
         ReRotate();
+
+        if (canMove)
+        {
+            MoveBack();
+            MoveFront();
+        }
+
     }
 }
