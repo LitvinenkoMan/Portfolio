@@ -28,7 +28,6 @@ public class ObjectDisappears : MonoBehaviour
         if (DisappearOnStart)
         {
             Disappears();
-            
         }
     }
 

@@ -35,19 +35,21 @@ public class CarSpeed : MonoBehaviour
         yield return null;
     }
 
-
-    private void Start()
+    private void OnEnable()
     {
         priviosPosition = gameObject.transform.position;
         currentPosition = gameObject.transform.position;
         StartCoroutine(SpeedCalculater());
+    }
+    private void OnDisable()
+    {
+        StopCoroutine(SpeedCalculater());
     }
 
     public float CalculateCarSpeed(Vector3 start, Vector3 finish)
     {
         float speed = 0;
         speed = Vector3.Distance(start, finish) / updateFrequency;
-        //Debug.Log($"{speed} * {3.6f} / {gameObject.transform.lossyScale.x}");
         return speed * 3.6f / gameObject.transform.lossyScale.x;
     }
 
@@ -57,7 +59,7 @@ public class CarSpeed : MonoBehaviour
 
         if (motorTorque <= 0) motorTorque = 1;
 
-        Debug.Log($"motorTorque: {Mathf.Round(currentSpeed)} * {100} / {MaxSpeed} = {motorTorque}, force: {motorForce} - {motorForce} / {100} * {motorTorque} = {motorForce - motorForce / 100 * motorTorque}");
+        //Debug.Log($"motorTorque: {Mathf.Round(currentSpeed)} * {100} / {MaxSpeed} = {motorTorque}, force: {motorForce} - {motorForce} / {100} * {motorTorque} = {motorForce - motorForce / 100 * motorTorque}");
         return motorForce - motorForce / 100 * motorTorque;
     }
 
