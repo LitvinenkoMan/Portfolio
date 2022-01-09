@@ -205,8 +205,9 @@ public class CarMovment : MonoBehaviour, IMoveable
         }
         if (isWheelsUp && Input.GetKeyDown(KeyCode.R))
         {
-            carRigidbody.AddForce(Vector3.up * carRigidbody.mass * 100 * Time.deltaTime);
-            gameObject.transform.DORotate(new Vector3(180, 0, 180), 1f);
+            carRigidbody.AddForce(Vector3.up * carRigidbody.mass * 1000);
+            carRigidbody.AddTorque(Vector3.right * 180 * carRigidbody.mass * 100);
+            //gameObject.transform.DORotate(new Vector3(180, 0, 180), 1f);
         }
     }
 
@@ -222,6 +223,7 @@ public class CarMovment : MonoBehaviour, IMoveable
 
     private void FixedUpdate()
     {
+        //  Debug.Log($"locla rotation {}");
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         steerAngle = MaxSteerAngle * horizontalInput;
@@ -232,8 +234,7 @@ public class CarMovment : MonoBehaviour, IMoveable
                 wheel.WheelCollider.motorTorque = 0;
             }
 
-        MoveLeft();
-        MoveRight();
+       
 
         if (horizontalInput == 0)
             foreach (var wheel in Wheels)
@@ -258,6 +259,8 @@ public class CarMovment : MonoBehaviour, IMoveable
         }
 
         UpdateWheeelsModels();
+        MoveLeft();
+        MoveRight();
         HandBreak();
         ReRotate();
 
