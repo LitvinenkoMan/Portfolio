@@ -134,10 +134,10 @@ public class VHACD : MonoBehaviour
         var mesh = GetComponent<MeshFilter>().sharedMesh;
         var vhacd = CreateVHACD();
         var parameters = m_parameters;
-        var colliders = new GameObject("Colliders");
-        colliders.transform.SetParent(gameObject.transform);
-        colliders.transform.SetPositionAndRotation(gameObject.transform.position, gameObject.transform.rotation);
-        colliders.transform.localScale = Vector3.one;
+        //var colliders = new GameObject("Colliders");
+        //colliders.transform.SetParent(gameObject.transform);
+        //colliders.transform.SetPositionAndRotation(gameObject.transform.position, gameObject.transform.rotation);
+        //colliders.transform.localScale = Vector3.one;
 
         var verts = mesh.vertices;
         var tris = mesh.triangles;
@@ -181,7 +181,8 @@ public class VHACD : MonoBehaviour
             Marshal.Copy((System.IntPtr)hull.m_triangles, indices, 0, indices.Length);
             hullMesh.SetTriangles(indices, 0);
 
-            var col = colliders.AddComponent<MeshCollider>();
+            //var col = colliders.AddComponent<MeshCollider>();
+            var col = gameObject.AddComponent<MeshCollider>();
             col.convex = true;
             col.sharedMesh = hullMesh;
         }
