@@ -118,7 +118,7 @@ public class VHACD : MonoBehaviour
 
     [DllImport("libvhacd")] static extern unsafe uint GetNConvexHulls(void* pVHACD);
 
-    [DllImport("libvhacd")]
+    [DllImport("libvhacd", EntryPoint = "GetConvexHull")]
     static extern unsafe void GetConvexHull(
         void* pVHACD,
         uint index,
@@ -137,9 +137,11 @@ public class VHACD : MonoBehaviour
         var colliders = new GameObject("Colliders");
         colliders.AddComponent<MeshFilter>();
         colliders.GetComponent<MeshFilter>().sharedMesh = gameObject.GetComponent<MeshFilter>().sharedMesh;
+        //colliders.AddComponent<MeshRenderer>().enabled = false;
         colliders.transform.SetParent(gameObject.transform);
         colliders.transform.SetPositionAndRotation(gameObject.transform.position, gameObject.transform.rotation);
         colliders.transform.localScale = Vector3.one;
+
 
         var verts = mesh.vertices;
         var tris = mesh.triangles;

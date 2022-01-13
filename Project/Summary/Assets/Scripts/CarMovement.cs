@@ -14,7 +14,7 @@ public class Wheel
     public bool IsCanAccelerate;
 }
 
-public class CarMovment : MonoBehaviour, IMoveable
+public class CarMovement : MonoBehaviour, IMoveable
 {
     [SerializeField]
     CarSound CarSound;

@@ -11,13 +11,13 @@ public class CarManager : MonoBehaviour
     bool ChangeCarWithoutTrigger = false;
 
     [SerializeField,]
-    CarMovment[] CarsMovments;
+    CarMovement[] CarsMovments;
 
     [SerializeField]
     GameObject[] Cars;
 
     GameObject ActiveCar;
-    CarMovment ActiveCarMovment;
+    CarMovement ActiveCarMovment;
 
     bool IsInGarage;
 
@@ -98,7 +98,7 @@ public class CarManager : MonoBehaviour
         return ActiveCar;
     }
 
-    public CarMovment GetActiveCarMovment()
+    public CarMovement GetActiveCarMovment()
     {
         return ActiveCarMovment;
     }
