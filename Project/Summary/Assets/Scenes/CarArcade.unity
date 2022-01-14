@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22616,6 +22616,7 @@ GameObject:
   - component: {fileID: 612366957}
   - component: {fileID: 612366956}
   - component: {fileID: 612366955}
+  - component: {fileID: 612366958}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -22659,11 +22660,11 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -22688,6 +22689,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
+--- !u!114 &612366958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612366954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcc089606ef674191779f443dadcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTarget: {fileID: 0}
+  playerModel: {fileID: 0}
+  minimumAngle: 0
+  maximumAngle: 180
+  mouseSensitivity: 0
+  isThirdPersonMode: 0
+  "OrthographicCameraP\u0442osition": {x: 80, y: 110, z: 80}
+  NoneOrthographicCameraPosition: {x: 0, y: 10, z: 15}
+  OrthographRotation: {x: 45, y: -135, z: 0}
 --- !u!43 &614010701
 Mesh:
   m_ObjectHideFlags: 0
