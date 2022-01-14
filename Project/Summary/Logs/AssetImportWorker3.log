@@ -871,3 +871,20 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 60085.040491 seconds.
+  path: Assets/Resources/map_modified.fbx
+  artifactKey: Guid(b40495af837dd864b9819e684049f56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/map_modified.fbx using Guid(b40495af837dd864b9819e684049f56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07857c7ef468a5ecccbab75774afd6e9') in 2.134879 seconds 
+  Import took 3.451281 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Resources/new_wheels.fbx
+  artifactKey: Guid(45a167129dbf43e4787e1c4c902e7f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/new_wheels.fbx using Guid(45a167129dbf43e4787e1c4c902e7f68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d9294d9a02240ee80555fe2c9cb635') in 4.422089 seconds 
+  Import took 4.633808 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
