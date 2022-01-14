@@ -6,37 +6,36 @@ using Zenject;
 
 public class CameraFolow : MonoBehaviour
 {
-    [SerializeField]
-    Transform cameraTarget;
-    [SerializeField]
-    Transform playerModel;
-    [SerializeField]
-    float minimumAngle;
-    [SerializeField]
-    float maximumAngle;
-    [SerializeField]
-    float mouseSensitivity;
+    //[SerializeField]
+    //Transform cameraTarget;
+    //[SerializeField]
+    //Transform playerModel;
+    //[SerializeField]
+    //float minimumAngle;
+    //[SerializeField]
+    //float maximumAngle;
+    //[SerializeField]
+    //float mouseSensitivity;
 
+    [SerializeField]
+    GameObject Target;
     Camera MainCamera;
-
+    [Inject]
     CarManager cars;
 
     [SerializeField]
     bool isThirdPersonMode = false;
+    [SerializeField]
+    bool IsNegativZ = true;
 
     [SerializeField]
-    Vector3 OrthographicCameraPòosition = new Vector3(80, 110, 80);
-    [SerializeField]
-    Vector3 NoneOrthographicCameraPosition = new Vector3(0, 10, 15);
+    Vector3 OrthographicCameraPosition = new Vector3(80, 110, 80);
     [SerializeField]
     Vector3 OrthographRotation = new Vector3(45, -135, 0);
-
-
-    [Inject]
-    void Constract(CarManager car)
-    {
-        this.cars = car;
-    }
+    //[SerializeField]
+    //Vector3 NoneOrthographicCameraPosition = new Vector3(0, 10, 15);
+    [SerializeField]
+    float DistanceToObject = 10;
 
     private void Start()
     {
@@ -48,10 +47,19 @@ public class CameraFolow : MonoBehaviour
     {
         ChangeCameraView();
 
-        if (!isThirdPersonMode) 
-        { 
-            gameObject.transform.DOMove(cars.GetActiveCar().transform.position + OrthographicCameraPòosition, 0.5f);
-            gameObject.transform.DORotate(OrthographRotation, 0.5f);
+        if (!isThirdPersonMode)
+        {
+            if (cars)
+            {
+                gameObject.transform.DOMove(cars.GetActiveCar().transform.position + OrthographicCameraPosition, 0.5f);
+                gameObject.transform.DORotate(OrthographRotation, 0.5f);
+            }
+            if (Target)
+            {
+                gameObject.transform.DOMove(Target.transform.position + OrthographicCameraPosition, 0.5f);
+                gameObject.transform.DORotate(OrthographRotation, 0.5f);
+                MainCamera.orthographicSize = 25;
+            }
         }
         else ThirdPersonMode();
     }
@@ -66,11 +74,11 @@ public class CameraFolow : MonoBehaviour
                 MainCamera.orthographic = true;
                 isThirdPersonMode = false;
             }
-            else 
+            else
             {
                 //MainCamera.transform.SetParent(cars.GetActiveCar().transform);
                 MainCamera.orthographic = false;
-                isThirdPersonMode = true; 
+                isThirdPersonMode = true;
             }
 
             //if (MainCamera.orthographic)
@@ -93,11 +101,24 @@ public class CameraFolow : MonoBehaviour
     {
         float aimX = Input.GetAxis("Mouse X");
         float aimY = Input.GetAxis("Mouse Y");
-
-        MainCamera.transform.DOLookAt(cars.GetActiveCar().transform.position+ new Vector3(0, 2, 0), 0.5f);
-
-        MainCamera.transform.DOMove(cars.GetActiveCar().transform.position + cars.GetActiveCar().transform.forward * 15 + new Vector3(0,5,0), 0.5f);
-
+        if (cars)
+        {
+            MainCamera.transform.DOLookAt(cars.GetActiveCar().transform.position + new Vector3(0, 2, 0), 0.5f);
+            if (IsNegativZ)
+            {
+                MainCamera.transform.DOMove(cars.GetActiveCar().transform.position + cars.GetActiveCar().transform.forward * DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+            }
+            else MainCamera.transform.DOMove(cars.GetActiveCar().transform.position + cars.GetActiveCar().transform.forward * -DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+        }
+        if (Target)
+        {
+            MainCamera.transform.DOLookAt(Target.transform.position + new Vector3(0, 2, 0), 0.5f);
+            if (IsNegativZ)
+            {
+                MainCamera.transform.DOMove(Target.transform.position + Target.transform.forward * DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+            }
+            else MainCamera.transform.DOMove(Target.transform.position + Target.transform.forward * -DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+        }
         //var angleX = cameraTarget.localEulerAngles.x;
         //if (angleX > 180 && angleX < maximumAngle)
         //{

@@ -27,7 +27,7 @@ public class ObjectDisappears : MonoBehaviour
         GameObjectCollider = gameObject.GetComponent<Collider>();
         if (DisappearOnStart)
         {
-            Disappears();
+            DisappearObject();
         }
     }
 
@@ -50,17 +50,17 @@ public class ObjectDisappears : MonoBehaviour
         {
             if (AcceptCollisionWithParentChildrens && collision.gameObject.transform.IsChildOf(gameObject.transform.parent))
             {
-                Disappears();
+                DisappearObject();
             }
 
             if (!AcceptCollisionWithParentChildrens && !collision.gameObject.transform.IsChildOf(gameObject.transform.parent))
             {
-                Disappears();
+                DisappearObject();
             }
         }
     }
 
-    public void Disappears() 
+    public void DisappearObject() 
     {
         if (IsCanDisappear)
         {

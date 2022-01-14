@@ -15,17 +15,6 @@ public class CarSound : MonoBehaviour, ICarSounded
     [SerializeField]
     AudioClip carAccceleration;
 
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     public void CarAccelerationSound()
     {
         //CarSoundSource.clip = carAccceleration;
