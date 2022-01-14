@@ -43,10 +43,7 @@ public class WheelsSmokeEffect : MonoBehaviour
 
     private void Update()
     {
-        if (!Wheel.isGrounded)
-        {
-            Effect.Stop();
-        }
+        
 
         if (Wheel.isGrounded)
         {
@@ -59,7 +56,9 @@ public class WheelsSmokeEffect : MonoBehaviour
 
         if (Wheel.motorTorque != 0)
         {
-            Effect.Emit(1);
+            if (!Wheel.isGrounded)
+                Effect.Stop();
+            else Effect.Emit(1);
         }
     }
 

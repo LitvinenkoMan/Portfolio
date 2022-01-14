@@ -7,6 +7,7 @@ using TMPro;
 
 public class CarDetecter : MonoBehaviour
 {
+    [Inject]
     CarManager cars;
 
     [SerializeField]
@@ -18,11 +19,6 @@ public class CarDetecter : MonoBehaviour
 
     bool IsEntered;
 
-    [Inject]
-    void Constract(CarManager cars) 
-    {
-        this.cars = cars;
-    }
     private void Start()
     {
         textStartPosition = gameObject.transform.position.y;

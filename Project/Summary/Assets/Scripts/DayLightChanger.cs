@@ -12,14 +12,9 @@ public class DayLightChanger : MonoBehaviour
 
     [SerializeField]
     Color startColor;
-
+    [Inject]
     CarManager cars;
 
-    [Inject]
-    void Constract(CarManager cars) 
-    {
-        this.cars = cars;
-    }
 
     private void Start()
     {

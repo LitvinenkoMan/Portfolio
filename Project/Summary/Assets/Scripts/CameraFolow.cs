@@ -18,7 +18,7 @@ public class CameraFolow : MonoBehaviour
     float mouseSensitivity;
 
     Camera MainCamera;
-
+    [Inject]
     CarManager cars;
 
     [SerializeField]
@@ -30,13 +30,6 @@ public class CameraFolow : MonoBehaviour
     Vector3 NoneOrthographicCameraPosition = new Vector3(0, 10, 15);
     [SerializeField]
     Vector3 OrthographRotation = new Vector3(45, -135, 0);
-
-
-    [Inject]
-    void Constract(CarManager car)
-    {
-        this.cars = car;
-    }
 
     private void Start()
     {
