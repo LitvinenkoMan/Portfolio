@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 05f16b436fd438b409dce22e8dfdd672, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a7067be204394fb4c9ea99df4228d541, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -68972,6 +68972,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 44.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1416024906144786738, guid: f7e1b3f697b60f5469ed2d84eeaf7daf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.48
+      objectReference: {fileID: 0}
     - target: {fileID: 3350729248045265700, guid: f7e1b3f697b60f5469ed2d84eeaf7daf, type: 3}
       propertyPath: m_LocalScale.z
       value: 51.593006
@@ -116856,6 +116860,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 685718210599518741, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ad5fe81bed6a614ea20d4c09bab1d76, type: 2}
+    - target: {fileID: 685718210599518741, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: af07cc8d774be0747bbe51620e1951b2, type: 2}
     - target: {fileID: 2725314509699958736, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -116900,6 +116912,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2906663564015450990, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20d562c8f09252143a1c63a895785fc0, type: 2}
+    - target: {fileID: 2906663564015450990, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: b1e531136f513a144a8b3f7d9a54e0d8, type: 2}
+    - target: {fileID: 2906663564015450990, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[8]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20d562c8f09252143a1c63a895785fc0, type: 2}
+    - target: {fileID: 3008853575533265894, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ad5fe81bed6a614ea20d4c09bab1d76, type: 2}
+    - target: {fileID: 3008853575533265894, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: af07cc8d774be0747bbe51620e1951b2, type: 2}
     - target: {fileID: 4501990492281220430, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
       propertyPath: CenterOfMass.y
       value: -2.25
@@ -116912,6 +116944,22 @@ PrefabInstance:
       propertyPath: MotorForce
       value: 5000
       objectReference: {fileID: 0}
+    - target: {fileID: 5795378371681316105, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ad5fe81bed6a614ea20d4c09bab1d76, type: 2}
+    - target: {fileID: 5795378371681316105, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: af07cc8d774be0747bbe51620e1951b2, type: 2}
+    - target: {fileID: 6072201438457215549, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ad5fe81bed6a614ea20d4c09bab1d76, type: 2}
+    - target: {fileID: 6072201438457215549, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: af07cc8d774be0747bbe51620e1951b2, type: 2}
     - target: {fileID: 6387261885333353562, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
