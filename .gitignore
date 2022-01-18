@@ -4,6 +4,7 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Project/Summary/Logs
 
 # Visual Studio cache directory
 .vs/
@@ -36,12 +37,3 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.log
-Project/Summary/Logs/shadercompiler-AssetImportWorker0.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe2.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe3.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe4.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe5.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe6.log
-Project/Summary/Logs/shadercompiler-UnityShaderCompiler.exe7.log
