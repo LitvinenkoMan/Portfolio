@@ -29,6 +29,8 @@ public class CarMovement : MonoBehaviour, IMoveable
     [SerializeField]
     float MaxSteerAngle = 30;
     [SerializeField]
+    float DegreessPerSecond = 10;
+    [SerializeField]
     float MotorForce = 6000;
     [SerializeField]
     float Breakforce = 1;
@@ -39,7 +41,8 @@ public class CarMovement : MonoBehaviour, IMoveable
     [SerializeField]
     bool IsNegetivZ = true;
 
-    bool canMove = false;
+    bool canMove;
+    float timer;
 
     public void MoveBack()
     {
@@ -223,29 +226,42 @@ public class CarMovement : MonoBehaviour, IMoveable
 
     private void FixedUpdate()
     {
-        //  Debug.Log($"locla rotation {}");
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        steerAngle = MaxSteerAngle * horizontalInput;
+        //steerAngle = MaxSteerAngle * horizontalInput;
+
+        if (horizontalInput != 0)
+        {
+            if (steerAngle + MaxSteerAngle * horizontalInput / DegreessPerSecond < MaxSteerAngle && steerAngle + MaxSteerAngle * horizontalInput / DegreessPerSecond > -MaxSteerAngle)
+            {
+                steerAngle += MaxSteerAngle * horizontalInput / DegreessPerSecond;
+            }
+        }
+
 
         if (verticalInput == 0)
             foreach (var wheel in Wheels)
-            {
                 wheel.WheelCollider.motorTorque = 0;
-            }
 
-       
 
-        if (horizontalInput == 0)
-            foreach (var wheel in Wheels)
+
+        Debug.Log(horizontalInput);
+        if (((int)horizontalInput) == 0)
+        {
+            if (steerAngle > 0)
+                steerAngle -= MaxSteerAngle / DegreessPerSecond;
+            if (steerAngle < 0)
+                steerAngle += MaxSteerAngle / DegreessPerSecond;
+            foreach (var item in Wheels)
             {
-                if (wheel.IsSteerWheel)
+                if (item.IsSteerWheel)
                 {
-                    wheel.WheelCollider.steerAngle = 0;
+                    item.WheelCollider.steerAngle = 0;
                 }
             }
+        }
 
-        
+
         if (canMove && Input.GetKeyDown(KeyCode.I))
         {
             CarSound.MuffleEngineSound();
@@ -258,17 +274,17 @@ public class CarMovement : MonoBehaviour, IMoveable
             StartMovment();
         }
 
-        UpdateWheeelsModels();
-        MoveLeft();
-        MoveRight();
-        HandBreak();
-        ReRotate();
-
         if (canMove)
         {
             MoveBack();
             MoveFront();
         }
 
+        MoveLeft();
+        MoveRight();
+        HandBreak();
+        UpdateWheeelsModels();
+
+        ReRotate();
     }
 }

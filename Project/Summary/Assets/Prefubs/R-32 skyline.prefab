@@ -423,6 +423,7 @@ MonoBehaviour:
   CarSpeed: {fileID: 560395599680388855}
   carRigidbody: {fileID: 560395599680388853}
   MaxSteerAngle: 30
+  DegreessPerSecond: 10
   MotorForce: 5000
   Breakforce: 10000
   Wheels:
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 560395599680388853}
   IsGravityOn: 1
-  CenterOfMass: {x: 0, y: -1, z: 0}
+  CenterOfMass: {x: 0, y: -1.5, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
 --- !u!1 &794750118201720971

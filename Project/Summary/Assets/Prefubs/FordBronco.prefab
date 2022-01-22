@@ -3169,6 +3169,7 @@ MonoBehaviour:
   CarSpeed: {fileID: 7343561392682127957}
   carRigidbody: {fileID: 3192052272466427801}
   MaxSteerAngle: 30
+  DegreessPerSecond: 10
   MotorForce: 5000
   Breakforce: 10000
   Wheels:
