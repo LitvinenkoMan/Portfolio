@@ -243,20 +243,21 @@ public class CarMovement : MonoBehaviour, IMoveable
             foreach (var wheel in Wheels)
                 wheel.WheelCollider.motorTorque = 0;
 
-
-
-        Debug.Log(horizontalInput);
-        if (((int)horizontalInput) == 0)
+        if (horizontalInput == 0)
         {
             if (steerAngle > 0)
                 steerAngle -= MaxSteerAngle / DegreessPerSecond;
             if (steerAngle < 0)
                 steerAngle += MaxSteerAngle / DegreessPerSecond;
-            foreach (var item in Wheels)
+            if (steerAngle < 1 && steerAngle > -1)
             {
-                if (item.IsSteerWheel)
+                steerAngle = 0;
+                foreach (var item in Wheels)
                 {
-                    item.WheelCollider.steerAngle = 0;
+                    if (item.IsSteerWheel)
+                    {
+                        item.WheelCollider.steerAngle = steerAngle;
+                    }
                 }
             }
         }
