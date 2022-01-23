@@ -423,6 +423,7 @@ MonoBehaviour:
   CarSpeed: {fileID: 560395599680388855}
   carRigidbody: {fileID: 560395599680388853}
   MaxSteerAngle: 30
+  DegreessPerSecond: 10
   MotorForce: 5000
   Breakforce: 10000
   Wheels:
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 560395599680388853}
   IsGravityOn: 1
-  CenterOfMass: {x: 0, y: -1, z: 0}
+  CenterOfMass: {x: 0, y: -1.5, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
 --- !u!1 &794750118201720971
@@ -519,9 +520,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 75000
-    damper: 9000
-    targetPosition: 0.5
+    spring: 90000
+    damper: 7500
+    targetPosition: 0.3
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -531,13 +532,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!1 &794750118357078559
 GameObject:
@@ -704,9 +705,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 75000
-    damper: 9000
-    targetPosition: 0.5
+    spring: 90000
+    damper: 7500
+    targetPosition: 0.3
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -716,13 +717,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!1 &794750119084292692
 GameObject:
@@ -765,9 +766,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 75000
-    damper: 9000
-    targetPosition: 0.5
+    spring: 90000
+    damper: 7500
+    targetPosition: 0.3
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -777,13 +778,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!1 &794750119256890122
 GameObject:
@@ -863,9 +864,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 75000
-    damper: 9000
-    targetPosition: 0.5
+    spring: 90000
+    damper: 7500
+    targetPosition: 0.3
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -875,13 +876,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!1 &1148395110812491525
 GameObject:

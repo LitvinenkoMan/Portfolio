@@ -58,7 +58,7 @@ public class CameraFolow : MonoBehaviour
             {
                 gameObject.transform.DOMove(Target.transform.position + OrthographicCameraPosition, 0.5f);
                 gameObject.transform.DORotate(OrthographRotation, 0.5f);
-                MainCamera.orthographicSize = 25;
+                MainCamera.orthographicSize = 30;
             }
         }
         else ThirdPersonMode();
