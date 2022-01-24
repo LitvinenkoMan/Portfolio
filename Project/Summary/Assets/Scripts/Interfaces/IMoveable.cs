@@ -4,7 +4,7 @@ interface IMoveable
     public void MoveBack();
     public void MoveLeft();
     public void MoveRight();
-    public void StartMovment();
-    public void StopMovment();
+    public void StartMovement();
+    public void StopMovement();
 
 }

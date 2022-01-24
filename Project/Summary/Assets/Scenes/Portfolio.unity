@@ -7033,7 +7033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -13402,7 +13402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -27626,7 +27626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -31750,7 +31750,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &677952826
 Transform:
@@ -42718,7 +42718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -46087,7 +46087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.1464466, y: -0.8535535, z: 0.35355338, w: 0.35355338}
-  m_LocalPosition: {x: 264.2536, y: 399, z: 268.7736}
+  m_LocalPosition: {x: 264.2536, y: 399, z: 5130}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75218,7 +75218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a6e519be101a644b0b932d4384cf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveCarNumber: 2
+  ActiveCarNumber: 1
   ChangeCarWithoutTrigger: 0
   carMovements:
   - {fileID: 1460518157}
@@ -101950,7 +101950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -116877,6 +116877,18 @@ PrefabInstance:
     - target: {fileID: 4501990492281220430, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
       propertyPath: CenterOfMass.y
       value: -2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385189458902625939, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5895705
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385189458902625939, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.407
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385189458902625939, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5851
       objectReference: {fileID: 0}
     - target: {fileID: 5673097121685649996, guid: 1c7dd6fb5125cfa49845e81385656eb7, type: 3}
       propertyPath: CarSound

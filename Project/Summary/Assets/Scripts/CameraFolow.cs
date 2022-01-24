@@ -70,8 +70,6 @@ public class CameraFolow : MonoBehaviour
 
     void ThirdPersonMode()
     {
-        float aimX = Input.GetAxis("Mouse X");
-        float aimY = Input.GetAxis("Mouse Y");
         if (cars)
         {
             MainCamera.transform.DOLookAt(cars.GetActiveCar().transform.position + new Vector3(0, 2, 0), 0.5f);
