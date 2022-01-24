@@ -13,7 +13,7 @@ public class CarSpeed : MonoBehaviour
 
     [SerializeField, Min(0)]
     float MaxSpeed;
-    [SerializeField]
+    [SerializeField, Min(0.01f)]
     float updateFrequency = 1f;
     float currentSpeed;
 
@@ -21,11 +21,11 @@ public class CarSpeed : MonoBehaviour
     {
         while (true)
         {
-            priviosPosition = gameObject.transform.position;
+            priviosPosition = transform.position;
             //
             yield return new WaitForSeconds(updateFrequency);
             //
-            currentPosition = gameObject.transform.position;
+            currentPosition = transform.position;
             currentSpeed = CalculateCarSpeed(priviosPosition, currentPosition);
             if (TextMesh)
             {
@@ -37,8 +37,8 @@ public class CarSpeed : MonoBehaviour
 
     private void OnEnable()
     {
-        priviosPosition = gameObject.transform.position;
-        currentPosition = gameObject.transform.position;
+        priviosPosition = transform.position;
+        currentPosition = transform.position;
         StartCoroutine(SpeedCalculater());
     }
     private void OnDisable()
@@ -51,14 +51,13 @@ public class CarSpeed : MonoBehaviour
         float speed = 0;
         speed = Vector3.Distance(start, finish) / updateFrequency;
         return speed * 3.6f / gameObject.transform.lossyScale.x;
+        //TODO: сделать значение 3,6f не константой, а переменной, значение которой зависит от частоты обновления скорости.
     }
 
     public float CalculateMotorTorque(float motorForce)
     {
         float motorTorque = Mathf.Round(currentSpeed) * 100 / MaxSpeed;
-
         if (motorTorque <= 0) motorTorque = 1;
-
         //Debug.Log($"motorTorque: {Mathf.Round(currentSpeed)} * {100} / {MaxSpeed} = {motorTorque}, force: {motorForce} - {motorForce} / {100} * {motorTorque} = {motorForce - motorForce / 100 * motorTorque}");
         return motorForce - motorForce / 100 * motorTorque;
     }

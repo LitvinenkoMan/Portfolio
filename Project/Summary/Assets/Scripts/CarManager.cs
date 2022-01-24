@@ -5,25 +5,25 @@ using Zenject;
 
 public class CarManager : MonoBehaviour
 {
-    [SerializeField, Min(1)]
-    int ActiveCarNumber = 1;
+    [SerializeField, Min(0)]
+    int ActiveCarNumber = 0;
     [SerializeField]
     bool ChangeCarWithoutTrigger = false;
 
     [SerializeField,]
-    CarMovement[] CarsMovments;
+    CarMovement[] carMovements;
 
     [SerializeField]
     GameObject[] Cars;
 
     GameObject ActiveCar;
-    CarMovement ActiveCarMovment;
+    CarMovement activeCarMovement;
 
     bool IsInGarage;
 
     void Start()
     {
-        ActiveCar = Cars[ActiveCarNumber-1];
+        ActiveCar = Cars[ActiveCarNumber];
         SetActiveCar();
     }
 
@@ -37,12 +37,12 @@ public class CarManager : MonoBehaviour
         for (int i = 0; i < Cars.Length; i++)
         {
             float priveiosCarSpeed = ActiveCar.GetComponent<CarSpeed>().GetCurrentSpeed();
-            if (i == ActiveCarNumber - 1)
+            if (i == ActiveCarNumber)
             {
                 Cars[i].transform.rotation = ActiveCar.transform.rotation;
                 Cars[i].transform.position = ActiveCar.transform.position;
                 ActiveCar = Cars[i];
-                ActiveCarMovment = CarsMovments[i];
+                activeCarMovement = carMovements[i];
                 Cars[i].SetActive(true);
                 if (Cars[i].GetComponent<CarSpeed>())
                 {
@@ -54,9 +54,9 @@ public class CarManager : MonoBehaviour
                 Cars[i].SetActive(false);
             } 
         }
-        if (ActiveCarNumber == Cars.Length)
+        if (ActiveCarNumber == Cars.Length-1)
         {
-            ActiveCarNumber = 1;
+            ActiveCarNumber = 0;
         }
         else
         {
@@ -98,8 +98,8 @@ public class CarManager : MonoBehaviour
         return ActiveCar;
     }
 
-    public CarMovement GetActiveCarMovment()
+    public CarMovement GetActiveCarMovement()
     {
-        return ActiveCarMovment;
+        return activeCarMovement;
     }
 }

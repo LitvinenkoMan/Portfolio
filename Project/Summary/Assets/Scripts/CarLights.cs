@@ -1,24 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CarLights : MonoBehaviour, ICarLightable
 {
-    [SerializeField]
-    Light[] FrontLights;
+    [SerializeField] Material frontLightsMaterial;
+    [SerializeField] Material backLightsMaterial;
+    [SerializeField] Light[] frontLights;
+    [SerializeField] Light[] backLights;
 
-    [SerializeField]
-    Light[] BackLights;
+    bool _isFrontLightsActivated = false;
+    bool _isBackLightsActivated = false;
+    Renderer FLMRenderer;
+    Renderer BLMRenderer;
 
-    bool isFrontLightsActivated = false;
-    bool isBackLightsActivated = false;
+    void Start()
+    {
+        FLMRenderer = GetComponent<Renderer>();
+        BLMRenderer = GetComponent<Renderer>();
+    }
+
     void Update()
     {
-        if (isFrontLightsActivated)
+        if (_isFrontLightsActivated)
             DeactivateFrontLights();
         else ActivateFrontLights();
 
-        if (isBackLightsActivated)
+        if (_isBackLightsActivated)
             DeactivateBackLights();
         else ActivateBackLights();
     }
@@ -27,10 +36,11 @@ public class CarLights : MonoBehaviour, ICarLightable
     {
         if (Input.GetAxis("Vertical") < 0)
         {
-            for (int i = 0; i < BackLights.Length; i++)
+            backLightsMaterial.EnableKeyword("_EMISSION");
+            for (int i = 0; i < backLights.Length; i++)
             {
-                BackLights[i].enabled = true;
-                isBackLightsActivated = true;
+                backLights[i].enabled = true;
+                _isBackLightsActivated = true;
             }
         }
     }
@@ -39,10 +49,11 @@ public class CarLights : MonoBehaviour, ICarLightable
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            for (int i = 0; i < FrontLights.Length; i++)
+            frontLightsMaterial.EnableKeyword("_EMISSION");
+            for (int i = 0; i < frontLights.Length; i++)
             {
-                FrontLights[i].enabled = true;
-                isFrontLightsActivated = true;
+                frontLights[i].enabled = true;
+                _isFrontLightsActivated = true;
             }
         }
     }
@@ -50,11 +61,12 @@ public class CarLights : MonoBehaviour, ICarLightable
     public void DeactivateBackLights()
     {
         if (Input.GetAxis("Vertical") >= 0)
-        {
-            for (int i = 0; i < BackLights.Length; i++)
+        {        
+            backLightsMaterial.DisableKeyword("_EMISSION");
+            for (int i = 0; i < backLights.Length; i++)
             {
-                BackLights[i].enabled = false;
-                isBackLightsActivated = false;
+                backLights[i].enabled = false;
+                _isBackLightsActivated = false;
             }
         }
     }
@@ -63,21 +75,22 @@ public class CarLights : MonoBehaviour, ICarLightable
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            for (int i = 0; i < FrontLights.Length; i++)
+            frontLightsMaterial.DisableKeyword("_EMISSION");
+            for (int i = 0; i < frontLights.Length; i++)
             {
-                FrontLights[i].enabled = false;
-                isFrontLightsActivated = false;
+                frontLights[i].enabled = false;
+                _isFrontLightsActivated = false;
             }
         }
     }
 
-    public bool GetFrontLightsState() 
+    public bool GetFrontLightsState()
     {
-        return isFrontLightsActivated;
+        return _isFrontLightsActivated;
     }
 
     public bool GetBackLightsState()
     {
-        return isBackLightsActivated;
+        return _isBackLightsActivated;
     }
 }

@@ -6,17 +6,6 @@ using Zenject;
 
 public class CameraFolow : MonoBehaviour
 {
-    //[SerializeField]
-    //Transform cameraTarget;
-    //[SerializeField]
-    //Transform playerModel;
-    //[SerializeField]
-    //float minimumAngle;
-    //[SerializeField]
-    //float maximumAngle;
-    //[SerializeField]
-    //float mouseSensitivity;
-
     [SerializeField]
     GameObject Target;
     Camera MainCamera;
@@ -32,8 +21,6 @@ public class CameraFolow : MonoBehaviour
     Vector3 OrthographicCameraPosition = new Vector3(80, 110, 80);
     [SerializeField]
     Vector3 OrthographRotation = new Vector3(45, -135, 0);
-    //[SerializeField]
-    //Vector3 NoneOrthographicCameraPosition = new Vector3(0, 10, 15);
     [SerializeField]
     float DistanceToObject = 10;
 
@@ -70,30 +57,14 @@ public class CameraFolow : MonoBehaviour
         {
             if (isThirdPersonMode)
             {
-                //MainCamera.transform.SetParent(cars.GetActiveCar().transform.parent);
                 MainCamera.orthographic = true;
                 isThirdPersonMode = false;
             }
             else
             {
-                //MainCamera.transform.SetParent(cars.GetActiveCar().transform);
                 MainCamera.orthographic = false;
                 isThirdPersonMode = true;
             }
-
-            //if (MainCamera.orthographic)
-            //{
-            //    MainCamera.orthographic = false;
-            //    gameObject.transform.DOMove(cars.GetActiveCar().transform.forward , 0.5f);
-            //    //MainCamera.transform.DOLookAt(car.transform.position, 0.5f);
-            //}
-            //else
-            //{
-            //    //MainCamera.transform.DORotate(OrthographRotation, 0.5f);
-            //    MainCamera.transform.SetParent(cars.transform.parent);
-            //    gameObject.transform.DOMove(cars.transform.localPosition + OrthographicCameraPosition, 0.5f);
-            //    MainCamera.orthographic = true;
-            //}
         }
     }
 
@@ -119,17 +90,5 @@ public class CameraFolow : MonoBehaviour
             }
             else MainCamera.transform.DOMove(Target.transform.position + Target.transform.forward * -DistanceToObject + new Vector3(0, 5, 0), 0.5f);
         }
-        //var angleX = cameraTarget.localEulerAngles.x;
-        //if (angleX > 180 && angleX < maximumAngle)
-        //{
-        //    angleX = maximumAngle;
-        //}
-        //else if (angleX < 180 && angleX > minimumAngle)
-        //{
-        //    angleX = minimumAngle;
-        //}
-
-        //cameraTarget.localEulerAngles = new Vector3(angleX, cameraTarget.localEulerAngles.y, 0);
-
     }
 }

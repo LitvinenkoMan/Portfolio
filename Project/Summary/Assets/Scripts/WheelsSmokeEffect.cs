@@ -43,9 +43,11 @@ public class WheelsSmokeEffect : MonoBehaviour
 
     private void Update()
     {
-        
-
-        if (Wheel.isGrounded)
+        if (Wheel.motorTorque != 0 && Wheel.isGrounded)
+        {
+            Effect.Emit(1);
+        }
+        else if (Wheel.isGrounded)
         {
             Effect.Play();
             if (Wheel.brakeTorque != 0 && CarSpeed.GetCurrentSpeed() > 5)
@@ -53,19 +55,5 @@ public class WheelsSmokeEffect : MonoBehaviour
                 Effect.Emit(1);
             }
         }
-
-        if (Wheel.motorTorque != 0)
-        {
-            if (!Wheel.isGrounded)
-                Effect.Stop();
-            else Effect.Emit(1);
-        }
-    }
-
-    bool CheckForTakingRace()
-    {
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Space))
-            return true;
-        else return false;
     }
 }

@@ -7,11 +7,11 @@ using Zenject;
 [System.Serializable]
 public class Wheel
 {
-    public WheelCollider WheelCollider;
-    public Transform WheelTransform;
-    public bool IsSteerWheel;
-    public bool IsFront;
-    public bool IsCanAccelerate;
+    public WheelCollider wheelCollider;
+    public Transform wheelTransform;
+    public bool isSteerWheel;
+    public bool isFront;
+    public bool isCanAccelerate;
 }
 
 public class CarMovement : MonoBehaviour, IMoveable
@@ -50,25 +50,25 @@ public class CarMovement : MonoBehaviour, IMoveable
         {
             foreach (var wheel in Wheels)
             {
-                if (wheel.IsCanAccelerate)
+                if (wheel.isCanAccelerate)
                 {
                     if (IsNegetivZ)
                     {
                         if (CarSpeed)
                         {
-                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
+                            wheel.wheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
                         }
                         else
-                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                            wheel.wheelCollider.motorTorque = verticalInput * MotorForce * -1;
                     }
                     if (!IsNegetivZ)
                     {
                         if (CarSpeed)
                         {
-                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce);
+                            wheel.wheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce);
                         }
                         else
-                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce;
+                            wheel.wheelCollider.motorTorque = verticalInput * MotorForce;
                     }
                 }
             }
@@ -81,13 +81,13 @@ public class CarMovement : MonoBehaviour, IMoveable
         {
             foreach (var wheel in Wheels)
             {
-                if (wheel.IsFront && wheel.IsSteerWheel)
+                if (wheel.isFront && wheel.isSteerWheel)
                 {
-                    wheel.WheelCollider.steerAngle = steerAngle;
+                    wheel.wheelCollider.steerAngle = steerAngle;
                 }
-                else if (!wheel.IsFront && wheel.IsSteerWheel)
+                else if (!wheel.isFront && wheel.isSteerWheel)
                 {
-                    wheel.WheelCollider.steerAngle = -steerAngle;
+                    wheel.wheelCollider.steerAngle = -steerAngle;
                 }
             }
         }
@@ -99,13 +99,13 @@ public class CarMovement : MonoBehaviour, IMoveable
         {
             foreach (var wheel in Wheels)
             {
-                if (wheel.IsFront && wheel.IsSteerWheel)
+                if (wheel.isFront && wheel.isSteerWheel)
                 {
-                    wheel.WheelCollider.steerAngle = steerAngle;
+                    wheel.wheelCollider.steerAngle = steerAngle;
                 }
-                else if (!wheel.IsFront && wheel.IsSteerWheel)
+                else if (!wheel.isFront && wheel.isSteerWheel)
                 {
-                    wheel.WheelCollider.steerAngle = -steerAngle;
+                    wheel.wheelCollider.steerAngle = -steerAngle;
                 }
             }
         }
@@ -115,31 +115,27 @@ public class CarMovement : MonoBehaviour, IMoveable
     {
         if (verticalInput > 0)
         {
-            if (CarSound) { CarSound.CarAccelerationSound(); }
-
             foreach (var wheel in Wheels)
             {
-                if (wheel.IsCanAccelerate)
+                if (wheel.isCanAccelerate)
                 {
                     if (IsNegetivZ)
                     {
                         if (CarSpeed)
                         {
-                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
-                            //Debug.Log(wheel.WheelCollider.motorTorque);
+                            wheel.wheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce) * -1;
                         }
                         else
-                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce * -1;
+                            wheel.wheelCollider.motorTorque = verticalInput * MotorForce * -1;
                     }
                     if (!IsNegetivZ)
                     {
                         if (CarSpeed)
                         {
-                            wheel.WheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce);
-                            //Debug.Log(wheel.WheelCollider.motorTorque);
+                            wheel.wheelCollider.motorTorque = verticalInput * CarSpeed.CalculateMotorTorque(MotorForce);
                         }
                         else
-                            wheel.WheelCollider.motorTorque = verticalInput * MotorForce;
+                            wheel.wheelCollider.motorTorque = verticalInput * MotorForce;
                     }
                 }
             }
@@ -160,13 +156,13 @@ public class CarMovement : MonoBehaviour, IMoveable
     {
         foreach (var wheel in Wheels)
         {
-            wheel.WheelCollider.brakeTorque = 0;
+            wheel.wheelCollider.brakeTorque = 0;
         }
 
         if (Input.GetKey(KeyCode.Space))
             foreach (var wheel in Wheels)
             {
-                wheel.WheelCollider.brakeTorque = Breakforce;
+                wheel.wheelCollider.brakeTorque = Breakforce;
             }
     }
 
@@ -179,7 +175,7 @@ public class CarMovement : MonoBehaviour, IMoveable
     {
         foreach (var wheel in Wheels)
         {
-            UpdateWheelModel(wheel.WheelCollider, wheel.WheelTransform);
+            UpdateWheelModel(wheel.wheelCollider, wheel.wheelTransform);
         }
     }
 
@@ -200,7 +196,7 @@ public class CarMovement : MonoBehaviour, IMoveable
 
         foreach (var wheel in Wheels)
         {
-            if (wheel.WheelTransform.position.y > gameObject.transform.position.y)
+            if (wheel.wheelTransform.position.y > gameObject.transform.position.y)
             {
                 isWheelsUp = true;
                 break;
@@ -241,7 +237,7 @@ public class CarMovement : MonoBehaviour, IMoveable
 
         if (verticalInput == 0)
             foreach (var wheel in Wheels)
-                wheel.WheelCollider.motorTorque = 0;
+                wheel.wheelCollider.motorTorque = 0;
 
         if (horizontalInput == 0)
         {
@@ -254,9 +250,9 @@ public class CarMovement : MonoBehaviour, IMoveable
                 steerAngle = 0;
                 foreach (var item in Wheels)
                 {
-                    if (item.IsSteerWheel)
+                    if (item.isSteerWheel)
                     {
-                        item.WheelCollider.steerAngle = steerAngle;
+                        item.wheelCollider.steerAngle = steerAngle;
                     }
                 }
             }

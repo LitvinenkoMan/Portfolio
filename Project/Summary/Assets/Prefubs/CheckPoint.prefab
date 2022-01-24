@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cceb3f9e10abd6746ac0d68511f5bc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Description: {fileID: 236524568022896580}
-  MoveOn: 20
+  description: {fileID: 236524568022896580}
+  moveOn: 20
 --- !u!1 &236524568022896580
 GameObject:
   m_ObjectHideFlags: 0
