@@ -255,13 +255,13 @@ public class CarMovement : MonoBehaviour, IMoveable
 
         if (canMove && Input.GetKeyDown(KeyCode.I))
         {
-            CarSound.MuffleEngineSound();
+            CarSound.MuffleEngine();
             StopMovement();
         }
         else if (!canMove && Input.GetKeyDown(KeyCode.I))
         {
-            CarSound.StartEngineSound();
-            CarSound.CarRollingSound();
+            CarSound.StartEngine();
+            CarSound.CarRolling();
             StartMovement();
         }
 

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5085893778301112045}
   - component: {fileID: 133511368429769696}
   - component: {fileID: 599994650192445788}
+  - component: {fileID: 4328493896011383858}
+  - component: {fileID: 8361473794414538773}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -97,6 +99,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2124705421725058983, guid: 1a9042a9bc8a07245807bd7f39dab33b, type: 3}
+--- !u!54 &4328493896011383858
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353926903158551119}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!138 &8361473794414538773
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353926903158551119}
+  m_ConnectedBody: {fileID: 3448749800415929840}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 20000
+  m_BreakTorque: 20000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &6232264658168581001
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +142,8 @@ GameObject:
   - component: {fileID: 813240994648215652}
   - component: {fileID: 1798779433504452708}
   - component: {fileID: 8390626823921208724}
+  - component: {fileID: 3448749800415929840}
+  - component: {fileID: 6513982258671778650}
   m_Layer: 0
   m_Name: Cylinder.002
   m_TagString: Untagged
@@ -195,6 +230,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8691780276856062721, guid: 1a9042a9bc8a07245807bd7f39dab33b, type: 3}
+--- !u!54 &3448749800415929840
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232264658168581001}
+  serializedVersion: 2
+  m_Mass: 50
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!138 &6513982258671778650
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232264658168581001}
+  m_ConnectedBody: {fileID: 5689186541501957577}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 20000
+  m_BreakTorque: 20000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &8661240820313510350
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8320743426074479476}
+  - component: {fileID: 5689186541501957577}
   m_Layer: 0
   m_Name: Sign
   m_TagString: Untagged
@@ -227,3 +294,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &5689186541501957577
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661240820313510350}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

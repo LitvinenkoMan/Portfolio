@@ -1,9 +1,9 @@
 interface ICarSounded
 {
-    public void StartEngineSound();
-    public void MuffleEngineSound();
-    public void CarAccelerationSound();
-    public void CarRollingSound();
-    public void CarBreakSound();
-    public void CarDriftingSound();
+    public void StartEngine();
+    public void MuffleEngine();
+    public void CarAcceleration();
+    public void CarRolling();
+    public void CarBreak();
+    public void CarDrifting();
 }

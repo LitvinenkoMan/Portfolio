@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,55 +8,63 @@ public class CarSound : MonoBehaviour, ICarSounded
     [SerializeField]
     AudioSource CarSoundSource;
     [SerializeField]
-    AudioClip engineOn;
+    AudioClip engineOnSound;
     [SerializeField]
-    AudioClip engineOff;
+    AudioClip engineOffSound;
     [SerializeField]
-    AudioClip carRolling;
+    AudioClip carRollingSound;
     [SerializeField]
-    AudioClip carAccceleration;
+    AudioClip carAcccelerationSound;
 
-    public void CarAccelerationSound()
+    private void Start()
+    {
+        if (!CarSoundSource || !engineOnSound || !engineOffSound || !carRollingSound || !carAcccelerationSound)
+        {
+            Debug.LogWarning("There is one or more sounds ");
+        }
+    }
+
+    public void CarAcceleration()
     {
         //CarSoundSource.clip = carAccceleration;
         //CarSoundSource.loop = true;
         //CarSoundSource.Play();
     }
 
-    public void CarBreakSound()
+    public void CarBreak()
     {
 
     }
 
-    public void CarDriftingSound()
+    public void CarDrifting()
     {
 
     }
 
-    public void CarRollingSound()
+    public void CarRolling()
     {
-        if (carRolling)
+        if (carRollingSound)
         {
-            CarSoundSource.clip = carRolling;
+            CarSoundSource.clip = carRollingSound;
             CarSoundSource.loop = true;
             CarSoundSource.Play();
         }
     }
 
-    public void MuffleEngineSound()
+    public void MuffleEngine()
     {
-        if (engineOff)
+        if (engineOffSound)
         {
             CarSoundSource.Stop();
-            CarSoundSource.PlayOneShot(engineOff);
+            CarSoundSource.PlayOneShot(engineOffSound);
         }
     }
 
-    public void StartEngineSound()
+    public void StartEngine()
     {
-        if (engineOn)
+        if (engineOnSound)
         {
-            CarSoundSource.PlayOneShot(engineOn);
+            CarSoundSource.PlayOneShot(engineOnSound);
         }
     }
 }
