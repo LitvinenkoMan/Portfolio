@@ -36,7 +36,7 @@ public class CarLights : MonoBehaviour, ICarLightable
     {
         if (Input.GetAxis("Vertical") < 0)
         {
-            backLightsMaterial.EnableKeyword("_EMISSION");
+            if (backLightsMaterial) backLightsMaterial.EnableKeyword("_EMISSION");
             for (int i = 0; i < backLights.Length; i++)
             {
                 backLights[i].enabled = true;
@@ -49,7 +49,7 @@ public class CarLights : MonoBehaviour, ICarLightable
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            frontLightsMaterial.EnableKeyword("_EMISSION");
+            if (frontLightsMaterial) frontLightsMaterial.EnableKeyword("_EMISSION");
             for (int i = 0; i < frontLights.Length; i++)
             {
                 frontLights[i].enabled = true;
@@ -61,8 +61,8 @@ public class CarLights : MonoBehaviour, ICarLightable
     public void DeactivateBackLights()
     {
         if (Input.GetAxis("Vertical") >= 0)
-        {        
-            backLightsMaterial.DisableKeyword("_EMISSION");
+        {
+            if (backLightsMaterial) backLightsMaterial.DisableKeyword("_EMISSION");
             for (int i = 0; i < backLights.Length; i++)
             {
                 backLights[i].enabled = false;
@@ -75,7 +75,7 @@ public class CarLights : MonoBehaviour, ICarLightable
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            frontLightsMaterial.DisableKeyword("_EMISSION");
+            if (frontLightsMaterial) frontLightsMaterial.DisableKeyword("_EMISSION");
             for (int i = 0; i < frontLights.Length; i++)
             {
                 frontLights[i].enabled = false;

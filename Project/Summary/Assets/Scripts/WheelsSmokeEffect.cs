@@ -5,9 +5,9 @@ using Zenject;
 
 public class WheelsSmokeEffect : MonoBehaviour
 {
-    WheelCollider Wheel;
-    [SerializeField]
-    ParticleSystem Effect;
+    [SerializeField] WheelCollider Wheel;
+    [SerializeField] ParticleSystem smokeEffect;
+    [SerializeField] private TrailRenderer trackEffect;
     CarSpeed CarSpeed;
 
     private void Start()
@@ -16,6 +16,7 @@ public class WheelsSmokeEffect : MonoBehaviour
         {
             CarSpeed = GetComponentInParent<CarSpeed>();
         }
+
         if (GetComponent<WheelCollider>())
         {
             Wheel = GetComponent<WheelCollider>();
@@ -31,28 +32,30 @@ public class WheelsSmokeEffect : MonoBehaviour
         Debug.Log("!!!!!");
         if (collision.gameObject.layer == 3)
         {
-            Effect.Play();
+            smokeEffect.Play();
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == 3)
-            Effect.Stop();
+            smokeEffect.Stop();
     }
 
     private void Update()
     {
+        trackEffect.emitting = Wheel.isGrounded && trackEffect ? true : false;
+        
         if (Wheel.motorTorque != 0 && Wheel.isGrounded)
         {
-            Effect.Emit(1);
+            smokeEffect.Emit(1);
         }
         else if (Wheel.isGrounded)
         {
-            Effect.Play();
+            smokeEffect.Play();
             if (Wheel.brakeTorque != 0 && CarSpeed.GetCurrentSpeed() > 5)
             {
-                Effect.Emit(1);
+                smokeEffect.Emit(1);
             }
         }
     }
