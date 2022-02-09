@@ -33,26 +33,17 @@ public class CarMovement : MonoBehaviour, IMoveable
     float verticalInput;
     float steerAngle;
     float timer;
+    int _direction = 1;
     bool canMove;
 
     public void MoveBack()
     {
-        int _direction = 1;
         if (verticalInput < 0)
         {
             foreach (var wheel in Wheels)
             {
                 if (wheel.isCanAccelerate)
                 {
-                    if (IsNegativZ)
-                    {
-                        _direction = -1;
-                    }
-                    else
-                    {
-                        _direction = 1;
-                    }
-
                     if (CarSpeed)
                     {
                         wheel.wheelCollider.motorTorque =
@@ -103,22 +94,12 @@ public class CarMovement : MonoBehaviour, IMoveable
 
     public void MoveFront()
     {
-        int _direction = 1;
         if (verticalInput > 0)
         {
             foreach (var wheel in Wheels)
             {
                 if (wheel.isCanAccelerate)
                 {
-                    if (IsNegativZ)
-                    {
-                        _direction = -1;
-                    }
-                    else
-                    {
-                        _direction = 1;
-                    }
-
                     if (CarSpeed)
                     {
                         wheel.wheelCollider.motorTorque =
@@ -175,7 +156,7 @@ public class CarMovement : MonoBehaviour, IMoveable
 
         wheelCollider.GetWorldPose(out position, out quaternion);
 
-        wheel.position = position + new Vector3(0, 0.1f, 0);
+        wheel.position = position/* + new Vector3(0, 0.1f, 0)*/;
         wheel.rotation = quaternion;
     }
 
@@ -208,6 +189,7 @@ public class CarMovement : MonoBehaviour, IMoveable
     void Start()
     {
         StartMovement();
+        _direction = IsNegativZ ? -1 : 1;
     }
 
     private void FixedUpdate()
@@ -231,7 +213,7 @@ public class CarMovement : MonoBehaviour, IMoveable
                 steerAngle -= MaxSteerAngle / DegreessPerSecond;
             if (steerAngle < 0)
                 steerAngle += MaxSteerAngle / DegreessPerSecond;
-            if (steerAngle < 2 && steerAngle > -2)
+            if (steerAngle < 3 && steerAngle > -3)
             {
                 steerAngle = 0;
                 foreach (var item in Wheels)
