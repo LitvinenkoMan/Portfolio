@@ -21189,7 +21189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79bcc089606ef674191779f443dadcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  Target: {fileID: 2134894518}
   isThirdPersonMode: 0
   IsNegativZ: 0
   OrthographicCameraPosition: {x: 80, y: 110, z: 80}
@@ -32873,15 +32873,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 904445589319869516, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5776572
+      value: 4.46
       objectReference: {fileID: 0}
     - target: {fileID: 904445589319869516, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.19
+      value: 3.27
       objectReference: {fileID: 0}
     - target: {fileID: 904445589319869516, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.598858
+      value: 12.55
       objectReference: {fileID: 0}
     - target: {fileID: 904445589319869516, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64206,7 +64206,7 @@ PrefabInstance:
     - target: {fileID: -3809945072200597350, guid: 5d474d903147d3a4da95c471fdfc2722, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 931441f2feb2eef4ebe8f4683a12dc1f, type: 2}
+      objectReference: {fileID: 2100000, guid: 8390637d6bce5c445a0b3508b1dd4649, type: 2}
     - target: {fileID: -3167828395493902737, guid: 5d474d903147d3a4da95c471fdfc2722, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -65553,6 +65553,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2134894518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 560395599680388854, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
+  m_PrefabInstance: {fileID: 1083974436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2137896443
 Mesh:
   m_ObjectHideFlags: 0
