@@ -26,7 +26,17 @@ public class CameraRayCaster : MonoBehaviour
             if (_raycastHit.collider.gameObject.GetComponent<MaterialChanger>())
             {
                 materialChanger = _raycastHit.collider.gameObject.GetComponent<MaterialChanger>();
-                _raycastHit.collider.gameObject.GetComponent<MaterialChanger>().ChangeMaterial();
+                _raycastHit.collider.gameObject.GetComponent<MaterialChanger>().ChangeMaterial(0);
+            }
+            if (_raycastHit.collider.gameObject.GetComponent<MaterialChanger>() && Input.GetMouseButton(0))
+            {
+                materialChanger = _raycastHit.collider.gameObject.GetComponent<MaterialChanger>();
+                _raycastHit.collider.gameObject.GetComponent<MaterialChanger>().ChangeMaterial(1);
+                if (_raycastHit.collider.gameObject.GetComponent<CameraMove>())
+                {
+                    _raycastHit.collider.gameObject.GetComponent<CameraMove>().ChangePosition();
+                    _raycastHit.collider.gameObject.GetComponent<CameraMove>().ChangeRotation();
+                }
             }
 
             if (!_raycastHit.collider.gameObject.GetComponent<MaterialChanger>() && materialChanger)

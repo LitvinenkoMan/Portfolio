@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialChanger : MonoBehaviour
+public class MaterialChanger : MonoBehaviour, ISubscriber
 {
     [SerializeField]private Material StartMaterial;
-    [SerializeField]private Material ChangedMaterial;
+    [SerializeField]private Material[] ChangedMaterials;
     private MeshRenderer mesh;
     void Start()
     {
@@ -17,14 +17,9 @@ public class MaterialChanger : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void ChangeMaterial(int materialIndex)
     {
-        //SetStartMaterial();
-    }
-
-    public void ChangeMaterial()
-    {
-        mesh.sharedMaterial = ChangedMaterial;
+        mesh.sharedMaterial = ChangedMaterials[materialIndex];
     }
 
     public void SetStartMaterial()
@@ -35,5 +30,10 @@ public class MaterialChanger : MonoBehaviour
     public void ChangeMaterial(Material material)
     {
         mesh.sharedMaterial = material;
+    }
+    //TODO: переделать систему событий
+    public void DoAction()
+    {
+       
     }
 }
