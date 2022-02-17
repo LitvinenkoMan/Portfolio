@@ -6,30 +6,30 @@ using Zenject;
 
 public class CameraFolow : MonoBehaviour
 {
-    [SerializeField]
-    GameObject Target;
-    Camera MainCamera;
-    [Inject]
-    CarManager cars;
+    [SerializeField] GameObject Target;
+    Camera Camera;
+    [Inject] CarManager cars;
 
-    [SerializeField]
-    bool isThirdPersonMode = false;
-    [SerializeField]
-    bool IsNegativZ = true;
+    [SerializeField] bool isThirdPersonMode = false;
+    [SerializeField] bool IsNegativeZ = true;
 
-    [SerializeField]
-    Vector3 OrthographicCameraPosition = new Vector3(80, 110, 80);
-    [SerializeField]
-    Vector3 OrthographRotation = new Vector3(45, -135, 0);
-    [SerializeField]
-    float DistanceToObject = 10;
+    [SerializeField] Vector3 OrthographicCameraPosition = new Vector3(80, 110, 80);
+    [SerializeField] Vector3 OrthographRotation = new Vector3(45, -135, 0);
+    [SerializeField] float DistanceToObject = 10;
 
     private void Start()
     {
-        MainCamera = Camera.main;
+        Camera = Camera.main;
+        if (!Camera)
+        {
+            Camera = GetComponent<Camera>();
+        }
+
+        Camera.orthographicSize = 50;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
     private void Update()
     {
         ChangeCameraView();
@@ -41,11 +41,12 @@ public class CameraFolow : MonoBehaviour
                 gameObject.transform.DOMove(cars.GetActiveCar().transform.position + OrthographicCameraPosition, 0.5f);
                 gameObject.transform.DORotate(OrthographRotation, 0.5f);
             }
+
             if (Target)
             {
                 gameObject.transform.DOMove(Target.transform.position + OrthographicCameraPosition, 0.5f);
                 gameObject.transform.DORotate(OrthographRotation, 0.5f);
-                MainCamera.orthographicSize = 30;
+                Camera.orthographicSize = 30;
             }
         }
         else ThirdPersonMode();
@@ -57,12 +58,12 @@ public class CameraFolow : MonoBehaviour
         {
             if (isThirdPersonMode)
             {
-                MainCamera.orthographic = true;
+                Camera.orthographic = true;
                 isThirdPersonMode = false;
             }
             else
             {
-                MainCamera.orthographic = false;
+                Camera.orthographic = false;
                 isThirdPersonMode = true;
             }
         }
@@ -72,21 +73,42 @@ public class CameraFolow : MonoBehaviour
     {
         if (cars)
         {
-            MainCamera.transform.DOLookAt(cars.GetActiveCar().transform.position + new Vector3(0, 2, 0), 0.5f);
-            if (IsNegativZ)
+            Camera.transform.DOLookAt(cars.GetActiveCar().transform.position + new Vector3(0, 2, 0), 0.5f);
+            if (IsNegativeZ)
             {
-                MainCamera.transform.DOMove(cars.GetActiveCar().transform.position + cars.GetActiveCar().transform.forward * DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+                Camera.transform.DOMove(
+                    cars.GetActiveCar().transform.position + cars.GetActiveCar().transform.forward * DistanceToObject +
+                    new Vector3(0, 5, 0), 0.5f);
             }
-            else MainCamera.transform.DOMove(cars.GetActiveCar().transform.position + cars.GetActiveCar().transform.forward * -DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+            else
+                Camera.transform.DOMove(
+                    cars.GetActiveCar().transform.position + cars.GetActiveCar().transform.forward * -DistanceToObject +
+                    new Vector3(0, 5, 0), 0.5f);
         }
+
         if (Target)
         {
-            MainCamera.transform.DOLookAt(Target.transform.position + new Vector3(0, 2, 0), 0.5f);
-            if (IsNegativZ)
+            Camera.transform.DOLookAt(Target.transform.position + new Vector3(0, 2, 0), 0.5f);
+            if (IsNegativeZ)
             {
-                MainCamera.transform.DOMove(Target.transform.position + Target.transform.forward * DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+                Camera.transform.DOMove(
+                    Target.transform.position + Target.transform.forward * DistanceToObject + new Vector3(0, 5, 0),
+                    0.5f);
             }
-            else MainCamera.transform.DOMove(Target.transform.position + Target.transform.forward * -DistanceToObject + new Vector3(0, 5, 0), 0.5f);
+            else
+                Camera.transform.DOMove(
+                    Target.transform.position + Target.transform.forward * -DistanceToObject + new Vector3(0, 5, 0),
+                    0.5f);
         }
+    }
+
+    public void SetTargetToFollow(GameObject target)
+    {
+        this.Target = target;
+    }
+
+    public void SetNegativeZ(bool state)
+    {
+        IsNegativeZ = state;
     }
 }
