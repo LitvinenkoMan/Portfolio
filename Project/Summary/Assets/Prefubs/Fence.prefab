@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 8669830103489650856}
   - component: {fileID: 2810826632311318709}
   - component: {fileID: 2904491556776517984}
+  - component: {fileID: 5016246322072146684}
+  - component: {fileID: 7095584021621272003}
+  - component: {fileID: 5756530241505770131}
   m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
@@ -97,6 +100,54 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: 1a9042a9bc8a07245807bd7f39dab33b, type: 3}
+--- !u!54 &5016246322072146684
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691954658046348957}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!114 &7095584021621272003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691954658046348957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68585f5d37ec294d960130864bdc3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectRigidbody: {fileID: 5016246322072146684}
+  IsGravityOn: 1
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  GravityDirection: {x: 0, y: -1, z: 0}
+  force: 10
+--- !u!138 &5756530241505770131
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691954658046348957}
+  m_ConnectedBody: {fileID: 4067162199980744571}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 100000
+  m_BreakTorque: 100000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &2972753116514619240
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +160,9 @@ GameObject:
   - component: {fileID: 8995709156713362680}
   - component: {fileID: 4192642805355736425}
   - component: {fileID: 9217591452411348280}
+  - component: {fileID: 9178126731640058720}
+  - component: {fileID: 4654675640769898078}
+  - component: {fileID: 6708783195440706497}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -193,6 +247,54 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4493585093827132993, guid: 1a9042a9bc8a07245807bd7f39dab33b, type: 3}
+--- !u!54 &9178126731640058720
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2972753116514619240}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!114 &4654675640769898078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2972753116514619240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68585f5d37ec294d960130864bdc3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectRigidbody: {fileID: 9178126731640058720}
+  IsGravityOn: 1
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  GravityDirection: {x: 0, y: -1, z: 0}
+  force: 10
+--- !u!138 &6708783195440706497
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2972753116514619240}
+  m_ConnectedBody: {fileID: 4067162199980744571}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 100000
+  m_BreakTorque: 100000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &6492861625721126172
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +307,9 @@ GameObject:
   - component: {fileID: 1986486338160969064}
   - component: {fileID: 7968951483965905335}
   - component: {fileID: 5572372351640155705}
+  - component: {fileID: 4067162199980744571}
+  - component: {fileID: 4619081343255490967}
+  - component: {fileID: 6867884482946668873}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -289,6 +394,54 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 1a9042a9bc8a07245807bd7f39dab33b, type: 3}
+--- !u!54 &4067162199980744571
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492861625721126172}
+  serializedVersion: 2
+  m_Mass: 250
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!114 &4619081343255490967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492861625721126172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68585f5d37ec294d960130864bdc3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectRigidbody: {fileID: 4067162199980744571}
+  IsGravityOn: 1
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  GravityDirection: {x: 0, y: -1, z: 0}
+  force: 10
+--- !u!138 &6867884482946668873
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492861625721126172}
+  m_ConnectedBody: {fileID: 251511612956526689}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 100000
+  m_BreakTorque: 100000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &6893563035612648297
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3868797082000083473}
+  - component: {fileID: 251511612956526689}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Untagged
@@ -322,3 +476,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &251511612956526689
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893563035612648297}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
