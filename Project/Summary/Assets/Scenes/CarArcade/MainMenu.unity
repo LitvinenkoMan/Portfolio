@@ -41697,12 +41697,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c82f682182c294b9f7bdcd3dd56af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerName: {fileID: 0}
+  PlayerName: {fileID: 879584794}
   CreateRoomName: {fileID: 1473557902}
   CreateRoomPassword: {fileID: 914706406}
   ConnectRoomName: {fileID: 1996400720}
   ConnectRoomPassword: {fileID: 504865628}
-  _networkManager: {fileID: 0}
 --- !u!4 &732563980
 Transform:
   m_ObjectHideFlags: 0
@@ -49337,17 +49336,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879584791}
-  m_LocalRotation: {x: -0, y: -0.80088747, z: -0, w: 0.5988149}
-  m_LocalPosition: {x: 0, y: 0, z: -12.678}
-  m_LocalScale: {x: 0.008516761, y: 0.00851676, z: 0.008516761}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 11.659002, y: 11.659001, z: 11.659002}
   m_Children:
   - {fileID: 2010391787}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1082123238}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1011.2439, y: 449.58414}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879584793
@@ -62751,6 +62750,10 @@ PrefabInstance:
       propertyPath: generateOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2161289223233540709, guid: 770c0a08158da914c8c74853cc1ea54f, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2173850535782883848, guid: 770c0a08158da914c8c74853cc1ea54f, type: 3}
       propertyPath: generateOnStart
       value: 0
@@ -62878,7 +62881,7 @@ GameObject:
   - component: {fileID: 1082123236}
   - component: {fileID: 1082123235}
   m_Layer: 5
-  m_Name: CanvasServerPasswordInput (1)
+  m_Name: CanvasPlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62955,9 +62958,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0.80088747, z: -0, w: 0.5988149}
   m_LocalPosition: {x: 0, y: 0, z: -12.678}
   m_LocalScale: {x: 0.000730488, y: 0.000730488, z: 0.000730488}
-  m_Children: []
+  m_Children:
+  - {fileID: 879584792}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -106.43, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -78418,7 +78422,7 @@ Transform:
   m_Children:
   - {fileID: 698265326}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: -110.022, z: 0}
 --- !u!1 &1345746535
 GameObject:
@@ -85901,67 +85905,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &1490830863
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063556, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063557, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: m_Name
-      value: NetworkManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5113818737878063562, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
-      propertyPath: NetworkConfig.ConnectionApproval
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1f870d0d0d3236248b037923d0e953de, type: 3}
 --- !u!43 &1491018154
 Mesh:
   m_ObjectHideFlags: 0
@@ -121111,6 +121054,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422363079535466236, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059487299380559382, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643717560613179496, guid: cc5c6ab24c296914eab0a954c741f55a, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

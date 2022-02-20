@@ -16,25 +16,25 @@ public class Wheel
 
 public class CarMovement : MonoBehaviour, IMoveable
 {
-    [SerializeField] CarSound CarSound;
-    [SerializeField] CarSpeed CarSpeed;
+    [SerializeField] protected CarSound CarSound;
+    [SerializeField] protected CarSpeed CarSpeed;
 
-    [SerializeField] Rigidbody carRigidbody;
-    [SerializeField] float MaxSteerAngle = 30;
-    [SerializeField] float DegreessPerSecond = 10;
-    [SerializeField] float MotorForce = 6000;
-    [SerializeField] float Breakforce = 1;
+    [SerializeField] protected Rigidbody carRigidbody;
+    [SerializeField] protected float MaxSteerAngle = 30;
+    [SerializeField] protected float DegreessPerSecond = 10;
+    [SerializeField] protected float MotorForce = 6000;
+    [SerializeField] protected float Breakforce = 1;
 
-    [SerializeField] List<Wheel> Wheels = new List<Wheel>();
+    [SerializeField] protected List<Wheel> Wheels = new List<Wheel>();
 
-    [SerializeField] bool IsNegativZ = true;
+    [SerializeField] protected bool IsNegativZ = true;
 
-    float horizontalInput;
-    float verticalInput;
-    float steerAngle;
-    float timer;
-    int _direction = 1;
-    bool canMove;
+    protected float horizontalInput;
+    protected float verticalInput;
+    protected float steerAngle;
+    protected float timer;
+    protected int _direction = 1;
+    protected bool canMove;
 
     public void MoveBack()
     {
@@ -122,7 +122,7 @@ public class CarMovement : MonoBehaviour, IMoveable
         canMove = false;
     }
 
-    void HandBreak()
+    protected void HandBreak()
     {
         foreach (var wheel in Wheels)
         {
@@ -141,7 +141,7 @@ public class CarMovement : MonoBehaviour, IMoveable
         return Wheels;
     }
 
-    void UpdateWheelsModels()
+    protected void UpdateWheelsModels()
     {
         foreach (var wheel in Wheels)
         {
@@ -149,7 +149,7 @@ public class CarMovement : MonoBehaviour, IMoveable
         }
     }
 
-    void UpdateWheelModel(WheelCollider wheelCollider, Transform wheel)
+    protected void UpdateWheelModel(WheelCollider wheelCollider, Transform wheel)
     {
         Vector3 position = wheel.position;
         Quaternion quaternion = wheel.rotation;
@@ -160,7 +160,7 @@ public class CarMovement : MonoBehaviour, IMoveable
         wheel.rotation = quaternion;
     }
 
-    void ReRotate()
+    public void ReRotate()
     {
         bool isWheelsUp = false;
 

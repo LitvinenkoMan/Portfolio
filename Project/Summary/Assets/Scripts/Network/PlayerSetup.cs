@@ -1,22 +1,19 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Netcode;
+using Photon.Pun;
 using UnityEngine;
 
-public class PlayerSetup : NetworkBehaviour
+public class PlayerSetup : MonoBehaviour
 {
     [SerializeField] private List<Behaviour> componentsToDisable;
 
-    public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
-    //private GameObject ObjectCamera;
+    [SerializeField] private PhotonView _pView;
     private Camera camera;
 
     void Start()
     {
         DisableComponents();
-        if (IsLocalPlayer)
+        if (_pView.IsMine)
         {
             GameObject ObjectCamera = Instantiate(new GameObject(), transform.position, transform.rotation);
             ObjectCamera.name = $"Camera {gameObject.name}";
@@ -28,40 +25,13 @@ public class PlayerSetup : NetworkBehaviour
 
     public void DisableComponents()
     {
-        if (IsServer)
-        {
-            
-        }
-
-        if (!IsLocalPlayer)
+        if (!_pView.IsMine)
         {
             foreach (var item in componentsToDisable)
             {
                 item.enabled = false;
             }
             Debug.Log("Components disabled");
-        }
-    }
-
-    private void Update()
-    {
-        if (IsServer)
-        {
-           
-        }
-
-        if (IsClient && IsOwner)
-        {
-            SubmitPositionRequestClientRpc();
-        }
-    }
-
-    [ClientRpc]
-    void SubmitPositionRequestClientRpc(ServerRpcParams rpcParams = default)
-    {
-        if (gameObject.transform.position != Position.Value)
-        {
-            Position.Value = gameObject.transform.position;
         }
     }
 }
