@@ -1,25 +1,38 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 
 public class PlayerSetup : NetworkBehaviour
 {
     [SerializeField] private List<Behaviour> componentsToDisable;
-    //public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
-    private GameObject ObjectCamera;
+
+    public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+    //private GameObject ObjectCamera;
     private Camera camera;
 
     void Start()
     {
         DisableComponents();
-        //Camera.main.GetComponent<CameraFolow>().SetTargetToFollow(gameObject);
-        
+        if (IsLocalPlayer)
+        {
+            GameObject ObjectCamera = Instantiate(new GameObject(), transform.position, transform.rotation);
+            ObjectCamera.name = $"Camera {gameObject.name}";
+            ObjectCamera.AddComponent<Camera>();
+            ObjectCamera.AddComponent<CameraFollow>().SetTargetToFollow(gameObject);
+            ObjectCamera.GetComponent<CameraFollow>().SetParametres(10, 50, false, false);
+        }
     }
 
     public void DisableComponents()
     {
+        if (IsServer)
+        {
+            
+        }
+
         if (!IsLocalPlayer)
         {
             foreach (var item in componentsToDisable)
@@ -27,21 +40,28 @@ public class PlayerSetup : NetworkBehaviour
                 item.enabled = false;
             }
             Debug.Log("Components disabled");
-            ObjectCamera = new GameObject();
-            ObjectCamera.AddComponent<Camera>();
-            ObjectCamera.AddComponent<CameraFolow>().SetTargetToFollow(gameObject);
-            ObjectCamera.GetComponent<CameraFolow>().SetNegativeZ(false);
         }
     }
 
     private void Update()
     {
-        //transform.position = Position.Value;
+        if (IsServer)
+        {
+           
+        }
+
+        if (IsClient && IsOwner)
+        {
+            SubmitPositionRequestClientRpc();
+        }
     }
-    
-    [ServerRpc]
-    void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
+
+    [ClientRpc]
+    void SubmitPositionRequestClientRpc(ServerRpcParams rpcParams = default)
     {
-        //Position.Value = transform.position + transform.forward * NetworkManager.LocalTime.Tick;
+        if (gameObject.transform.position != Position.Value)
+        {
+            Position.Value = gameObject.transform.position;
+        }
     }
 }

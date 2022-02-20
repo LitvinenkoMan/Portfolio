@@ -9,6 +9,12 @@ public class CameraRayCaster : MonoBehaviour
     private RaycastHit _raycastHit;
     private MaterialChanger materialChanger = null;
 
+    delegate void MouseClick();
+    event MouseClick OnMouseClick;
+
+    delegate void MouseDrag();
+    event MouseDrag OnMouseDrag;
+
     void Start()
     {
         if (!cam)
@@ -22,16 +28,18 @@ public class CameraRayCaster : MonoBehaviour
         _ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(_ray, out _raycastHit))
         {
-
+            
+            OnMouseDrag?.Invoke();
             if (_raycastHit.collider.gameObject.GetComponent<MaterialChanger>())
             {
-                materialChanger = _raycastHit.collider.gameObject.GetComponent<MaterialChanger>();
+                //materialChanger = _raycastHit.collider.gameObject.GetComponent<MaterialChanger>();
                 _raycastHit.collider.gameObject.GetComponent<MaterialChanger>().ChangeMaterial(0);
             }
             if (_raycastHit.collider.gameObject.GetComponent<MaterialChanger>() && Input.GetMouseButton(0))
             {
-                materialChanger = _raycastHit.collider.gameObject.GetComponent<MaterialChanger>();
-                _raycastHit.collider.gameObject.GetComponent<MaterialChanger>().ChangeMaterial(1);
+                OnMouseClick?.Invoke();
+                //materialChanger = _raycastHit.collider.gameObject.GetComponent<MaterialChanger>();
+                //_raycastHit.collider.gameObject.GetComponent<MaterialChanger>().ChangeMaterial(1);
                 if (_raycastHit.collider.gameObject.GetComponent<CameraMove>())
                 {
                     _raycastHit.collider.gameObject.GetComponent<CameraMove>().ChangePosition();
@@ -39,10 +47,10 @@ public class CameraRayCaster : MonoBehaviour
                 }
             }
 
-            if (!_raycastHit.collider.gameObject.GetComponent<MaterialChanger>() && materialChanger)
+            /*if (!_raycastHit.collider.gameObject.GetComponent<MaterialChanger>() && materialChanger)
             {
                 materialChanger.SetStartMaterial();
-            }
+            }*/
         }
     }
 }

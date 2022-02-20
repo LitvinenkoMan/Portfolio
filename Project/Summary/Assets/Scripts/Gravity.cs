@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    [SerializeField]
-    Rigidbody ObjectRigidbody;
-    [SerializeField]
-    bool IsGravityOn = false;
+    [SerializeField] Rigidbody ObjectRigidbody;
+    [SerializeField] bool IsGravityOn = false;
 
-    [SerializeField]
-    Vector3 CenterOfMass;
-    [SerializeField]
-    Vector3 GravityDirection = new Vector3(0, -1, 0);
-    [SerializeField, Min(0)]
-    float force = 1f;
+    [SerializeField] Vector3 CenterOfMass;
+    [SerializeField] Vector3 GravityDirection = new Vector3(0, -1, 0);
+    [SerializeField, Min(0)] float force = 1f;
 
     private void Start()
     {
@@ -25,6 +20,7 @@ public class Gravity : MonoBehaviour
             {
                 ObjectRigidbody = gameObject.GetComponentInParent<Rigidbody>();
             }
+
             ObjectRigidbody.centerOfMass = CenterOfMass;
         }
         else
@@ -37,6 +33,7 @@ public class Gravity : MonoBehaviour
     {
         IsGravityOn = true;
     }
+
     public void DeactivateGravity()
     {
         IsGravityOn = false;
@@ -54,13 +51,26 @@ public class Gravity : MonoBehaviour
             CalculateGravity();
         }
     }
-
+    
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(ObjectRigidbody.worldCenterOfMass, 0.1f);
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(ObjectRigidbody.worldCenterOfMass, ObjectRigidbody.worldCenterOfMass + GravityDirection);
+        if (UnityEditor.Selection.activeObject == gameObject)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(ObjectRigidbody.worldCenterOfMass, 0.1f);
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(ObjectRigidbody.worldCenterOfMass, ObjectRigidbody.worldCenterOfMass + GravityDirection);
+        }
     }
+#endif
 
+    [ContextMenu("Define Rigidbody component")]
+    public void DefineRigidbody()
+    {
+        if (gameObject.GetComponent<Rigidbody>())
+        {
+            ObjectRigidbody = gameObject.GetComponent<Rigidbody>();
+        }
+    }
 }

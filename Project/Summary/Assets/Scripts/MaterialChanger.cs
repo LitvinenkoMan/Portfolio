@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialChanger : MonoBehaviour, ISubscriber
+public class MaterialChanger : MonoBehaviour
 {
     [SerializeField]private Material StartMaterial;
     [SerializeField]private Material[] ChangedMaterials;
@@ -31,9 +31,19 @@ public class MaterialChanger : MonoBehaviour, ISubscriber
     {
         mesh.sharedMaterial = material;
     }
-    //TODO: переделать систему событий
-    public void DoAction()
+
+    private void OnMouseOver()
     {
-       
+        ChangeMaterial(0);
+    }
+
+    private void OnMouseDown()
+    {
+        ChangeMaterial(1);
+    }
+
+    private void OnMouseExit()
+    {
+        SetStartMaterial();
     }
 }

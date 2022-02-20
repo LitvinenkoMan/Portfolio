@@ -15,7 +15,148 @@ ModelImporter:
   - first:
       74: -6975612973740326475
     second: left_front_light.001|left_front_light.001Action.001
-  externalObjects: {}
+  - first:
+      74: -5380021767335742133
+    second: right_frint_light|front_lights_closed
+  - first:
+      74: 9029497541767705007
+    second: right_frint_light|left_front_light.001Action.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Car_front_window
+    second: {fileID: 2100000, guid: 8f317e1a3a8cf404a9636e7a6d04257f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frame_and_bottom_parts
+    second: {fileID: 2100000, guid: e4fdbfa84875da6468c7916844bd8b85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: ce3ad39cc6d4c0c46a59842bcfa1aa42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 5bed7e3865fd34c45912861f4c45d115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 580e0a75940b6d84ca1377a9d39d57f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpeedOmeter_Red
+    second: {fileID: 2100000, guid: 89ac067d23fee854f8f3112d365bca74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpeedOmeter_white
+    second: {fileID: 2100000, guid: edc838abea1822d47adec6ade96adc64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steering_wheel_metallic_parts
+    second: {fileID: 2100000, guid: a92c6011c9ec8554894b4121787002db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steering_wheel_metallic_parts.001
+    second: {fileID: 2100000, guid: f555ab88b1093f44bb37d499dcc7b56a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car_windows
+    second: {fileID: 2100000, guid: dcc6ff3a30622464b91957ae2e856803, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car_windows.002
+    second: {fileID: 2100000, guid: 528eba23a4217e744bef44c86f3f3513, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine_black
+    second: {fileID: 2100000, guid: 987174466588e1240ac3494e65ec4cb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine_gray
+    second: {fileID: 2100000, guid: 3e1c202cba5c9f844a0c97894d8cb43e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine_red
+    second: {fileID: 2100000, guid: 38dcfe787f9a5da41a81a8387575a911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights
+    second: {fileID: 2100000, guid: 0c886f3955dbc2d469a5aa27765f9c42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: main_color
+    second: {fileID: 2100000, guid: db0884e2e6441bc40b1c213372880866, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: main_color.002
+    second: {fileID: 2100000, guid: d1487e4b6543abc41ba3515b405c2445, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: non_reflectable_black
+    second: {fileID: 2100000, guid: 18b5e134f73e46041898dce8ff36610a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orange_lights
+    second: {fileID: 2100000, guid: 6c7ebc701295d7645959f8971b2f1b4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rear_lights_glass.001
+    second: {fileID: 2100000, guid: 54604f2e9bbeba540b53d1a60c1c9e3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rear_lights_non_glowing_part.001
+    second: {fileID: 2100000, guid: 6a13e4258109cda45b6a39519c8a50b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rear_lights_w_emission.001
+    second: {fileID: 2100000, guid: 0421a3b9fb8f9044a9614333963d8a7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: secondary_color
+    second: {fileID: 2100000, guid: 4f71fe31c8ceb18458e78b4907fc9005, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: secondary_color.002
+    second: {fileID: 2100000, guid: 27a8a4104cc1a9c4687d5435933d3d8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.131"
+    second: {fileID: 2100000, guid: 879b1da7b7b43864eb820e41d571708f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.133"
+    second: {fileID: 2100000, guid: 2cbf2b32dd200014ba9d68905ce1af74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.134"
+    second: {fileID: 2100000, guid: 5e2fac0f401f7b04bb5f040196171703, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -43,7 +184,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ public class VHACD : MonoBehaviour
             m_maxConvexHulls = 1024;
             m_projectHullVertices = true; // This will project the output convex hull vertices onto the original source mesh to increase the floating point accuracy of the results
         }
+
 
         [Tooltip("maximum concavity")]
         [Range(0, 1)]
@@ -126,6 +128,17 @@ public class VHACD : MonoBehaviour
 
     public Parameters m_parameters;
 
+    [Tooltip("Generate colliders on start?")]
+    [SerializeField]public bool generateOnStart = false;
+    
+    private void Start()
+    {
+        if (generateOnStart)
+        {
+            GenerateConvexMeshes();
+        }
+    }
+
     public VHACD() { m_parameters.Init(); }
 
     [ContextMenu("Generate Convex Meshes")]
@@ -137,7 +150,7 @@ public class VHACD : MonoBehaviour
         var colliders = new GameObject("Colliders");
         colliders.AddComponent<MeshFilter>();
         colliders.GetComponent<MeshFilter>().sharedMesh = gameObject.GetComponent<MeshFilter>().sharedMesh;
-        //colliders.AddComponent<MeshRenderer>().enabled = false;
+        colliders.AddComponent<MeshRenderer>().enabled = false;
         colliders.transform.SetParent(gameObject.transform);
         colliders.transform.SetPositionAndRotation(gameObject.transform.position, gameObject.transform.rotation);
         colliders.transform.localScale = Vector3.one;
