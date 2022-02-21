@@ -29,7 +29,6 @@ public class WheelsSmokeEffect : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("!!!!!");
         if (collision.gameObject.layer == 3)
         {
             smokeEffect.Play();

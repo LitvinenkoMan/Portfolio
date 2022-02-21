@@ -7,28 +7,26 @@ using Zenject;
 
 public class DayLightChanger : MonoBehaviour
 {
-    [SerializeField]
-    Light Light;
+    [SerializeField] Light Light;
 
-    [SerializeField]
-    Color startColor;
-    [Inject]
-    CarManager cars;
+    [SerializeField] Color startColor;
+    [Inject] CarManager cars;
 
 
     private void Start()
     {
         startColor = Color.white;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.transform.IsChildOf(cars.GetActiveCar().transform))
-            Light.DOColor(Color.black, 2f);
+            Light.gameObject.transform.DORotate(new Vector3(-105, 0, 0), 2);
     }
 
     private void OnTriggerExit(Collider other)
-    {
+    {        
         if (other.gameObject.transform.IsChildOf(cars.GetActiveCar().transform))
-            Light.DOColor(startColor, 2f);
+            Light.gameObject.transform.DORotate(new Vector3(75, -90, -90), 2);
     }
 }
