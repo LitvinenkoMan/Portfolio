@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
+        
     }
 
     public void JoinRoom()

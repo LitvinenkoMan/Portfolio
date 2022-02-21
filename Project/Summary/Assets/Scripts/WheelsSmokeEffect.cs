@@ -58,5 +58,6 @@ public class WheelsSmokeEffect : MonoBehaviour
                 smokeEffect.Emit(1);
             }
         }
+        else smokeEffect.Stop();
     }
 }
