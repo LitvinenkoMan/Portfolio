@@ -145,7 +145,6 @@ public class VHACD : MonoBehaviour
     public unsafe void GenerateConvexMeshes()
     {
         var mesh = GetComponent<MeshFilter>().sharedMesh;
-        var vhacd = CreateVHACD();
         var parameters = m_parameters;
         var colliders = new GameObject("Colliders");
         colliders.AddComponent<MeshFilter>();
@@ -154,6 +153,7 @@ public class VHACD : MonoBehaviour
         colliders.transform.SetParent(gameObject.transform);
         colliders.transform.SetPositionAndRotation(gameObject.transform.position, gameObject.transform.rotation);
         colliders.transform.localScale = Vector3.one;
+        var vhacd = CreateVHACD();
 
 
         var verts = mesh.vertices;

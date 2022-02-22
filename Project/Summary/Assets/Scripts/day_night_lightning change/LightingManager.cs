@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private LightingPreset Preset;
     //Variables
     [SerializeField, Range(0, 24)] private float TimeOfDay;
+    //[SerializeField, UnityEngine.Min(1)] private float OneDayInSeconds; 
 
 
     private void Update()

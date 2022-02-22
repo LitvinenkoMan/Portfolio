@@ -137,7 +137,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -147,7 +147,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!138 &108403224714232221
 FixedJoint:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -291,7 +291,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!54 &1454520670516485002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1231,7 +1231,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -1241,7 +1241,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!114 &3082924050995801789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,7 +1412,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -1422,7 +1422,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &1663060939383497413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,7 +2049,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -2059,7 +2059,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &2060574473163153963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,7 +2823,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 128
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -2833,7 +2833,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &3120242013782499114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,7 +3448,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 128
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -3458,7 +3458,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &4122548923004800788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,7 +3827,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -3837,7 +3837,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &5528662273249439516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,7 +4081,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -4091,7 +4091,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &5745512570801130803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4135,8 +4135,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 20
+  m_Intensity: 10
+  m_Range: 50
   m_SpotAngle: 35
   m_InnerSpotAngle: 3
   m_CookieSize: 10
@@ -4336,7 +4336,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -4346,7 +4346,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &5936271284428166422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4497,7 +4497,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -4507,7 +4507,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &6175547845584320816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,7 +4805,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -4815,7 +4815,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!1 &6742344707913239236
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,7 +5127,7 @@ MonoBehaviour:
     m_alpha: 0.05
     m_beta: 0.05
     m_minVolumePerCH: 0.0001
-    m_resolution: 100000
+    m_resolution: 10000
     m_maxNumVerticesPerCH: 64
     m_planeDownsampling: 4
     m_convexhullDownsampling: 4
@@ -5137,7 +5137,7 @@ MonoBehaviour:
     m_oclAcceleration: 0
     m_maxConvexHulls: 1024
     m_projectHullVertices: 1
-  generateOnStart: 0
+  generateOnStart: 1
 --- !u!138 &6959044194682490930
 FixedJoint:
   m_ObjectHideFlags: 0
@@ -5858,8 +5858,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 20
+  m_Intensity: 10
+  m_Range: 50
   m_SpotAngle: 35
   m_InnerSpotAngle: 3
   m_CookieSize: 10
