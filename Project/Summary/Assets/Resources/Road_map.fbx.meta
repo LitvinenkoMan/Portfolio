@@ -3,7 +3,17 @@ guid: d851c7d8419e2e04cb9236dc0260f828
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road_mat
+    second: {fileID: 2100000, guid: 3af0a6b1837a92a45be35fa920ed91a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shtrih_mat
+    second: {fileID: 2100000, guid: bd3cf3565352d1d4e96078dec08b2c24, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

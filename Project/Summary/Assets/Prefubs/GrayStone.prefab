@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3770270852164063269, guid: b9e5860194abc7e4a8858efa5861b7ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.218964
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3770270852164063269, guid: b9e5860194abc7e4a8858efa5861b7ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -187.42783
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3770270852164063269, guid: b9e5860194abc7e4a8858efa5861b7ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -130.41151
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3770270852164063269, guid: b9e5860194abc7e4a8858efa5861b7ca, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4546772990155541151, guid: b9e5860194abc7e4a8858efa5861b7ca, type: 3}
       propertyPath: m_Name
-      value: Stone (5)
+      value: GrayStone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9e5860194abc7e4a8858efa5861b7ca, type: 3}
