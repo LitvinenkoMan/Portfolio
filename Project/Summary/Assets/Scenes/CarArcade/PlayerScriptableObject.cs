@@ -6,4 +6,6 @@ public class PlayerScriptableObject : ScriptableObject
 {
     public string PrefubName;
     public string PlayerName;
+    public string RoomName;
+    public bool IsRoomCreator;
 }

@@ -8,6 +8,15 @@ public class MaterialChanger : MonoBehaviour
     [SerializeField]private Material StartMaterial;
     [SerializeField]private Material[] ChangedMaterials;
     private MeshRenderer mesh;
+
+    private void OnEnable()
+    {
+        if (mesh)
+        {
+            mesh.sharedMaterial = StartMaterial;
+        }
+    }
+
     void Start()
     {
         mesh = gameObject.GetComponent<MeshRenderer>();
@@ -46,4 +55,6 @@ public class MaterialChanger : MonoBehaviour
     {
         SetStartMaterial();
     }
+    
+    
 }
