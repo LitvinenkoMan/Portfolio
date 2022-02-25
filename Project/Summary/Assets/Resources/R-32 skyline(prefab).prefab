@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 108403224714232218}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -405,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1454520670516485002}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -755,6 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 560395599680388853}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: -1.5, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -1394,6 +1397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3250864883716466284}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -1581,6 +1585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1366939549016991039}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -1931,6 +1936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1724106256548872207}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -2354,6 +2360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 2032838532015709551}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -2580,6 +2587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 2060574473163153958}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -2728,6 +2736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3517554157509151844}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -2864,6 +2873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 2637386683566495007}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -3012,6 +3022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 2946531226937299346}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -3069,6 +3080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3110331559554344177}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -3381,6 +3393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3120242013782499113}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -3566,6 +3579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3197020825017414495}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -3861,6 +3875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3984368717545672734}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -4235,6 +4250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 4137031965284955816}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -4370,6 +4386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 5256939370567451919}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -4675,6 +4692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 5685943386777360896}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -4981,6 +4999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 5773150473623619107}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -5193,6 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 5936271284428166421}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -5417,6 +5437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 6445432301542323045}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -5552,6 +5573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 6473212482234629062}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -5925,6 +5947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 6959044194682490931}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -6566,6 +6589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3099705853048552074}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -6713,6 +6737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 4416322171737801278}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81
@@ -7055,6 +7080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 8419550571386155823}
   IsGravityOn: 1
+  SleepUntilTouch: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 9.81

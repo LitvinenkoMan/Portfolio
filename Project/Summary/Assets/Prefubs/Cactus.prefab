@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 772000039000875836}
   IsGravityOn: 1
+  SleepOnStart: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -296,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1073050981785554485}
   IsGravityOn: 1
+  SleepOnStart: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -462,6 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1803645773885243663}
   IsGravityOn: 1
+  SleepOnStart: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -511,7 +514,6 @@ GameObject:
   - component: {fileID: 5735711573450727422}
   - component: {fileID: 2221373486185195296}
   - component: {fileID: 2221373486185195303}
-  - component: {fileID: 5010740271898118085}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -612,23 +614,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 343c14f0302498543b3c719bbdb5144e, type: 3}
---- !u!114 &5010740271898118085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2221373486185195297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a68585f5d37ec294d960130864bdc3a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectRigidbody: {fileID: 2221373486185195296}
-  IsGravityOn: 1
-  CenterOfMass: {x: 0, y: 0, z: 0}
-  GravityDirection: {x: 0, y: -1, z: 0}
-  force: 1
 --- !u!1 &2354156795738199152
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 2871464951347088729}
   IsGravityOn: 1
+  SleepOnStart: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -963,6 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 6113042093167922741}
   IsGravityOn: 1
+  SleepOnStart: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -1129,6 +1116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 6506999016651048976}
   IsGravityOn: 1
+  SleepOnStart: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -1295,6 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 8506130934723674117}
   IsGravityOn: 1
+  SleepOnStart: 1
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10

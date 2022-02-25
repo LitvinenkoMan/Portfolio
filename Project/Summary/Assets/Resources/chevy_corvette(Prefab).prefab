@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 14782075128255025}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -251,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 967421620708982955}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -641,6 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1468698595980233641}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -1085,6 +1088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3234136014174699728}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -1564,6 +1568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 4285537019172956466}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -2212,6 +2217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 4956460822096399991}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -2422,6 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 5031431906593200827}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -2685,6 +2692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 5590996827424782498}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: -1, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -3149,6 +3157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 7292076820475100661}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10

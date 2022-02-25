@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 7429901038039648768}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: -0.1, y: -1, z: 0.1}
   force: 3

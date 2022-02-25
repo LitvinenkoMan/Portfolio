@@ -312,6 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 554947163209626762}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -510,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1129032690867629194}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -712,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 1165074571976580468}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -1262,6 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 3205844021129349576}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -1771,6 +1775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 6483056509858635869}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -2055,6 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 8168946202701866298}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: -1.5, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10
@@ -2128,6 +2134,18 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2609885114715866389}
   - {fileID: 3046058608385427622}
+  - {fileID: 62573280561368993}
+  - {fileID: 8866757074225708398}
+  - {fileID: 935842264444934633}
+  - {fileID: 4088459272159305981}
+  - {fileID: 7988528453895465490}
+  - {fileID: 5465699802016145613}
+  - {fileID: 1097231269514413362}
+  - {fileID: 5406322333719071115}
+  - {fileID: 3374512576480460992}
+  - {fileID: 526089099958837882}
+  - {fileID: 7621577353343607349}
+  - {fileID: 2378398383387312493}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2478,6 +2496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectRigidbody: {fileID: 9018693304771328894}
   IsGravityOn: 1
+  SleepUntilTouch: 0
   CenterOfMass: {x: 0, y: 0, z: 0}
   GravityDirection: {x: 0, y: -1, z: 0}
   force: 10

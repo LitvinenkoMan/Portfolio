@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-public class PlayersSpawner : MonoBehaviour
+using Photon.Realtime;
+
+public class PlayersSpawner : MonoBehaviourPunCallbacks
 {
-    [SerializeField] public GameObject PlayerPrefab;
     [SerializeField] private GameObject[] SpawnPlaces;
     [SerializeField] private PlayerScriptableObject _playerScriptableObject;
     void Start()
@@ -12,10 +13,16 @@ public class PlayersSpawner : MonoBehaviour
         int randomSpawnPoint = Random.Range(0, SpawnPlaces.Length);
         PhotonNetwork.Instantiate(_playerScriptableObject.PrefubName, SpawnPlaces[randomSpawnPoint].transform.position, SpawnPlaces[randomSpawnPoint].transform.rotation);
     }
+    
+    
 
-    // Update is called once per frame
-    void Update()
+    public void GetPlayers()
     {
         
+        Player[] players =  PhotonNetwork.PlayerList;
+        for (int i = 0; i < players.Length; i++)
+        {
+            //players[i].m;
+        }
     }
 }

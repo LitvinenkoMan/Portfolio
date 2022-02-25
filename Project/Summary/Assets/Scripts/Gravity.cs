@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Gravity : MonoBehaviour
 {
     [SerializeField] Rigidbody ObjectRigidbody;
     [SerializeField] bool IsGravityOn = false;
+    [SerializeField] bool SleepUntilTouch = true;
 
     [SerializeField] Vector3 CenterOfMass;
     [SerializeField] Vector3 GravityDirection = new Vector3(0, -1, 0);
@@ -27,6 +29,11 @@ public class Gravity : MonoBehaviour
         {
             ObjectRigidbody.centerOfMass = CenterOfMass;
         }
+
+        if (SleepUntilTouch && ObjectRigidbody)
+        {
+            ObjectRigidbody.Sleep();
+        }
     }
 
     public void ActivateGravity()
@@ -41,11 +48,18 @@ public class Gravity : MonoBehaviour
 
     void CalculateGravity()
     {
-        ObjectRigidbody.AddForce(GravityDirection * force * ObjectRigidbody.mass);
+        if (!ObjectRigidbody.IsSleeping())
+        {
+            ObjectRigidbody.AddForce(GravityDirection * force * ObjectRigidbody.mass);
+        }
     }
 
     private void FixedUpdate()
     {
+        if (SleepUntilTouch)
+        {
+            ObjectRigidbody.Sleep();
+        }
         if (IsGravityOn)
         {
             CalculateGravity();
@@ -72,5 +86,10 @@ public class Gravity : MonoBehaviour
         {
             ObjectRigidbody = gameObject.GetComponent<Rigidbody>();
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        SleepUntilTouch = false;
     }
 }

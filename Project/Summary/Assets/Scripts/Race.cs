@@ -2,16 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Race : MonoBehaviour
+public class Race : MonoBehaviour, IRace
 {
-    // Start is called before the first frame update
+    [SerializeField] private PlayersSpawner _playersSpawner;
+    [SerializeField] private GameObject[] PositionsToStart;
+    [SerializeField] private IRacer[] racers;
+    private bool RaceStarted = false;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
+    {
+        
+    }
+
+    public void StartRace()
+    {
+        if (!RaceStarted)
+        {
+            _playersSpawner
+        }
+    }
+
+    public void EndRace()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetPlayersOnStartPosition()
     {
         
     }

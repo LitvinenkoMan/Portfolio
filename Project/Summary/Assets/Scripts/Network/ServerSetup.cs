@@ -32,6 +32,7 @@ public class ServerSetup : MonoBehaviourPunCallbacks
     
     public override void OnJoinedRoom()
     {
+        PhotonNetwork.LocalPlayer.NickName = _playerScriptableObject.PlayerName;
         PhotonNetwork.LoadLevel("CarArcade");
     }
 }
