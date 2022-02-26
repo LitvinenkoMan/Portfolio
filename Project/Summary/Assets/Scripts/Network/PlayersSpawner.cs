@@ -13,7 +13,11 @@ public class PlayersSpawner : MonoBehaviourPunCallbacks
     {
         _players = new List<GameObject>();
         int randomSpawnPoint = Random.Range(0, SpawnPlaces.Length);
-        _players.Add(PhotonNetwork.Instantiate(_playerScriptableObject.PrefubName, SpawnPlaces[randomSpawnPoint].transform.position, SpawnPlaces[randomSpawnPoint].transform.rotation));
+        var newPlayer = PhotonNetwork.Instantiate(_playerScriptableObject.PrefubName, SpawnPlaces[randomSpawnPoint].transform.position,
+            SpawnPlaces[randomSpawnPoint].transform.rotation);
+        
+        _players.Add(newPlayer);
+        Debug.LogWarning("Player added");
     }
 
     public List<GameObject> GetPlayers()

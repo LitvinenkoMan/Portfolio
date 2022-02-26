@@ -24,11 +24,7 @@ public class Race : MonoBehaviour, IRace
     {
         if (RaceStarted)
         {
-            if (_timer > 0)
-            {
-                _timer -= Time.deltaTime;
-                OnTimerOut?.Invoke();
-            }
+            CountDown();
         }
     }
 
@@ -37,6 +33,7 @@ public class Race : MonoBehaviour, IRace
         if (!RaceStarted)
         {
             OnRaceStarted?.Invoke();
+            SetPlayersOnStartPosition();
             RaceStarted = true;
         }
     }
@@ -53,6 +50,15 @@ public class Race : MonoBehaviour, IRace
         {
             players[i].transform.position = PositionsToStart[i].transform.position;
             players[i].transform.rotation = PositionsToStart[i].transform.rotation;
+        }
+    }
+
+    public void CountDown()
+    {
+        if (_timer > 0)
+        {
+            _timer -= Time.deltaTime;
+            OnTimerOut?.Invoke();
         }
     }
 }

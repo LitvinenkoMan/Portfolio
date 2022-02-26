@@ -9426,6 +9426,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 187.662
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b0eb4933af4264a4a851f7ce0285830d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f291bd4d3bd23249bba5a0ed53edc8e, type: 2}
     - target: {fileID: 919132149155446097, guid: b0eb4933af4264a4a851f7ce0285830d, type: 3}
       propertyPath: m_Name
       value: Back_3d_text (2)
@@ -25977,7 +25981,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -67915,7 +67919,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
