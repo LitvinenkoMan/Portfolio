@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Race : MonoBehaviour, IRace
 {
@@ -8,23 +10,34 @@ public class Race : MonoBehaviour, IRace
     [SerializeField] private GameObject[] PositionsToStart;
     [SerializeField] private IRacer[] racers;
     private bool RaceStarted = false;
+    private UnityEvent OnTimerOut;
+    private UnityEvent OnRaceStarted;
+
+    private float _timer;
 
     void Start()
     {
-        
     }
 
 
     void Update()
     {
-        
+        if (RaceStarted)
+        {
+            if (_timer > 0)
+            {
+                _timer -= Time.deltaTime;
+                OnTimerOut?.Invoke();
+            }
+        }
     }
 
     public void StartRace()
     {
         if (!RaceStarted)
         {
-            _playersSpawner
+            OnRaceStarted?.Invoke();
+            RaceStarted = true;
         }
     }
 
@@ -35,6 +48,11 @@ public class Race : MonoBehaviour, IRace
 
     public void SetPlayersOnStartPosition()
     {
-        
+        var players = _playersSpawner.GetPlayers();
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].transform.position = PositionsToStart[i].transform.position;
+            players[i].transform.rotation = PositionsToStart[i].transform.rotation;
+        }
     }
 }

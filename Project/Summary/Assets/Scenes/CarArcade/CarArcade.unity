@@ -84540,7 +84540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f15e23ab3a35944a0de7b04e9e97f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playersSpawner: {fileID: 0}
+  _playersSpawner: {fileID: 210071554}
   PositionsToStart:
   - {fileID: 1810958292}
   - {fileID: 1843941719}
