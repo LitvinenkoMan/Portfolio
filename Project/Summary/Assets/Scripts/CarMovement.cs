@@ -237,6 +237,7 @@ public class CarMovement : MonoBehaviour, IMoveable
 
         if (canMove && Input.GetKeyDown(KeyCode.I))
         {
+            //TODO: переделать через вызов юнити событий
             CarSound.MuffleEngine();
             StopMovement();
         }

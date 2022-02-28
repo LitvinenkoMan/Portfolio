@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class PlayersSpawner : MonoBehaviourPunCallbacks
 {
@@ -19,9 +20,14 @@ public class PlayersSpawner : MonoBehaviourPunCallbacks
         _players.Add(newPlayer);
         Debug.LogWarning("Player added");
     }
-
+    
     public List<GameObject> GetPlayers()
     {
         return _players;
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

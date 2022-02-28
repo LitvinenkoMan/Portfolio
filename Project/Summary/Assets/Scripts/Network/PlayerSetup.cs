@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEditor;
 using UnityEngine;
 
-public class PlayerSetup : MonoBehaviour
+public class PlayerSetup : MonoBehaviourPun
 {
     [SerializeField] private List<Behaviour> componentsToDisable;
 
     [SerializeField] private PhotonView _pView;
+    
     private Camera camera;
 
     void Start()
@@ -34,5 +36,12 @@ public class PlayerSetup : MonoBehaviour
             }
             Debug.Log("Components disabled");
         }
+    }
+    
+    [PunRPC]
+    public void SetPositionAndRotation(Vector3 position, Vector3 rotation)
+    {
+        gameObject.transform.position = position;
+        gameObject.transform.Rotate(rotation);
     }
 }

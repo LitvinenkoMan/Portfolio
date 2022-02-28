@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
 public class CarSpeed : MonoBehaviour
 {
-    TextMesh TextMesh;
+    [SerializeField] TextMeshProUGUI TextMesh;
 
     Vector3 priviosPosition;
     Vector3 currentPosition;
 
-    [SerializeField, Min(0)]
-    float MaxSpeed;
-    [SerializeField, Min(0.01f)]
-    float updateFrequency = 1f;
+    [SerializeField, Min(0)] float MaxSpeed;
+    [SerializeField, Min(0.01f)] float updateFrequency = 1f;
     float currentSpeed;
 
     public IEnumerator SpeedCalculater()
@@ -29,9 +28,10 @@ public class CarSpeed : MonoBehaviour
             currentSpeed = CalculateCarSpeed(priviosPosition, currentPosition);
             if (TextMesh)
             {
-                TextMesh.text = currentSpeed.ToString();
+                TextMesh.text = Mathf.Round(currentSpeed).ToString();
             }
         }
+
         yield return null;
     }
 
@@ -41,6 +41,7 @@ public class CarSpeed : MonoBehaviour
         currentPosition = transform.position;
         StartCoroutine(SpeedCalculater());
     }
+
     private void OnDisable()
     {
         StopCoroutine(SpeedCalculater());
@@ -66,6 +67,7 @@ public class CarSpeed : MonoBehaviour
     {
         return currentSpeed;
     }
+
     public float GetMaxSpeed()
     {
         return MaxSpeed;
