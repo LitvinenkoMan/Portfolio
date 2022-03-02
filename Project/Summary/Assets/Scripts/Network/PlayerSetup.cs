@@ -8,6 +8,8 @@ using UnityEngine;
 public class PlayerSetup : MonoBehaviourPun
 {
     [SerializeField] private List<Behaviour> componentsToDisable;
+    
+    [SerializeField] private List<GameObject> gameObjectsToUnParent;
 
     [SerializeField] private PhotonView _pView;
     
@@ -22,8 +24,10 @@ public class PlayerSetup : MonoBehaviourPun
             ObjectCamera.name = $"Camera {gameObject.name}";
             ObjectCamera.AddComponent<Camera>();
             ObjectCamera.AddComponent<CameraFollow>().SetTargetToFollow(gameObject);
-            ObjectCamera.GetComponent<CameraFollow>().SetParametres(10, 50, false, false);
+            ObjectCamera.GetComponent<CameraFollow>().SetParametres(10, 60, false, false);
         }
+        UnParentObjects();
+
     }
 
     public void DisableComponents()
@@ -34,10 +38,20 @@ public class PlayerSetup : MonoBehaviourPun
             {
                 item.enabled = false;
             }
-            Debug.Log("Components disabled");
         }
     }
-    
+
+    public void UnParentObjects()
+    {
+        if (!_pView.IsMine)
+        {
+            for (int i = 0; i < gameObjectsToUnParent.Count; i++)
+            {
+                gameObjectsToUnParent[i].transform.parent = null;
+            }
+        }
+    }
+
     [PunRPC]
     public void SetPositionAndRotation(Vector3 position, Vector3 rotation)
     {

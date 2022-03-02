@@ -17,7 +17,7 @@ public class PlayersSpawner : MonoBehaviourPunCallbacks
         int randomSpawnPoint = Random.Range(0, SpawnPlaces.Length);
         var newPlayer = PhotonNetwork.Instantiate(_playerScriptableObject.PrefubName, SpawnPlaces[randomSpawnPoint].transform.position,
             SpawnPlaces[randomSpawnPoint].transform.rotation);
-        newPlayer.name += _playerScriptableObject.PlayerName;
+        newPlayer.name = _playerScriptableObject.PlayerName;
         
         _players.Add(newPlayer);
         Debug.LogWarning("Player added");

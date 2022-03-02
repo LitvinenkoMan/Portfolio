@@ -3163,6 +3163,8 @@ MonoBehaviour:
   - {fileID: 8168946202701866245}
   - {fileID: 649297431962047224}
   - {fileID: 1841874400591023754}
+  gameObjectsToUnParent:
+  - {fileID: 4957590913845692720}
   _pView: {fileID: 893266119164076508}
 --- !u!114 &8168946202701866297
 MonoBehaviour:
