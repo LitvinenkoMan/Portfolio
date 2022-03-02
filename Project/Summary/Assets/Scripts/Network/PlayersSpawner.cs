@@ -16,6 +16,7 @@ public class PlayersSpawner : MonoBehaviourPunCallbacks
         int randomSpawnPoint = Random.Range(0, SpawnPlaces.Length);
         var newPlayer = PhotonNetwork.Instantiate(_playerScriptableObject.PrefubName, SpawnPlaces[randomSpawnPoint].transform.position,
             SpawnPlaces[randomSpawnPoint].transform.rotation);
+        newPlayer.name += _playerScriptableObject.PlayerName;
         
         _players.Add(newPlayer);
         Debug.LogWarning("Player added");
@@ -29,5 +30,10 @@ public class PlayersSpawner : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        _players.Add(GameObject.Find(newPlayer.NickName));    
     }
 }

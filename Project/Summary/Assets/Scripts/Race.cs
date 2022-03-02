@@ -51,9 +51,11 @@ public class Race : MonoBehaviourPun, IRace
     {
         var players = _playersSpawner.GetPlayers();
         Debug.LogWarning($"{players.Count}");
+        
         for (int i = 0; i < players.Count; i++)
         {
             players[i].GetPhotonView().RPC("SetPositionAndRotation", RpcTarget.All, PositionsToStart[i].transform.position, PositionsToStart[i].transform.rotation.eulerAngles);
+            Debug.LogWarning($"{players[i].GetPhotonView().ViewID} is moved");
             //players[i].transform.rotation = PositionsToStart[i].transform.rotation;
         }
     }
