@@ -21,12 +21,19 @@ public class DayLightChanger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.transform.IsChildOf(cars.GetActiveCar().transform))
+        {
+            Light.DOColor(Color.black, 2);
             Light.gameObject.transform.DORotate(new Vector3(-105, 0, 0), 2);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {        
         if (other.gameObject.transform.IsChildOf(cars.GetActiveCar().transform))
+        {       
+            Light.DOColor(Color.white, 2);
             Light.gameObject.transform.DORotate(new Vector3(75, -90, -90), 2);
+        }
+            
     }
 }
