@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RaceMember : MonoBehaviour, IRacer
 {
     [SerializeField] private RaceCheckPointScript[] CheckPoints;
+    [SerializeField] private GameObject TextContainer;    
+    [SerializeField] private TextMeshProUGUI TimerText;
     private bool _playerStartedRace;
     private float _timer;
     
@@ -20,6 +23,7 @@ public class RaceMember : MonoBehaviour, IRacer
         if (_playerStartedRace)
         {
             RaceTimer();
+            ShowTimerValues();
         }
     }
 
@@ -43,6 +47,12 @@ public class RaceMember : MonoBehaviour, IRacer
         if (other.GetComponent<Race>() && !_playerStartedRace)
         {
             _playerStartedRace = true;
+            TextContainer.SetActive(true);
         }
+    }
+
+    public void ShowTimerValues()
+    {
+        TimerText.text = $"{Mathf.Round(_timer)} sec.";
     }
 }
