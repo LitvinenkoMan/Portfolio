@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rotater : MonoBehaviour
 {
+    [SerializeField] private float StartPosition;
     [SerializeField] private float DayInSeconds;
     float dayTime;
     
@@ -22,6 +23,7 @@ public class Rotater : MonoBehaviour
     }
     void Start()
     {
+        dayTime = StartPosition;
         StartCoroutine(TimeCounter());
     }
 

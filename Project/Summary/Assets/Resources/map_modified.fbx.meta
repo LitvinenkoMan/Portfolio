@@ -3,7 +3,32 @@ guid: 5d474d903147d3a4da95c471fdfc2722
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brick_part
+    second: {fileID: 2100000, guid: 1215c952c98778543b150c905e948a6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 11e2a91190846204482b0cfbc85c105c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road_material
+    second: {fileID: 2100000, guid: b0936e01beff84348947ab84b167a961, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road_stuff
+    second: {fileID: 2100000, guid: 718273f8ac90ffb4e99895a20c62354b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone_stuff
+    second: {fileID: 2100000, guid: eed31f9c3bd37cb4d924b5a45850fdc0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

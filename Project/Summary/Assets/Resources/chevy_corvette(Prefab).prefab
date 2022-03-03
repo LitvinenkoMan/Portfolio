@@ -3650,17 +3650,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5106208215269188124}
+  - component: {fileID: 2032395239483947978}
   - component: {fileID: 5590996827424782498}
   - component: {fileID: 5590996827424782499}
   - component: {fileID: 5590996827424782500}
+  - component: {fileID: 6492043212847204408}
   - component: {fileID: 5590996827424782501}
   - component: {fileID: 6123189223277576443}
   - component: {fileID: 691207223699313844}
   - component: {fileID: 3498168810669121623}
+  - component: {fileID: 2628201163033491385}
   - component: {fileID: 2161289223233540709}
   - component: {fileID: 2090245563894980962}
   - component: {fileID: 5602833612646575524}
-  - component: {fileID: 2628201163033491385}
   m_Layer: 0
   m_Name: chevy_corvette(Prefab)
   m_TagString: Untagged
@@ -3692,6 +3694,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2032395239483947978
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590996827424782502}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &5590996827424782498
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3738,7 +3836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90626a8c2b3f5de48ac77cf8509defd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarSound: {fileID: 0}
+  CarSound: {fileID: 6492043212847204408}
   CarSpeed: {fileID: 5590996827424782501}
   carRigidbody: {fileID: 5590996827424782498}
   MaxSteerAngle: 40
@@ -3767,6 +3865,23 @@ MonoBehaviour:
     isFront: 0
     isCanAccelerate: 1
   IsNegativZ: 0
+--- !u!114 &6492043212847204408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590996827424782502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd72c27dbbe29c43b4dfe6b02482356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarSoundSource: {fileID: 2032395239483947978}
+  engineOnSound: {fileID: 0}
+  engineOffSound: {fileID: 0}
+  carRollingSound: {fileID: 8300000, guid: 2fc6d050386051547a79619f290075cf, type: 3}
+  carAcccelerationSound: {fileID: 8300000, guid: e6d827910fed51f4292006f59a43c4c5, type: 3}
 --- !u!114 &5590996827424782501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3820,8 +3935,8 @@ MonoBehaviour:
   - {fileID: 6123189223277576443}
   - {fileID: 5590996827424782501}
   - {fileID: 5590996827424782500}
-  - {fileID: 5590996827424782499}
   - {fileID: 3498168810669121623}
+  - {fileID: 5590996827424782499}
   - {fileID: 6716686786503432226}
   gameObjectsToUnParent:
   - {fileID: 1807665178678748897}
@@ -3841,6 +3956,21 @@ MonoBehaviour:
   MenuInterface: {fileID: 5801334271275082338}
   InGameInterface: {fileID: 3840475756699144049}
   StartRaceButton: {fileID: 1348800198777915456}
+--- !u!114 &2628201163033491385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590996827424782502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9432bd81e00d8c845a3d0034097092ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CheckPoints: []
+  TextContainer: {fileID: 1869296203571388784}
+  TimerText: {fileID: 94944758159205750}
 --- !u!114 &2161289223233540709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3926,21 +4056,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &2628201163033491385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5590996827424782502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9432bd81e00d8c845a3d0034097092ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CheckPoints: []
-  TextContainer: {fileID: 1869296203571388784}
-  TimerText: {fileID: 94944758159205750}
 --- !u!1 &5801334271275082338
 GameObject:
   m_ObjectHideFlags: 0

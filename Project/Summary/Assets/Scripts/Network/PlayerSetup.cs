@@ -20,14 +20,15 @@ public class PlayerSetup : MonoBehaviourPun
         DisableComponents();
         if (_pView.IsMine)
         {
+            
             GameObject ObjectCamera = Instantiate(new GameObject(), transform.position, transform.rotation);
             ObjectCamera.name = $"Camera {gameObject.name}";
             ObjectCamera.AddComponent<Camera>();
+            ObjectCamera.AddComponent<AudioListener>();
             ObjectCamera.AddComponent<CameraFollow>().SetTargetToFollow(gameObject);
             ObjectCamera.GetComponent<CameraFollow>().SetParametres(10, 60, false, false);
         }
         UnParentObjects();
-
     }
 
     public void DisableComponents()

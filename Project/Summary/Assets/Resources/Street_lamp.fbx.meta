@@ -3,7 +3,22 @@ guid: 70d8fcceb62cb46458d8cae88d85398e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glow Glass
+    second: {fileID: 2100000, guid: 9849adc84374c1d4faeae84cfb9cd363, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metall part of street lamp
+    second: {fileID: 2100000, guid: 57e491cfe9f96014ba4e1c8adf6c7352, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparent_glass
+    second: {fileID: 2100000, guid: 605b0543015e9ed4c937ac7ab1c55a89, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

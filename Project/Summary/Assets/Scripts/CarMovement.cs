@@ -96,6 +96,10 @@ public class CarMovement : MonoBehaviour, IMoveable
     {
         if (verticalInput > 0)
         {
+            if (CarSound)
+            {
+                CarSound.CarAcceleration();
+            }
             foreach (var wheel in Wheels)
             {
                 if (wheel.isCanAccelerate)
@@ -226,6 +230,21 @@ public class CarMovement : MonoBehaviour, IMoveable
             }
         }
 
+        if (verticalInput != 0)
+        {
+            if (CarSound)
+            {
+                CarSound.CarAcceleration();
+            }
+        }
+        else
+        {
+            if (CarSound)
+            {
+                CarSound.CarRolling();
+            }
+        }
+
         MoveLeft();
         MoveRight();
 
@@ -233,6 +252,7 @@ public class CarMovement : MonoBehaviour, IMoveable
         {
             MoveBack();
             MoveFront();
+            
         }
 
         if (canMove && Input.GetKeyDown(KeyCode.I))
