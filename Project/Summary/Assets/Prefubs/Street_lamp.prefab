@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3480463731468193068}
   - component: {fileID: 568241660384101001}
   - component: {fileID: 2307597341820270147}
+  - component: {fileID: 7107427839311450201}
   m_Layer: 0
   m_Name: Street_lamp
   m_TagString: Untagged
@@ -84,6 +85,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7107427839311450201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253306793267730326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7826428f28df0a45a1e68ffff857e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_parameters:
+    m_concavity: 0.001
+    m_alpha: 0.05
+    m_beta: 0.05
+    m_minVolumePerCH: 0.0001
+    m_resolution: 100000
+    m_maxNumVerticesPerCH: 64
+    m_planeDownsampling: 4
+    m_convexhullDownsampling: 4
+    m_pca: 0
+    m_mode: 0
+    m_convexhullApproximation: 1
+    m_oclAcceleration: 0
+    m_maxConvexHulls: 1024
+    m_projectHullVertices: 1
+  generateOnStart: 0
 --- !u!1 &5701466973742084696
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,13 +137,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5701466973742084696}
-  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.000001937151}
+  m_LocalRotation: {x: -0.9959637, y: 0.0000001899898, z: -0.089757696, w: 0.000001937151}
   m_LocalPosition: {x: 0.12059996, y: 0.0015005346, z: 0.47779474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3480463731468193068}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: -10.299011, z: 0}
 --- !u!108 &8693383372293173536
 Light:
   m_ObjectHideFlags: 0
@@ -127,10 +156,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 40
-  m_SpotAngle: 100.950615
-  m_InnerSpotAngle: 83.13227
+  m_Intensity: 100
+  m_Range: 60
+  m_SpotAngle: 121.39401
+  m_InnerSpotAngle: 95.1578
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0

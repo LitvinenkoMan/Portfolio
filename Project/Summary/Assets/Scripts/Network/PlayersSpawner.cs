@@ -36,6 +36,6 @@ public class PlayersSpawner : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        _players.Add(GameObject.Find(newPlayer.NickName));    
+        //_players.Add(GameObject.Find(newPlayer.NickName));    
     }
 }
