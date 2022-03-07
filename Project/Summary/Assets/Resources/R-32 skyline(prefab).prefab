@@ -882,6 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9432bd81e00d8c845a3d0034097092ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raundsLeft: 1
   CheckPoints: []
   TextContainer: {fileID: 2198203722518287530}
   TimerText: {fileID: 8048213809938311745}
