@@ -3359,6 +3359,7 @@ MonoBehaviour:
   gameObjectsToUnParent:
   - {fileID: 4957590913845692720}
   _pView: {fileID: 893266119164076508}
+  _playerScriptableObject: {fileID: 11400000, guid: 82c5f03e9311f8f48b93fe923f7390c2, type: 2}
 --- !u!114 &8168946202701866297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,6 +3498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9432bd81e00d8c845a3d0034097092ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raundsLeft: 1
   CheckPoints: []
   TextContainer: {fileID: 4183078145886398030}
   TimerText: {fileID: 297418465483707416}

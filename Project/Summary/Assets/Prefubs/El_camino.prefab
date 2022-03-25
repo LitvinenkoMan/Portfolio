@@ -1528,6 +1528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d10368c1275ea4d97ff67df7ebd5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextMesh: {fileID: 0}
   MaxSpeed: 280
   updateFrequency: 1
 --- !u!114 &7454345888554165799

@@ -12,6 +12,8 @@ public class PlayerSetup : MonoBehaviourPun
     [SerializeField] private List<GameObject> gameObjectsToUnParent;
 
     [SerializeField] private PhotonView _pView;
+
+    [SerializeField] private PlayerScriptableObject _playerScriptableObject;
     
     private Camera camera;
 
@@ -24,9 +26,13 @@ public class PlayerSetup : MonoBehaviourPun
             GameObject ObjectCamera = Instantiate(new GameObject(), transform.position, transform.rotation);
             ObjectCamera.name = $"Camera {gameObject.name}";
             ObjectCamera.AddComponent<Camera>();
-            ObjectCamera.AddComponent<AudioListener>();
+            if (_playerScriptableObject.IsSoundOn)
+            {
+                ObjectCamera.AddComponent<AudioListener>();
+            }
             ObjectCamera.AddComponent<CameraFollow>().SetTargetToFollow(gameObject);
             ObjectCamera.GetComponent<CameraFollow>().SetParametres(10, 60, false, false);
+            
         }
         UnParentObjects();
     }

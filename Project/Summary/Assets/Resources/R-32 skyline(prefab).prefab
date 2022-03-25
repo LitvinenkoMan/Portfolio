@@ -870,6 +870,7 @@ MonoBehaviour:
   gameObjectsToUnParent:
   - {fileID: 8212549914541244425}
   _pView: {fileID: 5059487299380559382}
+  _playerScriptableObject: {fileID: 11400000, guid: 82c5f03e9311f8f48b93fe923f7390c2, type: 2}
 --- !u!114 &4753855849074386746
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,11 +54,11 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     public void SoundOn()
     {
-        
+        _playerScriptableObject.IsSoundOn = true;
     }
 
     public void SoundOff()
     {
-        
+        _playerScriptableObject.IsSoundOn = false;
     }
 }

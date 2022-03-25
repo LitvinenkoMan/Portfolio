@@ -15,13 +15,25 @@ public class RaceMember : MonoBehaviour, IRacer
     private float _timer;
     private float _afterCheckpointTimer;
 
+    public IEnumerator ResultHandler()
+    {
+        yield return new WaitForSeconds(10);
+        raundsLeft = 1;
+        _timer = 0;
+        TextContainer.SetActive(false);
+        TimerText.text = "0";
+        _playerStartedRace = false;
+        _afterCheckpointTimer = 5;
+        yield return null;
+    }
+
     void Start()
     {
         _playerStartedRace = false;
         _timer = 0;
         _afterCheckpointTimer = 5;
     }
-
+    
     void Update()
     {
         if (_playerStartedRace)
@@ -38,19 +50,11 @@ public class RaceMember : MonoBehaviour, IRacer
                 _afterCheckpointTimer = 5;
                 if (raundsLeft < 0)
                 {
-                    TextContainer.SetActive(false);
-                    _timer = 0;
-                    raundsLeft = 1;
+                    _playerStartedRace = false;
+                    StartCoroutine("ResultHandler");
                 }
-
                 _CheckPointCrossed = false;
             }
-        }
-
-        if (raundsLeft < 0)
-        {
-            _playerStartedRace = false;
-            _afterCheckpointTimer = 5;
         }
     }
 

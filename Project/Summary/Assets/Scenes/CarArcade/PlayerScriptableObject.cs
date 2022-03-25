@@ -8,4 +8,5 @@ public class PlayerScriptableObject : ScriptableObject
     public string PlayerName;
     public string RoomName;
     public bool IsRoomCreator;
+    public bool IsSoundOn;
 }
