@@ -2,25 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class RaceMember : MonoBehaviour, IRacer
 {
-    [SerializeField] private float raundsLeft = 1;
+    [SerializeField] private int LapCount = 3;
     [SerializeField] private RaceCheckPointScript[] CheckPoints;
     [SerializeField] private GameObject TextContainer;
     [SerializeField] private TextMeshProUGUI TimerText;
+    [SerializeField] private TextMeshProUGUI LapText;
     private bool _playerStartedRace;
     private bool _CheckPointCrossed;
     private float _timer;
     private float _afterCheckpointTimer;
+    private int _currentLap = 0;
 
     public IEnumerator ResultHandler()
     {
         yield return new WaitForSeconds(10);
-        raundsLeft = 1;
+        _currentLap = 0;
         _timer = 0;
-        TextContainer.SetActive(false);
+        TextContainer.SetActive(false);     
+        LapText.enabled = false;
         TimerText.text = "0";
         _playerStartedRace = false;
         _afterCheckpointTimer = 5;
@@ -42,18 +46,22 @@ public class RaceMember : MonoBehaviour, IRacer
             ShowTimerValues();
         }
 
-        if (_CheckPointCrossed)
+        if (_CheckPointCrossed )
         {
             _afterCheckpointTimer -= Time.deltaTime;
+            
             if (_afterCheckpointTimer < 0)
             {
                 _afterCheckpointTimer = 5;
-                if (raundsLeft < 0)
-                {
-                    _playerStartedRace = false;
-                    StartCoroutine("ResultHandler");
-                }
+                
                 _CheckPointCrossed = false;
+            }
+            
+            if (_currentLap == LapCount)
+            {
+                _playerStartedRace = false;
+                LapText.text = $"Finished";
+                StartCoroutine("ResultHandler");
             }
         }
     }
@@ -77,7 +85,7 @@ public class RaceMember : MonoBehaviour, IRacer
     {
         if (other.GetComponent<Race>() && _playerStartedRace && !_CheckPointCrossed)
         {
-            raundsLeft -= 1;
+            _currentLap += 1;
             _CheckPointCrossed = true;
         }
 
@@ -85,11 +93,13 @@ public class RaceMember : MonoBehaviour, IRacer
         {
             _playerStartedRace = true;
             TextContainer.SetActive(true);
+            LapText.enabled = true;
         }
     }
 
     public void ShowTimerValues()
     {
         TimerText.text = $"{Mathf.Round(_timer)} sec.";
+        LapText.text = $"Lap: {_currentLap + 1}";
     }
 }
