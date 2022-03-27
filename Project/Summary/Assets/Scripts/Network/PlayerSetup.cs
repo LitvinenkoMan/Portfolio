@@ -30,6 +30,14 @@ public class PlayerSetup : MonoBehaviourPun
             {
                 ObjectCamera.AddComponent<AudioListener>();
             }
+
+            if (!_playerScriptableObject.IsSoundOn)
+            {
+                if (ObjectCamera.GetComponent<AudioListener>())
+                {
+                    ObjectCamera.GetComponent<AudioListener>().enabled = false;
+                }
+            }
             ObjectCamera.AddComponent<CameraFollow>().SetTargetToFollow(gameObject);
             ObjectCamera.GetComponent<CameraFollow>().SetParametres(10, 60, false, false);
             
