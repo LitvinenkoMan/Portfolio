@@ -46,14 +46,13 @@ public class RaceMember : MonoBehaviour, IRacer
             ShowTimerValues();
         }
 
-        if (_CheckPointCrossed )
+        if (_CheckPointCrossed)
         {
             _afterCheckpointTimer -= Time.deltaTime;
             
             if (_afterCheckpointTimer < 0)
             {
                 _afterCheckpointTimer = 5;
-                
                 _CheckPointCrossed = false;
             }
             
